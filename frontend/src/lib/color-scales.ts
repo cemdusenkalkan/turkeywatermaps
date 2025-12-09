@@ -14,7 +14,7 @@ export const RISK_COLORS = {
   ],
 }
 
-export function getColorScale(categoryId: string): string[] {
+export function getColorScale(): string[] {
   // All categories use the same blue scale
   return RISK_COLORS.blueShades
 }
