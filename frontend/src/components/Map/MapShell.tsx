@@ -214,7 +214,7 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
     
     const categoryId = activeCategory.id
     const scoreKey = categoryId === 'combined_risk' ? 'combined_score' : `${categoryId}_score`
-    const colors = getColorScale(categoryId)
+    const colors = getColorScale()
     
     // Create color expression for MapLibre
     const colorExpression: any = [

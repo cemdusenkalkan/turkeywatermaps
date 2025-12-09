@@ -7,7 +7,7 @@ interface LegendProps {
 }
 
 export function Legend({ category }: LegendProps) {
-  const colors = getColorScale(category.id)
+  const colors = getColorScale()
   const breaks = [0, 1, 2, 3, 4, 5]
   
   return (

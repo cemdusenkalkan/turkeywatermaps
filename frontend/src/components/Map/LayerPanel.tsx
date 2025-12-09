@@ -10,7 +10,7 @@ interface LayerPanelProps {
 }
 
 export function LayerPanel({ categories, activeCategoryId, onCategoryChange, activeCategory }: LayerPanelProps) {
-  const colors = activeCategory ? getColorScale(activeCategory.id) : []
+  const colors = activeCategory ? getColorScale() : []
   const breaks = [0, 1, 2, 3, 4, 5]
   
   return (
