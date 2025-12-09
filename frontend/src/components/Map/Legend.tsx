@@ -15,10 +15,10 @@ export function Legend({ category }: LegendProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.3 }}
-      className="bg-white rounded-lg shadow-soft p-4 min-w-[200px]"
+      transition={{ duration: 0.25 }}
+      className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-5 min-w-[220px]"
     >
-      <h3 className="font-semibold text-sm mb-3 text-gray-800">
+      <h3 className="font-semibold text-base mb-4 text-gray-900">
         {category.short_name || category.name}
       </h3>
       
@@ -28,12 +28,12 @@ export function Legend({ category }: LegendProps) {
           const max = breaks[i + 1] || 5
           
           return (
-            <div key={i} className="flex items-center space-x-2">
+            <div key={i} className="flex items-center space-x-3">
               <div
-                className="w-6 h-6 rounded border border-gray-300 flex-shrink-0"
+                className="w-7 h-7 rounded-lg border border-gray-300 flex-shrink-0 shadow-sm"
                 style={{ backgroundColor: color }}
               />
-              <div className="text-xs text-gray-700 flex-1">
+              <div className="text-sm text-gray-800 flex-1">
                 <span className="font-medium">{min.toFixed(1)} - {max.toFixed(1)}</span>
                 <span className="text-gray-500 ml-1">({getRiskLabel(min)})</span>
               </div>

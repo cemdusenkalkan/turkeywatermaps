@@ -49,7 +49,7 @@ export function MapPage() {
     return (
       <div className="h-screen flex items-center justify-center">
         <div className="text-center max-w-md">
-          <div className="text-6xl mb-4">⚠️</div>
+          <div className="text-4xl mb-4 font-bold">Error</div>
           <h2 className="text-2xl font-bold mb-2">Error Loading Data</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
@@ -80,7 +80,7 @@ export function MapPage() {
       : manifest.categories.find(c => c.id === activeCategoryId) || null
   
   return (
-    <div className="relative h-[calc(100vh-4rem)]">
+    <div className="relative w-full h-[calc(100vh-4rem)]" style={{ minHeight: '600px' }}>
       {/* Layer Panel */}
       <AnimatePresence>
         {showPanel && (
@@ -88,13 +88,14 @@ export function MapPage() {
             initial={{ x: -300 }}
             animate={{ x: 0 }}
             exit={{ x: -300 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="absolute top-6 left-6 z-20 max-h-[calc(100vh-8rem)] overflow-y-auto"
+            transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+            className="absolute top-0 left-0 z-20 h-full overflow-y-auto shadow-lg"
           >
             <LayerPanel
               categories={manifest.categories}
               activeCategoryId={activeCategoryId}
               onCategoryChange={setActiveCategoryId}
+              activeCategory={activeCategory}
             />
           </motion.div>
         )}
@@ -103,9 +104,9 @@ export function MapPage() {
       {/* Toggle Panel Button */}
       <button
         onClick={() => setShowPanel(!showPanel)}
-        className="absolute top-6 left-6 z-30 bg-white rounded-lg shadow-soft p-2 
-          hover:bg-gray-50 transition-colors"
-        style={{ marginLeft: showPanel ? '360px' : '0' }}
+        className="absolute top-4 left-4 z-30 bg-white rounded-full shadow-lg p-3 
+          hover:bg-gray-50 transition-all hover:scale-105"
+        style={{ marginLeft: showPanel ? '280px' : '0' }}
         aria-label={showPanel ? 'Hide panel' : 'Show panel'}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,14 +119,19 @@ export function MapPage() {
       </button>
       
       {/* Info Badge */}
-      <div className="absolute top-6 right-6 z-20 bg-white rounded-lg shadow-soft px-4 py-2 text-sm">
-        <div className="text-gray-600">
-          Data: <span className="font-semibold">{manifest.mode === 'synthetic_demo' ? 'Synthetic Demo' : 'Production'}</span>
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        className="absolute top-4 right-4 z-20 bg-white rounded-xl shadow-md px-4 py-2.5 text-sm"
+      >
+        <div className="text-gray-700">
+          Data: <span className="font-semibold text-gray-900">{manifest.mode === 'synthetic_demo' ? 'Synthetic Demo' : 'Production'}</span>
         </div>
-        <div className="text-xs text-gray-500">
+        <div className="text-xs text-gray-600">
           {manifest.temporal_coverage}
         </div>
-      </div>
+      </motion.div>
       
       {/* Map */}
       <MapShell

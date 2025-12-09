@@ -14,30 +14,29 @@ export function Home() {
             className="max-w-3xl"
           >
             <h1 className="text-5xl font-bold mb-6">
-              Understanding Turkey's Water Risks
+              Turkey Water Risk Map
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              An open-source, data-driven platform assessing water-related risks across 
-              Turkey's 81 provinces. Transparent methodology. Reproducible results. 
-              Community-driven insights.
+              Visualize water-related risks across Turkey's 81 provinces. 
+              Open-source data from WRI Aqueduct 4.0. Free to use and explore.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/map"
-                className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-lg font-semibold 
-                  transition-colors inline-flex items-center"
+                className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-xl font-semibold 
+                  transition-all hover:scale-105 inline-flex items-center shadow-lg"
               >
-                Explore the Map
+                View Map
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
               <Link
                 to="/methodology"
-                className="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-lg font-semibold 
-                  transition-colors backdrop-blur-sm"
+                className="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-xl font-semibold 
+                  transition-all hover:scale-105 backdrop-blur-sm border border-white/20"
               >
-                Read Methodology
+                Methodology
               </Link>
             </div>
           </motion.div>
@@ -84,50 +83,45 @@ export function Home() {
       {/* Features */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why This Matters</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">What's Included</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '💧',
-                title: 'Baseline Water Stress',
-                description: 'Understand where water demand exceeds sustainable supply across Turkey.',
+                title: 'Water Stress',
+                description: 'See where water demand exceeds supply.',
               },
               {
-                icon: '☀️',
-                title: 'Drought Vulnerability',
-                description: 'Track meteorological drought patterns and their frequency over time.',
+                title: 'Drought Risk',
+                description: 'View drought patterns by province.',
               },
               {
-                icon: '🌊',
                 title: 'Flood Risk',
-                description: 'Identify provinces exposed to riverine flooding and extreme precipitation.',
+                description: 'Identify flood exposure levels.',
               },
               {
-                icon: '📊',
-                title: 'Transparent Data',
-                description: 'All methodology documented. Every calculation reproducible. No black boxes.',
+                title: 'Open Source',
+                description: 'All code and data publicly available.',
               },
               {
-                icon: '🗺️',
-                title: 'Interactive Maps',
-                description: 'Explore data visually. Compare provinces. Download raw datasets.',
+                title: 'Interactive',
+                description: 'Explore and compare provinces visually.',
               },
               {
-                icon: '🤝',
-                title: 'Community-Driven',
-                description: 'Built by contributors. Improved through collaboration. Open for all.',
+                title: 'Free to Use',
+                description: 'No registration. No fees. Just information.',
               },
             ].map((feature, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-soft"
+                viewport={{ once: true }}
+                whileHover={{ y: -4 }}
+                transition={{ delay: i * 0.08, duration: 0.2 }}
+                className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
@@ -138,16 +132,16 @@ export function Home() {
       {/* CTA */}
       <section className="py-16 bg-navy-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Explore?</h2>
+          <h2 className="text-3xl font-bold mb-4">View the Map</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Dive into the interactive map and discover water risk patterns across Turkey.
+            Interactive visualization of water risk data for all Turkish provinces.
           </p>
           <Link
             to="/map"
-            className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-lg font-semibold 
-              transition-colors inline-flex items-center text-lg"
+            className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-xl font-semibold 
+              transition-all hover:scale-105 inline-flex items-center text-lg shadow-lg"
           >
-            Launch Map
+            Open Map
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

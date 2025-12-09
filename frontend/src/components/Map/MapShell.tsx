@@ -4,8 +4,7 @@ import { Protocol } from 'pmtiles'
 import type { ProvincesGeoJSON, Category } from '@/types'
 import { getColorScale, getRiskLabel } from '@/lib/color-scales'
 import { calculatePercentile } from '@/lib/calculations'
-import { Legend } from './Legend'
-  import 'maplibre-gl/dist/maplibre-gl.css'
+import 'maplibre-gl/dist/maplibre-gl.css'
 
 interface MapShellProps {
   data: ProvincesGeoJSON
@@ -27,26 +26,27 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
     const protocol = new Protocol()
     maplibregl.addProtocol('pmtiles', protocol.tile)
     
-    // Initialize map
+    // Initialize map with simple OSM basemap
     map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: {
         version: 8,
         sources: {
-          'carto-light': {
+          'osm': {
             type: 'raster',
             tiles: [
-              'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+              'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             ],
             tileSize: 256,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxzoom: 19
           },
         },
         layers: [
           {
-            id: 'carto-light-layer',
+            id: 'osm-tiles',
             type: 'raster',
-            source: 'carto-light',
+            source: 'osm',
             minzoom: 0,
             maxzoom: 22,
           },
@@ -69,44 +69,55 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
     map.current.on('load', () => {
       if (!map.current) return
       
-      map.current.addSource('provinces', {
-        type: 'geojson',
-        data: data as any,
-      })
+      // Add source
+      if (map.current.getSource('provinces')) {
+        (map.current.getSource('provinces') as maplibregl.GeoJSONSource).setData(data as any)
+      } else {
+        map.current.addSource('provinces', {
+          type: 'geojson',
+          data: data as any,
+        })
+      }
       
       // Province fill layer
-      map.current.addLayer({
-        id: 'provinces-fill',
-        type: 'fill',
-        source: 'provinces',
-        paint: {
-          'fill-color': '#627d98',
-          'fill-opacity': 0.6,
-        },
-      })
+      if (!map.current.getLayer('provinces-fill')) {
+        map.current.addLayer({
+          id: 'provinces-fill',
+          type: 'fill',
+          source: 'provinces',
+          paint: {
+            'fill-color': '#627d98',
+            'fill-opacity': 0.7,
+          },
+        })
+      }
       
       // Province outline layer
-      map.current.addLayer({
-        id: 'provinces-outline',
-        type: 'line',
-        source: 'provinces',
-        paint: {
-          'line-color': '#334e68',
-          'line-width': 1,
-        },
-      })
+      if (!map.current.getLayer('provinces-outline')) {
+        map.current.addLayer({
+          id: 'provinces-outline',
+          type: 'line',
+          source: 'provinces',
+          paint: {
+            'line-color': '#334e68',
+            'line-width': 1,
+          },
+        })
+      }
       
       // Hover effect layer
-      map.current.addLayer({
-        id: 'provinces-hover',
-        type: 'line',
-        source: 'provinces',
-        paint: {
-          'line-color': '#2b6cb0',
-          'line-width': 2,
-        },
-        filter: ['==', 'province_id', ''],
-      })
+      if (!map.current.getLayer('provinces-hover')) {
+        map.current.addLayer({
+          id: 'provinces-hover',
+          type: 'line',
+          source: 'provinces',
+          paint: {
+            'line-color': '#2b6cb0',
+            'line-width': 2,
+          },
+          filter: ['==', 'province_id', ''],
+        })
+      }
       
       // Mouse events
       map.current.on('mousemove', 'provinces-fill', (e) => {
@@ -142,21 +153,21 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
           }
           
           const popupContent = `
-            <div class="text-sm">
-              <div class="font-semibold text-base mb-1">${properties?.name}</div>
-              <div class="text-gray-600 text-xs mb-2">${properties?.name_tr}</div>
-              <div class="border-t pt-2">
-                <div class="flex justify-between mb-1">
-                  <span class="text-gray-600">Score:</span>
-                  <span class="font-semibold">${score.toFixed(2)} / 5.0</span>
+            <div class="text-sm" style="min-width: 200px;">
+              <div class="font-semibold text-base mb-1" style="color: #111827;">${properties?.name}</div>
+              <div class="text-xs mb-2" style="color: #6b7280;">${properties?.name_tr}</div>
+              <div class="border-t pt-2 mt-2" style="border-color: #e5e7eb;">
+                <div class="flex justify-between mb-1.5">
+                  <span style="color: #4b5563;">Score:</span>
+                  <span class="font-semibold" style="color: #111827;">${score.toFixed(2)} / 5.0</span>
                 </div>
-                <div class="flex justify-between mb-1">
-                  <span class="text-gray-600">Risk Level:</span>
-                  <span class="font-semibold">${getRiskLabel(score)}</span>
+                <div class="flex justify-between mb-1.5">
+                  <span style="color: #4b5563;">Risk Level:</span>
+                  <span class="font-semibold" style="color: #111827;">${getRiskLabel(score)}</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-gray-600">Percentile:</span>
-                  <span class="font-semibold">${percentile}th</span>
+                  <span style="color: #4b5563;">Percentile:</span>
+                  <span class="font-semibold" style="color: #111827;">${percentile}th</span>
                 </div>
               </div>
             </div>
@@ -195,11 +206,11 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
         map.current = null
       }
     }
-  }, [])
+  }, [data])
   
   // Update colors when category changes
   useEffect(() => {
-    if (!map.current || !activeCategory) return
+    if (!map.current || !activeCategory || !map.current.isStyleLoaded()) return
     
     const categoryId = activeCategory.id
     const scoreKey = categoryId === 'combined_risk' ? 'combined_score' : `${categoryId}_score`
@@ -223,13 +234,11 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
   
   return (
     <div className="relative w-full h-full">
-      <div ref={mapContainer} className="absolute inset-0" />
-      
-      {activeCategory && (
-        <div className="absolute bottom-6 left-6 z-10">
-          <Legend category={activeCategory} />
-        </div>
-      )}
+      <div 
+        ref={mapContainer} 
+        className="absolute inset-0"
+        style={{ width: '100%', height: '100%' }}
+      />
     </div>
   )
 }

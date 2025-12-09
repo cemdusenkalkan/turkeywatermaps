@@ -20,9 +20,9 @@ export default {
           900: '#102a43',
         },
         accent: {
-          light: '#4299e1',
-          DEFAULT: '#2b6cb0',
-          dark: '#2c5282',
+          light: '#3b82f6',
+          DEFAULT: '#2563eb',
+          dark: '#1d4ed8',
         },
       },
       fontFamily: {

@@ -18,7 +18,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl">🌊</span>
               <span className="font-bold text-lg text-navy-800">
                 Türkiye Water Risk Map
               </span>
@@ -96,7 +95,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-navy-700 mt-8 pt-6 text-center text-sm text-gray-400">
-            <p>&copy; 2025 Türkiye Water Risk Map. Licensed under MIT. Made with 🌊 for a water-secure Turkey.</p>
+            <p>&copy; 2025 Türkiye Water Risk Map. Licensed under MIT.</p>
           </div>
         </div>
       </footer>
