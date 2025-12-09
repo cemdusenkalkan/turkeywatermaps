@@ -23,23 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-      
-      - name: Install Python dependencies
-        run: |
-          cd pipeline
-          pip install -r requirements.txt
-      
-      - name: Download and process WRI Aqueduct data
-        run: |
-          cd pipeline
-          chmod +x run_pipeline.sh
-          ./run_pipeline.sh
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -51,11 +34,6 @@ jobs:
         run: |
           cd frontend
           npm ci
-      
-      - name: Copy data to public directory
-        run: |
-          mkdir -p frontend/public/data
-          cp -r data/processed/* frontend/public/data/
       
       - name: Build frontend
         run: |
