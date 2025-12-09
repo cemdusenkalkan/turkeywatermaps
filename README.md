@@ -2,7 +2,7 @@
 
 **Open-source water risk assessment platform for Turkey using WRI Aqueduct 4.0 data**
 
-**[Live Demo](https://cemdusenkalkan.github.io/turkeywatermap)** | **[Data Downloads](https://github.com/cemdusenkalkan/turkeywatermap/releases)** | **[Methodology](docs/METHODOLOGY.md)**
+[Live Demo](https://cemdusenkalkan.github.io/turkeywatermaps) | [Data Downloads](https://github.com/cemdusenkalkan/turkeywatermaps/releases) | [Methodology](docs/METHODOLOGY.md)
 
 ---
 
@@ -25,7 +25,7 @@ This project provides transparent water risk assessments across Turkey's 81 prov
 
 ## Quick Start
 
-Visit the live site at https://cemdusenkalkan.github.io/turkeywatermap
+Visit the live site at https://cemdusenkalkan.github.io/turkeywatermaps
 
 Download processed data from releases.
 
@@ -39,8 +39,8 @@ Requirements:
 Clone and setup:
 
 ```bash
-git clone https://github.com/cemdusenkalkan/turkeywatermap.git
-cd turkeywatermap
+git clone https://github.com/cemdusenkalkan/turkeywatermaps.git
+cd turkeywatermaps
 
 # Setup Python environment
 cd pipeline
@@ -61,7 +61,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs at http://localhost:5173/turkeywatermap/
+Frontend runs at http://localhost:5173/turkeywatermaps/
 
 ## Project Structure
 
@@ -168,7 +168,7 @@ Contributions welcome. See docs/CONTRIBUTING.md for guidelines.
   title = {Türkiye Water Risk Map},
   author = {Community Contributors},
   year = {2025},
-  url = {https://github.com/cemdusenkalkan/turkeywatermap},
+  url = {https://github.com/cemdusenkalkan/turkeywatermaps},
   license = {MIT}
 }
 

@@ -99,5 +99,5 @@ Washington, DC: World Resources Institute.
 
 - WRI Aqueduct FAQ: https://www.wri.org/initiatives/aqueduct/frequently-asked-questions
 - Data page: https://www.wri.org/data/aqueduct-global-maps-40-data
-- GitHub issues: https://github.com/cemdusenkalkan/turkeywatermap/issues
+- GitHub issues: https://github.com/cemdusenkalkan/turkeywatermaps/issues
 

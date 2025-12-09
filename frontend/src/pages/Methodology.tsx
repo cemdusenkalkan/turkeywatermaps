@@ -34,8 +34,8 @@ export function Methodology() {
           <div>
             <h2 className="text-xl font-semibold mb-3">GitHub Repository</h2>
             <p className="text-gray-700 mb-2">
-              <a href="https://github.com/cemdusenkalkan/turkeywatermap" className="text-blue-600 hover:underline">
-                https://github.com/cemdusenkalkan/turkeywatermap
+              <a href="https://github.com/cemdusenkalkan/s" className="text-blue-600 hover:underline">
+                https://github.com/cemdusenkalkan/turkeywatermaps
               </a>
             </p>
             <p className="text-gray-600 text-sm">
@@ -46,11 +46,11 @@ export function Methodology() {
           <div>
             <h2 className="text-xl font-semibold mb-3">Citation</h2>
             <pre className="bg-gray-50 p-5 rounded-xl border border-gray-300 text-sm overflow-x-auto text-gray-900 font-mono">
-{`@software{turkeywatermap_2025,
+{`@software{turkeywatermaps_2025,
   title = {Türkiye Water Risk Map},
   author = {Community Contributors},
   year = {2025},
-  url = {https://github.com/cemdusenkalkan/turkeywatermap},
+  url = {https://github.com/cemdusenkalkan/turkeywatermaps},
   license = {MIT}
 }`}
             </pre>
