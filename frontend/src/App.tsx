@@ -8,7 +8,7 @@ import { About } from './pages/About'
 
 function App() {
   return (
-    <BrowserRouter basename="/turkeywatermap">
+    <BrowserRouter basename="/turkeywatermaps">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
