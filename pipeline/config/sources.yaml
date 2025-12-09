@@ -1,0 +1,77 @@
+# Data source configuration for Türkiye Water Risk Map
+# Update URLs and paths before running production mode
+
+spatial:
+  provinces:
+    source: gadm  # or tuik
+    url: https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_TUR_1.json
+    # Alternative: https://data.tuik.gov.tr (requires manual download)
+    crs: EPSG:4326
+    id_field: GID_1  # GADM province ID field
+    name_field: NAME_1
+    name_field_turkish: VARNAME_1  # if available
+
+climate:
+  era5_land:
+    api: cds  # Copernicus Climate Data Store
+    variables:
+      - total_precipitation
+      - runoff
+      - surface_runoff
+      - sub_surface_runoff
+    bbox: [25.5, 35.8, 44.8, 42.1]  # Turkey bounding box [W, S, E, N]
+    resolution: 0.1  # degrees (~10km)
+    years: [2000, 2023]
+    download_path: data/raw/era5_land/
+    # Requires CDS API key: https://cds.climate.copernicus.eu/api-how-to
+    
+socioeconomic:
+  tuik:
+    # Turkish Statistical Institute - requires manual scraping or API (if available)
+    water_use_url: https://biruni.tuik.gov.tr/medas/?locale=en
+    population_url: https://data.tuik.gov.tr/Kategori/GetKategori?p=nufus-ve-demografi-109
+    irrigation_url: https://data.tuik.gov.tr/Kategori/GetKategori?p=tarim-111
+    download_path: data/raw/tuik/
+    note: Manual download may be required; check for CSV/Excel availability
+    
+hydrology:
+  dsi:
+    # State Hydraulic Works (Devlet Su İşleri) - mostly PDF reports
+    water_potential_url: https://www.dsi.gov.tr/Sayfa/Detay/754
+    groundwater_monitoring_url: https://www.dsi.gov.tr/Sayfa/Detay/930
+    download_path: data/raw/dsi/
+    note: Manual extraction from PDF reports required
+    
+groundwater:
+  grace:
+    # GRACE/GRACE-FO groundwater storage anomalies
+    source: nasa_ges_disc
+    url: https://disc.gsfc.nasa.gov/datasets/GRACEDADM_CLSM025GL_7.4/summary
+    # Or JPL TELLUS: https://grace.jpl.nasa.gov/data/get-data/
+    resolution: 0.25  # degrees (~25km native, but effective ~300km due to filtering)
+    years: [2002, 2023]
+    download_path: data/raw/grace/
+    note: Requires Earthdata login
+    
+topography:
+  merit_hydro:
+    # MERIT-Hydro for topographic wetness index (flood proxy)
+    url: http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/
+    variables:
+      - elv  # elevation
+      - hnd  # height above nearest drainage
+    bbox: [25, 35, 45, 43]
+    download_path: data/raw/merit_hydro/
+    
+disasters:
+  afad:
+    # Disaster and Emergency Management Authority - historical flood events
+    url: https://www.afad.gov.tr/aciklamalar
+    download_path: data/raw/afad/
+    note: Manually scrape flood event database 2000-2023
+
+cache:
+  enable: true
+  ttl_days: 90  # Re-download if older than 90 days
+  verify_checksums: true
+

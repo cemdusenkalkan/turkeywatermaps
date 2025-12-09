@@ -1,0 +1,32 @@
+# Core dependencies
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<3.0.0
+geopandas>=0.14.0,<1.0.0
+shapely>=2.0.0,<3.0.0
+pyproj>=3.5.0,<4.0.0
+
+# Raster/climate data
+xarray>=2023.1.0,<2025.0.0
+rioxarray>=0.15.0,<1.0.0
+netCDF4>=1.6.0,<2.0.0
+h5netcdf>=1.2.0,<2.0.0
+
+# Data download
+requests>=2.31.0,<3.0.0
+pooch>=1.7.0,<2.0.0
+cdsapi>=0.6.0,<1.0.0  # For ERA5-Land
+
+# Configuration
+PyYAML>=6.0,<7.0
+
+# Utilities
+tqdm>=4.65.0,<5.0.0
+python-dateutil>=2.8.0,<3.0.0
+
+# Optional: for faster GeoJSON I/O
+orjson>=3.9.0,<4.0.0
+
+# Development
+pytest>=7.4.0,<9.0.0
+ruff>=0.1.0,<1.0.0
+

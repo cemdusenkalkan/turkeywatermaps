@@ -1,0 +1,120 @@
+# WRI Aqueduct 4.0 Indicator Configuration
+# Based on official WRI methodology
+# Source: https://www.wri.org/research/aqueduct-30-updated-decision-relevant-global-water-risk-indicators
+
+categories:
+  - id: baseline_stress
+    name: Baseline Water Stress
+    short_name: Water Stress
+    description: Ratio of total water withdrawals to available renewable water supply
+    weight: 0.25
+    color: "#d73027"
+    source: WRI Aqueduct 4.0 - PCR-GLOBWB 2
+    indicator_code: bws_raw
+    scoring_thresholds:
+      - [0, 0.1, 0]  # <10% = Low
+      - [0.1, 0.2, 1]  # 10-20% = Low-Medium
+      - [0.2, 0.4, 2]  # 20-40% = Medium-High
+      - [0.4, 0.8, 3]  # 40-80% = High
+      - [0.8, 1.0, 4]  # 80-100% = Extremely High
+      - [1.0, 999, 5]  # >100% = Extremely High
+    
+  - id: seasonal_variability
+    name: Seasonal Variability
+    short_name: Seasonal Var
+    description: Coefficient of variation of monthly water supply
+    weight: 0.25
+    color: "#fc8d59"
+    source: WRI Aqueduct 4.0 - PCR-GLOBWB 2
+    indicator_code: sev_raw
+    scoring_thresholds:
+      - [0, 0.33, 0]
+      - [0.33, 0.66, 1]
+      - [0.66, 1.0, 2]
+      - [1.0, 1.33, 3]
+      - [1.33, 1.66, 4]
+      - [1.66, 999, 5]
+    
+  - id: interannual_variability
+    name: Interannual Variability
+    short_name: Interannual Var
+    description: Coefficient of variation of annual water supply (1960-2014)
+    weight: 0.25
+    color: "#e0f3f8"
+    source: WRI Aqueduct 4.0 - PCR-GLOBWB 2
+    indicator_code: iav_raw
+    scoring_thresholds:
+      - [0, 0.25, 0]
+      - [0.25, 0.5, 1]
+      - [0.5, 0.75, 2]
+      - [0.75, 1.0, 3]
+      - [1.0, 1.25, 4]
+      - [1.25, 999, 5]
+    
+  - id: groundwater_stress
+    name: Groundwater Table Decline
+    short_name: Groundwater
+    description: Average decline in groundwater table depth
+    weight: 0.125
+    color: "#4575b4"
+    source: WRI Aqueduct 4.0 - PCR-GLOBWB 2
+    indicator_code: gtd_raw
+    scoring_thresholds:
+      # Negative values = decline
+      - [-999, -10, 5]
+      - [-10, -8, 4]
+      - [-8, -6, 3]
+      - [-6, -4, 2]
+      - [-4, -2, 1]
+      - [-2, 999, 0]
+    
+  - id: drought_hazard
+    name: Drought Risk
+    short_name: Drought
+    description: Number of drought months (SPI < -1.5) from 1950-2014
+    weight: 0.0625
+    color: "#fee08b"
+    source: WRI Aqueduct 4.0 - CRU TS 4.03
+    indicator_code: drr_raw
+    scoring_thresholds:
+      # Convert to percentage: drr_raw / 780 months * 100
+      - [0, 78, 0]    # <10%
+      - [78, 156, 1]   # 10-20%
+      - [156, 234, 2]  # 20-30%
+      - [234, 312, 3]  # 30-40%
+      - [312, 390, 4]  # 40-50%
+      - [390, 999, 5]  # >50%
+    
+  - id: flood_hazard
+    name: Riverine Flood Risk
+    short_name: Flood Risk
+    description: Percentage of population exposed to 1-in-100 year floods
+    weight: 0.0625
+    color: "#91bfdb"
+    source: WRI Aqueduct 4.0 - GLOFRIS
+    indicator_code: rfr_raw
+    scoring_thresholds:
+      - [0, 0.1, 0]
+      - [0.1, 1, 1]
+      - [1, 5, 2]
+      - [5, 10, 3]
+      - [10, 25, 4]
+      - [25, 999, 5]
+
+combined_index:
+  id: combined_risk
+  name: Combined Water Risk Index
+  method: weighted_arithmetic_mean
+  description: WRI Aqueduct aggregation of physical risk quantity indicators
+  weights_source: WRI Aqueduct Technical Note (2019)
+
+metadata:
+  data_source: WRI Aqueduct 4.0
+  data_year: Baseline (1960-2019, varies by indicator)
+  hydrological_model: PCR-GLOBWB 2
+  spatial_resolution: Sub-basin (HydroBASINS level 6)
+  aggregation_method: Area-weighted average to provinces
+  license: CC BY 4.0
+  citation: "WRI (2019). Aqueduct 4.0: Updated Decision-Relevant Global Water Risk Indicators. World Resources Institute."
+  url: https://www.wri.org/aqueduct
+

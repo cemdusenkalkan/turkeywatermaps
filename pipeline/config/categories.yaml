@@ -1,0 +1,85 @@
+categories:
+  - id: baseline_stress
+    name: Baseline Water Stress
+    short_name: Baseline Stress
+    description: Ratio of total annual water withdrawals to available renewable supply
+    units: dimensionless_ratio
+    score_range: [0, 5]
+    color: "#d73027"
+    weight: 0.20
+    uncertainty: high
+    
+  - id: seasonal_variability
+    name: Seasonal Variability
+    short_name: Seasonal Var
+    description: Intra-annual variation in water availability (monthly runoff coefficient of variation)
+    units: coefficient_of_variation_percent
+    score_range: [0, 5]
+    color: "#fc8d59"
+    weight: 0.15
+    uncertainty: medium
+    
+  - id: drought_hazard
+    name: Drought Hazard
+    short_name: Drought
+    description: Frequency and severity of meteorological droughts based on SPI-12
+    units: drought_months_per_decade
+    score_range: [0, 5]
+    color: "#fee08b"
+    weight: 0.20
+    uncertainty: low
+    
+  - id: flood_hazard
+    name: Flood Hazard
+    short_name: Flood
+    description: Exposure to riverine flooding from extreme precipitation and topography
+    units: proxy_score
+    score_range: [0, 5]
+    color: "#91bfdb"
+    weight: 0.10
+    uncertainty: high
+    
+  - id: groundwater_stress
+    name: Groundwater Stress
+    short_name: Groundwater
+    description: Declining groundwater levels or over-extraction relative to recharge
+    units: proxy_score
+    score_range: [0, 5]
+    color: "#4575b4"
+    weight: 0.15
+    uncertainty: high
+    
+  - id: interannual_variability
+    name: Interannual Variability
+    short_name: Interannual Var
+    description: Year-to-year volatility in total annual water availability
+    units: coefficient_of_variation_percent
+    score_range: [0, 5]
+    color: "#e0f3f8"
+    weight: 0.10
+    uncertainty: medium
+    
+  - id: demand_pressure
+    name: Water Demand Pressure
+    short_name: Demand
+    description: Rate of change in water demand from population and irrigation growth
+    units: growth_index
+    score_range: [0, 5]
+    color: "#762a83"
+    weight: 0.10
+    uncertainty: medium
+
+combined_index:
+  id: combined_risk
+  name: Combined Water Risk Index
+  method: geometric_mean  # or arithmetic_mean
+  description: Weighted geometric mean of all category scores
+  score_range: [0, 5]
+  color_palette: viridis
+
+scoring:
+  normalization_method: quantile  # within Turkey
+  quantiles: [0, 0.2, 0.4, 0.6, 0.8, 1.0]
+  scale_0_5: true
+  scale_0_100: true  # for CSV exports
+
