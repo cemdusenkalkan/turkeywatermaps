@@ -36,10 +36,10 @@ export function MapPage() {
   
   if (loading) {
     return (
-      <div className="h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent mb-4" />
-          <div className="text-gray-600">Loading map data...</div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 md:h-16 md:w-16 border-4 border-gray-300 border-b-accent mb-6" />
+          <div className="text-gray-600 text-base md:text-lg font-medium">Loading map data...</div>
         </div>
       </div>
     )
@@ -47,7 +47,7 @@ export function MapPage() {
   
   if (error || !manifest || !geoData) {
     return (
-      <div className="h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-md">
           <div className="text-4xl mb-4 font-bold">Error</div>
           <h2 className="text-2xl font-bold mb-2">Error Loading Data</h2>

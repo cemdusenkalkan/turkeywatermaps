@@ -1,0 +1,25 @@
+# Robots.txt for Türkiye Water Risk Map
+# Allow search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Specific rules for common crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Disallow access to sensitive or duplicate pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://cemdusenkalkan.github.io/turkeywatermaps/sitemap.xml
+
+# Cache time
+Cache-Control: max-age=2592000
