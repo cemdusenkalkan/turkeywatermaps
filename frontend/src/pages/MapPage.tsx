@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { MapShell } from '@/components/Map/MapShell'
 import { LayerPanel } from '@/components/Map/LayerPanel'
+import { ProvinceModal } from '@/components/ProvinceModal'
 import { loadManifest, loadProvincesGeoJSON } from '@/lib/data-loader'
-import type { DataManifest, ProvincesGeoJSON, Category } from '@/types'
+import { calculatePercentile } from '@/lib/calculations'
+import type { DataManifest, ProvincesGeoJSON, Category, ProvinceDetailData } from '@/types'
 
 export function MapPage() {
   const [manifest, setManifest] = useState<DataManifest | null>(null)
@@ -12,6 +14,8 @@ export function MapPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [showPanel, setShowPanel] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalData, setModalData] = useState<ProvinceDetailData | null>(null)
   
   useEffect(() => {
     async function loadData() {
@@ -33,6 +37,48 @@ export function MapPage() {
     
     loadData()
   }, [])
+
+  // Handle province click to open modal with all scores
+  const handleProvinceClick = (provinceId: string) => {
+    if (!geoData || !manifest) return
+
+    // Find province feature
+    const province = geoData.features.find(f => f.properties.province_id === provinceId)
+    if (!province) return
+
+    const props = province.properties
+    
+    // Get combined score
+    const combinedScore = props.combined_score || 0
+    const allCombinedScores = geoData.features.map(f => f.properties.combined_score as number)
+    const combinedPercentile = calculatePercentile(combinedScore, allCombinedScores)
+
+    // Build category scores
+    const categoryScores = manifest.categories.map(cat => {
+      const scoreKey = `${cat.id}_score`
+      const score = props[scoreKey] as number || 0
+      const allScores = geoData.features.map(f => f.properties[scoreKey] as number)
+      const percentile = calculatePercentile(score, allScores)
+      
+      return {
+        categoryId: cat.id,
+        categoryName: cat.name,
+        score,
+        percentile,
+      }
+    })
+
+    const modalContent: ProvinceDetailData = {
+      provinceName: props.name,
+      provinceNameTr: props.name_tr,
+      combinedScore,
+      combinedPercentile,
+      categoryScores,
+    }
+
+    setModalData(modalContent)
+    setModalOpen(true)
+  }
   
   if (loading) {
     return (
@@ -137,7 +183,14 @@ export function MapPage() {
       <MapShell
         data={geoData}
         activeCategory={activeCategory}
-        onProvinceClick={(id) => console.log('Clicked province:', id)}
+        onProvinceClick={handleProvinceClick}
+      />
+
+      {/* Province Detail Modal */}
+      <ProvinceModal
+        isOpen={modalOpen}
+        data={modalData}
+        onClose={() => setModalOpen(false)}
       />
     </div>
   )
