@@ -6,33 +6,33 @@ export function About() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-navy-900">{t('about.title')}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-navy-900 dark:text-white">{t('about.title')}</h1>
         
         <div className="space-y-6 md:space-y-8">
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">{t('about.subtitle')}</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('about.subtitle')}</h2>
+            <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
               {t('about.description')}
             </p>
           </div>
           
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">{t('about.dataTitle')}</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('about.dataTitle')}</h2>
+            <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
               {t('about.dataText')}
             </p>
           </div>
           
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">{t('about.licenseTitle')}</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('about.licenseTitle')}</h2>
+            <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
               {t('about.licenseText')}
             </p>
           </div>
           
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">{t('about.contributeTitle')}</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('about.contributeTitle')}</h2>
+            <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-6">
               {t('about.contributeText')}
             </p>
             <a 
@@ -49,9 +49,9 @@ export function About() {
             </a>
           </div>
           
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">{t('about.contactTitle')}</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('about.contactTitle')}</h2>
+            <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
               {t('about.contactText')}
             </p>
           </div>

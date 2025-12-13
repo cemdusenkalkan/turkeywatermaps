@@ -139,6 +139,13 @@
     "license": "Licensed under MIT & CC BY 4.0",
     "github": "GitHub"
   },
+  "modal": {
+    "combinedIndex": "Combined Water Risk Index",
+    "categoryScores": "Category Scores",
+    "percentile": "Percentile",
+    "outOf100": "out of 100",
+    "riskLevel": "Risk Level"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error loading data",
@@ -147,6 +154,8 @@
     "province": "Province",
     "risk": "Risk",
     "viewMore": "View More",
-    "close": "Close"
+    "close": "Close",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
   }
 }

@@ -71,3 +71,17 @@ export interface TooltipData {
   category?: string
 }
 
+export interface ProvinceCategoryScore {
+  categoryId: string
+  categoryName: string
+  score: number
+  percentile: number
+}
+
+export interface ProvinceDetailData {
+  provinceName: string
+  provinceNameTr: string
+  combinedScore: number
+  combinedPercentile: number
+  categoryScores: ProvinceCategoryScore[]
+}

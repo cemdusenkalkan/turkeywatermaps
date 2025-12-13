@@ -46,37 +46,37 @@ export function Home() {
       </section>
       
       {/* Key Statistics */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-center bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="text-center bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow dark:border dark:border-gray-700"
             >
               <div className="text-5xl md:text-6xl font-bold text-accent mb-3">81</div>
-              <div className="text-gray-600 text-sm md:text-base font-medium">{t('home.stats.provinces')}</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm md:text-base font-medium">{t('home.stats.provinces')}</div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-center bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="text-center bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow dark:border dark:border-gray-700"
             >
               <div className="text-5xl md:text-6xl font-bold text-accent mb-3">7</div>
-              <div className="text-gray-600 text-sm md:text-base font-medium">{t('home.stats.categories')}</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm md:text-base font-medium">{t('home.stats.categories')}</div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-center bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="text-center bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow dark:border dark:border-gray-700"
             >
               <div className="text-5xl md:text-6xl font-bold text-accent mb-3">100%</div>
-              <div className="text-gray-600 text-sm md:text-base font-medium">{t('home.stats.openSource')}</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm md:text-base font-medium">{t('home.stats.openSource')}</div>
             </motion.div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export function Home() {
       {/* Features */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-navy-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-navy-900 dark:text-white">
             {t('home.whatsIncluded')}
           </h2>
           
@@ -123,10 +123,10 @@ export function Home() {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
                 transition={{ delay: i * 0.08, duration: 0.2 }}
-                className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow touch-auto"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow touch-auto"
               >
-                <h3 className="text-xl md:text-lg font-bold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl md:text-lg font-bold mb-3 text-gray-900 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export function Home() {
       </section>
       
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-navy-800 text-white">
+      <section className="py-12 md:py-16 bg-navy-800 dark:bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">{t('home.cta.title')}</h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">

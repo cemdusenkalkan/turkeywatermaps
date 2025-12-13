@@ -139,6 +139,13 @@
     "license": "MIT & CC BY 4.0 ile lisanslanmıştır",
     "github": "GitHub"
   },
+  "modal": {
+    "combinedIndex": "Birleştirilmiş Su Risk İndeksi",
+    "categoryScores": "Kategori Skorları",
+    "percentile": "Yüzdelik",
+    "outOf100": "100 üzerinden",
+    "riskLevel": "Risk Seviyesi"
+  },
   "common": {
     "loading": "Yükleniyor...",
     "error": "Veri yükleme hatası",
@@ -147,6 +154,8 @@
     "province": "İl",
     "risk": "Risk",
     "viewMore": "Daha Fazla",
-    "close": "Kapat"
+    "close": "Kapat",
+    "darkMode": "Koyu Mod",
+    "lightMode": "Açık Mod"
   }
 }
