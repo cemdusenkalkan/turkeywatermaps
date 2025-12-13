@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export function Home() {
+  const { t } = useLanguage()
+  
   return (
     <div>
       {/* Hero Section */}
@@ -14,11 +17,10 @@ export function Home() {
             className="max-w-3xl"
           >
             <h1 className="text-5xl font-bold mb-6">
-              Turkey Water Risk Map
+              {t('home.title')}
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Visualize water-related risks across Turkey's 81 provinces. 
-              Open-source data from WRI Aqueduct 4.0. Free to use and explore.
+              {t('home.subtitle')}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -26,7 +28,7 @@ export function Home() {
                 className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-xl font-semibold 
                   transition-all hover:scale-105 inline-flex items-center shadow-lg"
               >
-                View Map
+                {t('home.viewMap')}
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -36,7 +38,7 @@ export function Home() {
                 className="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-xl font-semibold 
                   transition-all hover:scale-105 backdrop-blur-sm border border-white/20"
               >
-                Methodology
+                {t('home.methodologyBtn')}
               </Link>
             </div>
           </motion.div>
@@ -54,7 +56,7 @@ export function Home() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-accent mb-2">81</div>
-              <div className="text-gray-600">Provinces Covered</div>
+              <div className="text-gray-600">{t('home.stats.provinces')}</div>
             </motion.div>
             
             <motion.div
@@ -64,7 +66,7 @@ export function Home() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-accent mb-2">7</div>
-              <div className="text-gray-600">Risk Categories</div>
+              <div className="text-gray-600">{t('home.stats.categories')}</div>
             </motion.div>
             
             <motion.div
@@ -74,7 +76,7 @@ export function Home() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-accent mb-2">100%</div>
-              <div className="text-gray-600">Open Source</div>
+              <div className="text-gray-600">{t('home.stats.openSource')}</div>
             </motion.div>
           </div>
         </div>
@@ -83,33 +85,33 @@ export function Home() {
       {/* Features */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">What's Included</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t('home.whatsIncluded')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Water Stress',
-                description: 'See where water demand exceeds supply.',
+                title: t('home.features.waterStress.title'),
+                description: t('home.features.waterStress.desc'),
               },
               {
-                title: 'Drought Risk',
-                description: 'View drought patterns by province.',
+                title: t('home.features.drought.title'),
+                description: t('home.features.drought.desc'),
               },
               {
-                title: 'Flood Risk',
-                description: 'Identify flood exposure levels.',
+                title: t('home.features.flood.title'),
+                description: t('home.features.flood.desc'),
               },
               {
-                title: 'Open Source',
-                description: 'All code and data publicly available.',
+                title: t('home.features.openSource.title'),
+                description: t('home.features.openSource.desc'),
               },
               {
-                title: 'Interactive',
-                description: 'Explore and compare provinces visually.',
+                title: t('home.features.interactive.title'),
+                description: t('home.features.interactive.desc'),
               },
               {
-                title: 'Free to Use',
-                description: 'No registration. No fees. Just information.',
+                title: t('home.features.free.title'),
+                description: t('home.features.free.desc'),
               },
             ].map((feature, i) => (
               <motion.div
@@ -132,16 +134,16 @@ export function Home() {
       {/* CTA */}
       <section className="py-16 bg-navy-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">View the Map</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('home.cta.title')}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Interactive visualization of water risk data for all Turkish provinces.
+            {t('home.cta.subtitle')}
           </p>
           <Link
             to="/map"
             className="bg-accent hover:bg-accent-dark px-8 py-3 rounded-xl font-semibold 
               transition-all hover:scale-105 inline-flex items-center text-lg shadow-lg"
           >
-            Open Map
+            {t('home.cta.button')}
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

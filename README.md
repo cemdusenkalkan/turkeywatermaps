@@ -8,18 +8,21 @@
 
 ## Overview
 
-This project provides transparent water risk assessments across Turkey's 81 provinces using real data from the World Resources Institute's Aqueduct 4.0 global water risk atlas. The platform visualizes six water risk dimensions derived from the PCR-GLOBWB 2 hydrological model through an interactive web map.
+This project provides transparent water risk assessments across Turkey's 81 provinces using **real WRI Aqueduct 4.0 data**. The platform visualizes six water risk indicators based on the PCR-GLOBWB 2 global hydrological model (developed by Utrecht University) through an interactive web map.
+
+**Data Source:** We download and process official WRI Aqueduct 4.0 datasets (CSV and GeoPackage formats) and aggregate sub-basin level data to Turkey's 81 provinces using area-weighted averaging.
 
 ### Key Features
 
 - **6 WRI Aqueduct Indicators**: Baseline water stress, seasonal/interannual variability, groundwater decline, drought risk, flood risk
 - **Combined Risk Index**: WRI's weighted arithmetic mean methodology
 - **Interactive Map**: Fast, GPU-accelerated rendering with MapLibre GL JS
-- **Province-Level Data**: All 81 Turkish provinces with area-weighted aggregation
-- **Real Data**: WRI Aqueduct 4.0 from PCR-GLOBWB 2 hydrological model
-- **Open & Reproducible**: Complete pipeline from download to visualization
+- **Province-Level Data**: All 81 Turkish provinces with area-weighted aggregation from sub-basin data
+- **Real WRI Aqueduct 4.0 Data**: Downloads and processes official WRI datasets (not synthetic or simulated)
+- **Open & Reproducible**: Complete pipeline from data download to visualization
 - **Performant**: Optimized single-file data architecture
-- **Accessible**: WCAG 2.1 AA basics implemented
+- **Accessible**: WCAG 2.1 AA basics, bilingual (EN/TR)
+- **Source**: Data derived from PCR-GLOBWB 2 global hydrological model via WRI
 
 ---
 

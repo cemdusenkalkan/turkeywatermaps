@@ -1,15 +1,18 @@
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { LanguageSelector } from './LanguageSelector'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
+  const { t } = useLanguage()
   
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/map', label: 'Map' },
-    { path: '/categories', label: 'Categories' },
-    { path: '/methodology', label: 'Methodology' },
-    { path: '/about', label: 'About' },
+    { path: '/', label: t('nav.home') },
+    { path: '/map', label: t('nav.map') },
+    { path: '/categories', label: t('nav.categories') },
+    { path: '/methodology', label: t('nav.methodology') },
+    { path: '/about', label: t('nav.about') },
   ]
   
   return (
@@ -23,33 +26,36 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </Link>
             
-            <ul className="hidden md:flex items-center space-x-1">
-              {navLinks.map(link => {
-                const isActive = location.pathname === link.path
-                return (
-                  <li key={link.path}>
-                    <Link
-                      to={link.path}
-                      className={`px-4 py-2 rounded-md text-sm font-medium transition-colors relative
-                        ${isActive 
-                          ? 'text-accent' 
-                          : 'text-gray-600 hover:text-accent hover:bg-gray-50'
-                        }`}
-                    >
-                      {link.label}
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeTab"
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
-                          initial={false}
-                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                        />
-                      )}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
+            <div className="hidden md:flex items-center space-x-4">
+              <ul className="flex items-center space-x-1">
+                {navLinks.map(link => {
+                  const isActive = location.pathname === link.path
+                  return (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors relative
+                          ${isActive 
+                            ? 'text-accent' 
+                            : 'text-gray-600 hover:text-accent hover:bg-gray-50'
+                          }`}
+                      >
+                        {link.label}
+                        {isActive && (
+                          <motion.div
+                            layoutId="activeTab"
+                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
+                            initial={false}
+                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                          />
+                        )}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+              <LanguageSelector />
+            </div>
             
             {/* Mobile menu button */}
             <button className="md:hidden p-2 text-gray-600 hover:text-gray-900">

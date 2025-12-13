@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './contexts/LanguageContext'
 import { Layout } from './components/Layout'
 import { Home } from './pages/Home'
 import { MapPage } from './pages/MapPage'
@@ -9,16 +10,18 @@ import { About } from './pages/About'
 function App() {
   return (
     <BrowserRouter basename="/turkeywatermaps">
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/methodology" element={<Methodology />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <LanguageProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/methodology" element={<Methodology />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </LanguageProvider>
     </BrowserRouter>
   )
 }
@@ -36,4 +39,3 @@ function NotFound() {
 }
 
 export default App
-

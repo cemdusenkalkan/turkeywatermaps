@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "map": "Harita",
+    "categories": "Kategoriler",
+    "methodology": "Metodoloji",
+    "about": "Hakkında"
+  },
+  "home": {
+    "title": "Türkiye Su Riski Haritası",
+    "subtitle": "Türkiye'nin 81 ilindeki su risklerini görselleştirin. WRI Aqueduct 4.0'dan açık kaynak veriler. Ücretsiz kullanım ve keşif.",
+    "viewMap": "Haritayı Görüntüle",
+    "methodologyBtn": "Metodoloji",
+    "stats": {
+      "provinces": "Kapsanan İl",
+      "categories": "Risk Kategorisi",
+      "openSource": "Açık Kaynak"
+    },
+    "whatsIncluded": "Neler İçerir",
+    "features": {
+      "waterStress": {
+        "title": "Su Stresi",
+        "desc": "Su talebinin arzı aştığı bölgeleri görün."
+      },
+      "drought": {
+        "title": "Kuraklık Riski",
+        "desc": "İllere göre kuraklık desenlerini inceleyin."
+      },
+      "flood": {
+        "title": "Taşkın Riski",
+        "desc": "Taşkın maruziyeti seviyelerini belirleyin."
+      },
+      "openSource": {
+        "title": "Açık Kaynak",
+        "desc": "Tüm kod ve veriler herkese açık."
+      },
+      "interactive": {
+        "title": "Etkileşimli",
+        "desc": "İlleri görsel olarak keşfedin ve karşılaştırın."
+      },
+      "free": {
+        "title": "Ücretsiz Kullanım",
+        "desc": "Kayıt yok. Ücret yok. Sadece bilgi."
+      }
+    },
+    "cta": {
+      "title": "Haritayı Görüntüle",
+      "subtitle": "Tüm Türkiye illeri için etkileşimli su riski veri görselleştirmesi.",
+      "button": "Haritayı Aç"
+    }
+  },
+  "map": {
+    "title": "Su Riski Haritası",
+    "selectProvince": "Detayları görmek için bir il seçin",
+    "layers": "Katmanlar",
+    "legend": "Lejant",
+    "riskLevels": {
+      "veryLow": "Çok Düşük",
+      "low": "Düşük",
+      "medium": "Orta",
+      "high": "Yüksek",
+      "veryHigh": "Çok Yüksek"
+    }
+  },
+  "categories": {
+    "title": "Risk Kategorileri",
+    "subtitle": "WRI Aqueduct 4.0'dan altı su riski göstergesi",
+    "baseline_stress": {
+      "name": "Temel Su Stresi",
+      "short": "Su Stresi",
+      "desc": "Toplam su çekiminin yenilenebilir su kaynağına oranı",
+      "detail": "Su kaynakları için rekabeti ölçer. Yüksek değerler, su kaynaklarında daha fazla baskı olduğunu gösterir."
+    },
+    "seasonal_variability": {
+      "name": "Mevsimsel Değişkenlik",
+      "short": "Mevsimsel Değ.",
+      "desc": "Aylık su arzının değişkenlik katsayısı",
+      "detail": "Su mevcudiyetinin yıl boyunca ne kadar değiştiğini gösterir. Yüksek değerler, daha az öngörülebilir mevsimsel desenler anlamına gelir."
+    },
+    "interannual_variability": {
+      "name": "Yıllar Arası Değişkenlik",
+      "short": "Yıllar Arası Değ.",
+      "desc": "Yıllık su arzının değişkenlik katsayısı",
+      "detail": "Yıldan yıla su mevcudiyetindeki değişimi gösterir. Yüksek değerler, yıllar arasında daha fazla belirsizlik gösterir."
+    },
+    "groundwater_stress": {
+      "name": "Yeraltı Suyu Düşüşü",
+      "short": "Yeraltı Suyu",
+      "desc": "Yeraltı suyu seviyesindeki ortalama düşüş",
+      "detail": "Yeraltı suyu tükenmesinin hızını ölçer. Negatif değerler, yeraltı suyu seviyelerinin düştüğünü gösterir."
+    },
+    "drought_hazard": {
+      "name": "Kuraklık Riski",
+      "short": "Kuraklık",
+      "desc": "Meteorolojik kuraklıkların sıklığı ve şiddeti",
+      "detail": "Standartlaştırılmış Yağış İndeksi'ne (SPI) dayanır. Geçmiş kuraklık oluşumlarını gösterir."
+    },
+    "flood_hazard": {
+      "name": "Nehir Taşkını Riski",
+      "short": "Taşkın",
+      "desc": "Nehir taşkınlarına maruz kalan nüfus",
+      "detail": "Geçmiş taşkın modellerine dayalı olarak nehir taşkını riski olan bölgeleri gösterir."
+    },
+    "combined": {
+      "name": "Birleşik Su Riski",
+      "short": "Birleşik",
+      "desc": "Tüm risk kategorilerinin ağırlıklı ortalaması",
+      "detail": "WRI Aqueduct metodolojisi kullanılarak ağırlıklı göstergelerle hesaplanan genel su riski skoru."
+    }
+  },
+  "methodology": {
+    "title": "Metodoloji",
+    "subtitle": "Su riski skorlarını nasıl hesaplıyoruz",
+    "dataSource": "Veri Kaynağı",
+    "dataSourceText": "Utrecht Üniversitesi tarafından geliştirilen PCR-GLOBWB 2 küresel hidrolojik modelinden türetilen resmi WRI Aqueduct 4.0 veri setlerini kullanıyoruz.",
+    "processing": "Veri İşleme",
+    "processingText": "Alt-havza seviyesindeki veriler, doğru temsili sağlamak için alan ağırlıklı ortalama kullanılarak Türkiye'nin 81 iline toplulaştırılır.",
+    "scoring": "Risk Skorlama",
+    "scoringText": "Her gösterge, WRI'ın metodolojisini takip ederek 0-5 ölçeğinde skorlanır. Birleşik risk, WRI araştırmacıları tarafından atanan ağırlıklarla ağırlıklı aritmetik ortalama kullanır.",
+    "weights": "Kategori Ağırlıkları",
+    "viewDetails": "Detaylı Metodolojiyi Görüntüle"
+  },
+  "about": {
+    "title": "Proje Hakkında",
+    "subtitle": "Türkiye için açık kaynak su riski değerlendirmesi",
+    "description": "Bu proje, gerçek WRI Aqueduct 4.0 verilerini kullanarak Türkiye'nin 81 ili için şeffaf, veriye dayalı su riski değerlendirmeleri sağlar. Tüm kod ve veri işleme süreçleri açık kaynak ve yeniden üretilebilirdir.",
+    "dataTitle": "Veri Kaynakları",
+    "dataText": "Birincil veriler, PCR-GLOBWB 2 hidrolojik modeline dayalı WRI Aqueduct 4.0'dan, Türk hükümet kaynaklarından (DSİ, TÜİK) ek doğrulama ile.",
+    "licenseTitle": "Lisans",
+    "licenseText": "Kod: MIT Lisansı. Veri: Creative Commons Atıf 4.0 (CC BY 4.0). Atıf ile ücretsiz kullanım.",
+    "contributeTitle": "Katkıda Bulun",
+    "contributeText": "Bu açık kaynak bir projedir. Katkılar, öneriler ve veri iyileştirmeleri memnuniyetle karşılanır.",
+    "githubLink": "GitHub'da Görüntüle",
+    "contactTitle": "İletişim",
+    "contactText": "Sorularınız veya geri bildiriminiz mi var? GitHub'da bir konu açın veya e-posta ile ulaşın."
+  },
+  "footer": {
+    "dataSource": "Veri: WRI Aqueduct 4.0",
+    "license": "MIT & CC BY 4.0 ile lisanslanmıştır",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Veri yükleme hatası",
+    "noData": "Veri mevcut değil",
+    "score": "Skor",
+    "province": "İl",
+    "risk": "Risk",
+    "viewMore": "Daha Fazla",
+    "close": "Kapat"
+  }
+}

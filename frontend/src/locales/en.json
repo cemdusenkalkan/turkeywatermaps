@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "home": "Home",
+    "map": "Map",
+    "categories": "Categories",
+    "methodology": "Methodology",
+    "about": "About"
+  },
+  "home": {
+    "title": "Turkey Water Risk Map",
+    "subtitle": "Visualize water-related risks across Turkey's 81 provinces. Open-source data from WRI Aqueduct 4.0. Free to use and explore.",
+    "viewMap": "View Map",
+    "methodologyBtn": "Methodology",
+    "stats": {
+      "provinces": "Provinces Covered",
+      "categories": "Risk Categories",
+      "openSource": "Open Source"
+    },
+    "whatsIncluded": "What's Included",
+    "features": {
+      "waterStress": {
+        "title": "Water Stress",
+        "desc": "See where water demand exceeds supply."
+      },
+      "drought": {
+        "title": "Drought Risk",
+        "desc": "View drought patterns by province."
+      },
+      "flood": {
+        "title": "Flood Risk",
+        "desc": "Identify flood exposure levels."
+      },
+      "openSource": {
+        "title": "Open Source",
+        "desc": "All code and data publicly available."
+      },
+      "interactive": {
+        "title": "Interactive",
+        "desc": "Explore and compare provinces visually."
+      },
+      "free": {
+        "title": "Free to Use",
+        "desc": "No registration. No fees. Just information."
+      }
+    },
+    "cta": {
+      "title": "View the Map",
+      "subtitle": "Interactive visualization of water risk data for all Turkish provinces.",
+      "button": "Open Map"
+    }
+  },
+  "map": {
+    "title": "Water Risk Map",
+    "selectProvince": "Click a province to see details",
+    "layers": "Layers",
+    "legend": "Legend",
+    "riskLevels": {
+      "veryLow": "Very Low",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "veryHigh": "Very High"
+    }
+  },
+  "categories": {
+    "title": "Risk Categories",
+    "subtitle": "Six water risk indicators from WRI Aqueduct 4.0",
+    "baseline_stress": {
+      "name": "Baseline Water Stress",
+      "short": "Water Stress",
+      "desc": "Ratio of total water withdrawals to available renewable water supply",
+      "detail": "Measures the competition for water resources. Higher values indicate greater stress on water supplies."
+    },
+    "seasonal_variability": {
+      "name": "Seasonal Variability",
+      "short": "Seasonal Var",
+      "desc": "Coefficient of variation of monthly water supply",
+      "detail": "Indicates how much water availability changes throughout the year. Higher values mean less predictable seasonal patterns."
+    },
+    "interannual_variability": {
+      "name": "Interannual Variability",
+      "short": "Interannual Var",
+      "desc": "Coefficient of variation of annual water supply",
+      "detail": "Shows year-to-year variation in water availability. Higher values indicate greater uncertainty between years."
+    },
+    "groundwater_stress": {
+      "name": "Groundwater Table Decline",
+      "short": "Groundwater",
+      "desc": "Average decline in groundwater table depth",
+      "detail": "Measures the rate of groundwater depletion. Negative values indicate declining groundwater levels."
+    },
+    "drought_hazard": {
+      "name": "Drought Risk",
+      "short": "Drought",
+      "desc": "Frequency and severity of meteorological droughts",
+      "detail": "Based on Standardized Precipitation Index (SPI). Shows historical drought occurrence."
+    },
+    "flood_hazard": {
+      "name": "Riverine Flood Risk",
+      "short": "Flood",
+      "desc": "Population exposed to riverine flooding",
+      "detail": "Indicates areas at risk of river flooding based on historical flood models."
+    },
+    "combined": {
+      "name": "Combined Water Risk",
+      "short": "Combined",
+      "desc": "Weighted average of all risk categories",
+      "detail": "Overall water risk score calculated using WRI Aqueduct methodology with weighted indicators."
+    }
+  },
+  "methodology": {
+    "title": "Methodology",
+    "subtitle": "How we calculate water risk scores",
+    "dataSource": "Data Source",
+    "dataSourceText": "We use official WRI Aqueduct 4.0 datasets derived from the PCR-GLOBWB 2 global hydrological model developed by Utrecht University.",
+    "processing": "Data Processing",
+    "processingText": "Sub-basin level data is aggregated to Turkey's 81 provinces using area-weighted averaging to ensure accurate representation.",
+    "scoring": "Risk Scoring",
+    "scoringText": "Each indicator is scored on a 0-5 scale following WRI's methodology. The combined risk uses weighted arithmetic mean with weights assigned by WRI researchers.",
+    "weights": "Category Weights",
+    "viewDetails": "View Detailed Methodology"
+  },
+  "about": {
+    "title": "About This Project",
+    "subtitle": "Open-source water risk assessment for Turkey",
+    "description": "This project provides transparent, data-driven water risk assessments for Turkey's 81 provinces using real WRI Aqueduct 4.0 data. All code and data processing pipelines are open-source and reproducible.",
+    "dataTitle": "Data Sources",
+    "dataText": "Primary data from WRI Aqueduct 4.0, based on PCR-GLOBWB 2 hydrological model, with additional validation from Turkish government sources (DSİ, TÜİK).",
+    "licenseTitle": "License",
+    "licenseText": "Code: MIT License. Data: Creative Commons Attribution 4.0 (CC BY 4.0). Free to use with attribution.",
+    "contributeTitle": "Contribute",
+    "contributeText": "This is an open-source project. Contributions, suggestions, and data improvements are welcome.",
+    "githubLink": "View on GitHub",
+    "contactTitle": "Contact",
+    "contactText": "Questions or feedback? Open an issue on GitHub or reach out via email."
+  },
+  "footer": {
+    "dataSource": "Data: WRI Aqueduct 4.0",
+    "license": "Licensed under MIT & CC BY 4.0",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error loading data",
+    "noData": "No data available",
+    "score": "Score",
+    "province": "Province",
+    "risk": "Risk",
+    "viewMore": "View More",
+    "close": "Close"
+  }
+}
