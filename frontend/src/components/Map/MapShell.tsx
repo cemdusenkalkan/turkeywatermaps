@@ -74,7 +74,7 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
             minzoom: 0,
             maxzoom: 22,
             paint: {
-              'raster-opacity': isDarkMode ? 0.5 : 0.3
+              'raster-opacity': isDarkMode ? 0.7 : 0.5
             }
           },
           // Province layers will be inserted here
@@ -128,7 +128,7 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
           source: 'provinces',
           paint: {
             'fill-color': colorExpression,
-            'fill-opacity': 0.6, // Reduced from 0.7 for better label visibility
+            'fill-opacity': 0.5, // Reduced for better basemap visibility and brighter appearance
           },
         })
       }

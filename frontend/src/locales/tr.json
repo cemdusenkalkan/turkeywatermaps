@@ -74,6 +74,19 @@
       "quality": "Kalite",
       "access_reputational": "Erişim & İtibar"
     },
+    "groupDescriptions": {
+      "quantity_variability": "Fiziksel su mevcudiyeti, talep ve zamansal dalgalanmalar",
+      "flooding": "Nehirler ve kıyı bölgelerinden taşkın riski",
+      "quality": "Su kirliliği ve kontaminasyon göstergeleri",
+      "access_reputational": "Su erişimi, sanitasyon ve yönetişim riski"
+    },
+    "groupWeights": {
+      "quantity_variability": "Ağırlık: 88%",
+      "flooding": "Ağırlık: 8%",
+      "quality": "Ağırlık: 5%",
+      "access_reputational": "Ağırlık: 0%"
+    },
+    "indicatorCount": "Göstergeler",
     "baseline_stress": {
       "name": "Temel Su Stresi",
       "short": "Su Stresi",
@@ -182,6 +195,9 @@
     "scoringFormula": "risk_skoru ∈ [0, 5] | Düşük: [0-1], Orta: [2-3], Yüksek: [4-5]",
     "weights": "Kategori Ağırlıkları",
     "viewDetails": "Detaylı Metodolojiyi Görüntüle",
+    "githubRepo": "GitHub Deposu",
+    "githubRepoDesc": "Tam kod, veri işleme hattı ve dokümantasyon mevcut.",
+    "citation": "Alıntı",
     "dataDictionary": {
       "title": "Veri Sözlüğü",
       "subtitle": "Su riski göstergeleri ve değişkenlerini anlamak",
@@ -249,8 +265,23 @@
     "contactText": "Sorularınız veya geri bildiriminiz mi var? GitHub'da bir konu açın veya e-posta ile ulaşın."
   },
   "footer": {
+    "title": "Türkiye Su Riski Haritası",
+    "subtitle": "Gerçek WRI Aqueduct 4.0 verilerini kullanarak açık kaynak su riski değerlendirme platformu. Ücretsiz, şeffaf ve yeniden üretilebilir.",
+    "resources": "Kaynaklar",
+    "home": "Ana Sayfa",
+    "interactiveMap": "Etkileşimli Harita",
+    "riskCategories": "Risk Kategorileri",
+    "methodology": "Metodoloji",
+    "externalLinks": "Harici Bağlantılar",
+    "githubRepo": "GitHub Deposu",
+    "wriAqueduct": "WRI Aqueduct",
+    "linkedinProfile": "LinkedIn Profili",
+    "about": "Hakkında",
+    "aboutText": "Topluluk odaklı, resmi olmayan ürün. Yetkili bilgi için resmi Türk devlet kurumlarına (DSİ, MGM, TÜİK) danışın.",
+    "copyright": "© 2025 Türkiye Su Riski Haritası. Tüm hakları saklıdır.",
+    "terms": "Şartlar",
+    "license": "Lisans (MIT)",
     "dataSource": "Veri: WRI Aqueduct 4.0",
-    "license": "MIT & CC BY 4.0 ile lisanslanmıştır",
     "github": "GitHub"
   },
   "modal": {
