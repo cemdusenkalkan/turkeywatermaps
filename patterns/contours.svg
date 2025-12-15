@@ -1,0 +1,31 @@
+<svg width="900" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="contour-pattern" x="0" y="0" width="900" height="900" patternUnits="userSpaceOnUse">
+      <!-- Subtle topographic contour lines -->
+      <path d="M0,100 Q225,80 450,100 T900,100" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,150 Q225,135 450,150 T900,150" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.25"/>
+      <path d="M0,200 Q225,185 450,200 T900,200" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,250 Q225,230 450,250 T900,250" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M0,300 Q225,280 450,300 T900,300" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,350 Q225,335 450,350 T900,350" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.25"/>
+      <path d="M0,400 Q225,385 450,400 T900,400" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,450 Q225,430 450,450 T900,450" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M0,500 Q225,480 450,500 T900,500" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,550 Q225,535 450,550 T900,550" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.25"/>
+      <path d="M0,600 Q225,585 450,600 T900,600" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,650 Q225,630 450,650 T900,650" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M0,700 Q225,680 450,700 T900,700" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      <path d="M0,750 Q225,735 450,750 T900,750" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.25"/>
+      <path d="M0,800 Q225,785 450,800 T900,800" stroke="#1e40af" stroke-width="0.5" fill="none" opacity="0.3"/>
+      
+      <!-- Vertical contours for variety -->
+      <path d="M100,0 Q80,225 100,450 T100,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M250,0 Q230,225 250,450 T250,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.15"/>
+      <path d="M400,0 Q380,225 400,450 T400,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M550,0 Q530,225 550,450 T550,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.15"/>
+      <path d="M700,0 Q680,225 700,450 T700,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <path d="M850,0 Q830,225 850,450 T850,900" stroke="#0c4a6e" stroke-width="0.5" fill="none" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="900" fill="url(#contour-pattern)"/>
+</svg>

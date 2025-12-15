@@ -1,0 +1,281 @@
+{
+  "version": "4.0.0",
+  "aqueduct_version": "4.0 (July 2023)",
+  "generated": "2025-12-15T14:52:42.304719+00:00",
+  "mode": "baseline_annual",
+  "data_source": "WRI Aqueduct 4.0",
+  "baseline_period": "1960-2019 (varies by indicator)",
+  "spatial_resolution": "province (admin level 1)",
+  "country": "TUR",
+  "n_features": 81,
+  "indicator_groups": {
+    "groups": [
+      {
+        "id": "quantity_variability",
+        "name": "Quantity & Variability",
+        "description": "Physical water availability, demand, and temporal fluctuations",
+        "indicators": [
+          {
+            "id": "baseline_stress",
+            "code": "bws",
+            "name": "Baseline Water Stress",
+            "short_name": "Water Stress",
+            "description": "Ratio of total water withdrawals to available renewable water supply",
+            "weight": 0.25,
+            "color": "#d73027",
+            "source": "PCR-GLOBWB 2",
+            "units": "ratio",
+            "min_score": 0.0,
+            "max_score": 4.843588810061396,
+            "mean_score": 2.656633783561793,
+            "std_score": 1.4226890630543838,
+            "coverage": 100.0
+          },
+          {
+            "id": "baseline_depletion",
+            "code": "bwd",
+            "name": "Baseline Water Depletion",
+            "short_name": "Water Depletion",
+            "description": "Ratio of consumption to available renewable water supply",
+            "weight": 0.2,
+            "color": "#fc8d59",
+            "source": "PCR-GLOBWB 2",
+            "units": "ratio",
+            "min_score": 0.4066262079367584,
+            "max_score": 4.678661242133735,
+            "mean_score": 1.9711216559012934,
+            "std_score": 1.0700624574291766,
+            "coverage": 100.0
+          },
+          {
+            "id": "groundwater_decline",
+            "code": "gtd",
+            "name": "Groundwater Table Decline",
+            "short_name": "Groundwater Decline",
+            "description": "Average decline rate of groundwater table",
+            "weight": 0.125,
+            "color": "#4575b4",
+            "source": "PCR-GLOBWB 2",
+            "units": "cm/year",
+            "min_score": 1.0739189999999998,
+            "max_score": 1.0739190000000003,
+            "mean_score": 1.0739190000000003,
+            "std_score": 2.5249737087137516e-16,
+            "coverage": 72.8395061728395
+          },
+          {
+            "id": "interannual_variability",
+            "code": "iav",
+            "name": "Interannual Variability",
+            "short_name": "Year-to-Year Variation",
+            "description": "Year-to-year variation in water supply",
+            "weight": 0.125,
+            "color": "#abd9e9",
+            "source": "PCR-GLOBWB 2",
+            "units": "coefficient",
+            "min_score": 0.8215529342267944,
+            "max_score": 2.677223247415987,
+            "mean_score": 1.4617804716343719,
+            "std_score": 0.3485986685148909,
+            "coverage": 100.0
+          },
+          {
+            "id": "seasonal_variability",
+            "code": "sev",
+            "name": "Seasonal Variability",
+            "short_name": "Seasonal Variation",
+            "description": "Month-to-month variation in water supply",
+            "weight": 0.125,
+            "color": "#e0f3f8",
+            "source": "PCR-GLOBWB 2",
+            "units": "coefficient",
+            "min_score": 0.7650569230769194,
+            "max_score": 2.544966783475297,
+            "mean_score": 1.340503514003181,
+            "std_score": 0.3407624377592132,
+            "coverage": 100.0
+          },
+          {
+            "id": "drought_risk",
+            "code": "drr",
+            "name": "Drought Risk",
+            "short_name": "Drought",
+            "description": "Frequency of drought conditions (SPI < -1.5)",
+            "weight": 0.05,
+            "color": "#fee090",
+            "source": "CRU TS 4.03",
+            "units": "months",
+            "min_score": 2.295331383775399,
+            "max_score": 3.672340404339216,
+            "mean_score": 2.9860133370820385,
+            "std_score": 0.2861315184689237,
+            "coverage": 100.0
+          }
+        ]
+      },
+      {
+        "id": "flooding",
+        "name": "Flooding",
+        "description": "Flood risk from rivers and coastal areas",
+        "indicators": [
+          {
+            "id": "riverine_flood_risk",
+            "code": "rfr",
+            "name": "Riverine Flood Risk",
+            "short_name": "River Flooding",
+            "description": "Population exposed to 1-in-100 year riverine floods",
+            "weight": 0.05,
+            "color": "#91bfdb",
+            "source": "GLOFRIS",
+            "units": "percent",
+            "min_score": 0.4317592188046743,
+            "max_score": 3.7579765169261186,
+            "mean_score": 2.1880534717544102,
+            "std_score": 0.8758085201074821,
+            "coverage": 100.0
+          },
+          {
+            "id": "coastal_flood_risk",
+            "code": "cfr",
+            "name": "Coastal Flood Risk",
+            "short_name": "Coastal Flooding",
+            "description": "Population exposed to 1-in-100 year coastal floods",
+            "weight": 0.025,
+            "color": "#4393c3",
+            "source": "WRI coastal model",
+            "units": "percent",
+            "min_score": 0.0,
+            "max_score": 0.9830697446979328,
+            "mean_score": 0.08339592755263091,
+            "std_score": 0.20906414411051175,
+            "coverage": 100.0
+          }
+        ]
+      },
+      {
+        "id": "quality",
+        "name": "Quality",
+        "description": "Water pollution and contamination indicators",
+        "indicators": [
+          {
+            "id": "untreated_wastewater",
+            "code": "ucw",
+            "name": "Untreated Connected Wastewater",
+            "short_name": "Untreated Wastewater",
+            "description": "Percentage of collected wastewater not treated before discharge",
+            "weight": 0.03,
+            "color": "#8c510a",
+            "source": "Jones et al. 2021",
+            "units": "percent",
+            "min_score": 2.0573333333299995,
+            "max_score": 2.0573333333300003,
+            "mean_score": 2.05733333333,
+            "std_score": 2.482534153247273e-16,
+            "coverage": 100.0
+          },
+          {
+            "id": "coastal_eutrophication",
+            "code": "cep",
+            "name": "Coastal Eutrophication Potential",
+            "short_name": "Eutrophication",
+            "description": "Nitrogen and phosphorus export to coastal waters",
+            "weight": 0.02,
+            "color": "#bf812d",
+            "source": "NEWS2 model",
+            "units": "kg/km²/year",
+            "min_score": 0.9559190618224652,
+            "max_score": 4.08864752258935,
+            "mean_score": 2.255768499244231,
+            "std_score": 0.8022365142612484,
+            "coverage": 100.0
+          }
+        ]
+      },
+      {
+        "id": "access_reputational",
+        "name": "Access & Reputational",
+        "description": "Water access, sanitation, and governance risk",
+        "indicators": [
+          {
+            "id": "unimproved_drinking_water",
+            "code": "udw",
+            "name": "Unimproved Drinking Water",
+            "short_name": "Unsafe Water Access",
+            "description": "Population without access to improved drinking water sources",
+            "weight": 0.0,
+            "color": "#762a83",
+            "source": "WHO/UNICEF JMP",
+            "units": "percent",
+            "min_score": 0.0,
+            "max_score": 1.86556452963298,
+            "mean_score": 0.07760333201022089,
+            "std_score": 0.2931920640803712,
+            "coverage": 100.0
+          },
+          {
+            "id": "unimproved_sanitation",
+            "code": "usa",
+            "name": "Unimproved Sanitation",
+            "short_name": "Unsafe Sanitation",
+            "description": "Population without access to improved sanitation facilities",
+            "weight": 0.0,
+            "color": "#9970ab",
+            "source": "WHO/UNICEF JMP",
+            "units": "percent",
+            "min_score": 0.659223620267,
+            "max_score": 3.642583407924183,
+            "mean_score": 2.3350847698064157,
+            "std_score": 0.4596967720509751,
+            "coverage": 100.0
+          },
+          {
+            "id": "reputational_risk",
+            "code": "rri",
+            "name": "RepRisk Index",
+            "short_name": "Governance Risk",
+            "description": "Peak RepRisk country ESG risk index (country-level)",
+            "weight": 0.0,
+            "color": "#c2a5cf",
+            "source": "RepRisk",
+            "units": "index",
+            "min_score": 3.0666666666699993,
+            "max_score": 3.066666666670001,
+            "mean_score": 3.0666666666699998,
+            "std_score": 6.221212756561689e-16,
+            "coverage": 100.0
+          }
+        ]
+      }
+    ]
+  },
+  "combined_index": {
+    "name": "Physical Water Risk (Default)",
+    "method": "weighted_arithmetic_mean",
+    "description": "Weighted average of quantity, variability, and quality indicators. Access/reputational indicators displayed separately.",
+    "weighting_scheme": {
+      "baseline_stress": 0.25,
+      "baseline_depletion": 0.2,
+      "groundwater_decline": 0.125,
+      "interannual_variability": 0.125,
+      "seasonal_variability": 0.125,
+      "drought_risk": 0.05,
+      "riverine_flood_risk": 0.05,
+      "coastal_flood_risk": 0.025,
+      "untreated_wastewater": 0.03,
+      "coastal_eutrophication": 0.02
+    },
+    "min_score": 0.8539201607863705,
+    "max_score": 3.1695979908988483,
+    "mean_score": 1.9352929688163225,
+    "aggregation_note": "Province scores are area-weighted averages of sub-basin data"
+  },
+  "available_datasets": {
+    "baseline_annual": "baseline_annual.json",
+    "baseline_monthly": null,
+    "future_annual": null
+  },
+  "license": "CC BY 4.0",
+  "citation": "WRI (2023). Aqueduct 4.0. World Resources Institute. https://www.wri.org/aqueduct",
+  "attribution": "Data: WRI Aqueduct 4.0 | Boundaries: GADM 4.1",
+  "disclaimer": "Province-level values are area-weighted aggregations of WRI sub-basin data. For official water management decisions, consult Turkish government agencies (DSİ, MGM, TÜİK)."
+}
