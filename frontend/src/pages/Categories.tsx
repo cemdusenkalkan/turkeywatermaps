@@ -45,7 +45,7 @@ export function Categories() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
           {manifest?.indicator_groups?.groups?.map((group, i) => (
             <CategoryCard key={group.id} category={group} index={i} />
-          )) ?? manifest?.categories?.map((category, i) => (
+          )) ?? (manifest as any)?.categories?.map((category: any, i: number) => (
             <CategoryCard key={category.id} category={category} index={i} />
           ))}
         </div>

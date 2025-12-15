@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { useLanguage } from '../contexts/LanguageContext'
 import { fetchWeatherForecast, getWeatherDescription, getWeatherIcon } from '@/lib/weather-service'
 import type { WeatherForecast } from '@/lib/weather-service'
 
 export function Weather() {
-  const { t } = useLanguage()
   const [forecast, setForecast] = useState<WeatherForecast | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
