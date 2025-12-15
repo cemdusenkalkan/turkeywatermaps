@@ -11,6 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.2.8",
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",
     "maplibre-gl": "^5.0.0",

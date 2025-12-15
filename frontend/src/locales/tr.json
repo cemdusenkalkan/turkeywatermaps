@@ -14,7 +14,10 @@
     "stats": {
       "provinces": "Kapsanan İl",
       "categories": "Risk Kategorisi",
-      "openSource": "Açık Kaynak"
+      "openSource": "Açık Kaynak",
+      "provinceDetail": "İl düzeyinde toplama",
+      "categoriesDetail": "Temel Dönem 1960–2019",
+      "openSourceDetail": "Kaynak: Aqueduct 4.0"
     },
     "whatsIncluded": "Neler İçerir",
     "features": {
@@ -52,7 +55,7 @@
   "map": {
     "title": "Su Riski Haritası",
     "selectProvince": "Detayları görmek için bir il seçin",
-    "layers": "Katmanlar",
+    "layers": "Risk Göstergeleri",
     "legend": "Lejant",
     "riskLevels": {
       "veryLow": "Çok Düşük",
@@ -63,67 +66,178 @@
     }
   },
   "categories": {
-    "title": "Risk Kategorileri",
-    "subtitle": "WRI Aqueduct 4.0'dan altı su riski göstergesi",
+    "title": "Risk Göstergeleri",
+    "subtitle": "WRI Aqueduct 4.0'dan 13 su riski göstergesi",
+    "groups": {
+      "quantity_variability": "Miktar & Değişkenlik",
+      "flooding": "Taşkınlar",
+      "quality": "Kalite",
+      "access_reputational": "Erişim & İtibar"
+    },
     "baseline_stress": {
       "name": "Temel Su Stresi",
       "short": "Su Stresi",
       "desc": "Toplam su çekiminin yenilenebilir su kaynağına oranı",
-      "detail": "Su kaynakları için rekabeti ölçer. Yüksek değerler, su kaynaklarında daha fazla baskı olduğunu gösterir."
+      "detail": "Su kaynakları için rekabeti ölçer. Yüksek değerler, insan talebinden kaynaklı su kaynaklarında daha fazla baskı olduğunu gösterir."
     },
-    "seasonal_variability": {
-      "name": "Mevsimsel Değişkenlik",
-      "short": "Mevsimsel Değ.",
-      "desc": "Aylık su arzının değişkenlik katsayısı",
-      "detail": "Su mevcudiyetinin yıl boyunca ne kadar değiştiğini gösterir. Yüksek değerler, daha az öngörülebilir mevsimsel desenler anlamına gelir."
+    "baseline_depletion": {
+      "name": "Temel Su Tükenmesi",
+      "short": "Su Tükenmesi",
+      "desc": "Su tüketiminin yenilenebilir su kaynağına oranı",
+      "detail": "Çekilen suyun sisteme geri dönmeyen kısmını gösterir. Yüksek değerler daha fazla kalıcı su kaybı anlamına gelir."
+    },
+    "groundwater_decline": {
+      "name": "Yeraltı Suyu Düşüşü",
+      "short": "Yeraltı Suyu Düşüşü",
+      "desc": "Yeraltı suyu seviyesinin ortalama düşüş hızı",
+      "detail": "Yeraltı suyu tükenme eğilimlerini ölçer. Yüksek değerler, zaman içinde yeraltı suyu seviyelerinde daha hızlı düşüş gösterir."
     },
     "interannual_variability": {
       "name": "Yıllar Arası Değişkenlik",
-      "short": "Yıllar Arası Değ.",
-      "desc": "Yıllık su arzının değişkenlik katsayısı",
-      "detail": "Yıldan yıla su mevcudiyetindeki değişimi gösterir. Yüksek değerler, yıllar arasında daha fazla belirsizlik gösterir."
+      "short": "Yıllar Arası Değişim",
+      "desc": "Su arzında yıldan yıla değişim",
+      "detail": "Yıllar arasındaki belirsizliği gösterir. Yüksek değerler, bir yıldan diğerine daha az öngörülebilir su mevcudiyeti gösterir."
     },
-    "groundwater_stress": {
-      "name": "Yeraltı Suyu Düşüşü",
-      "short": "Yeraltı Suyu",
-      "desc": "Yeraltı suyu seviyesindeki ortalama düşüş",
-      "detail": "Yeraltı suyu tükenmesinin hızını ölçer. Negatif değerler, yeraltı suyu seviyelerinin düştüğünü gösterir."
+    "seasonal_variability": {
+      "name": "Mevsimsel Değişkenlik",
+      "short": "Mevsimsel Değişim",
+      "desc": "Su arzında aydan aya değişim",
+      "detail": "Mevsimsel su mevcudiyeti desenlerini gösterir. Yüksek değerler, yağışlı ve kurak mevsimler arasında daha büyük farklar anlamına gelir."
     },
-    "drought_hazard": {
+    "drought_risk": {
       "name": "Kuraklık Riski",
       "short": "Kuraklık",
-      "desc": "Meteorolojik kuraklıkların sıklığı ve şiddeti",
-      "detail": "Standartlaştırılmış Yağış İndeksi'ne (SPI) dayanır. Geçmiş kuraklık oluşumlarını gösterir."
+      "desc": "Kuraklık koşullarının sıklığı (SPI < -1.5)",
+      "detail": "1950-2014 arası geçmiş kuraklık olaylarına dayanır. Daha yüksek tarihsel kuraklık sıklığına sahip alanları gösterir."
     },
-    "flood_hazard": {
+    "riverine_flood_risk": {
       "name": "Nehir Taşkını Riski",
-      "short": "Taşkın",
-      "desc": "Nehir taşkınlarına maruz kalan nüfus",
-      "detail": "Geçmiş taşkın modellerine dayalı olarak nehir taşkını riski olan bölgeleri gösterir."
+      "short": "Nehir Taşkını",
+      "desc": "100 yılda bir nehir taşkınlarına maruz kalan nüfus",
+      "detail": "Taşkın dönüş periyodu modellerine göre büyük nehir taşkını riski altındaki alanlarda yaşayan nüfus yüzdesini gösterir."
+    },
+    "coastal_flood_risk": {
+      "name": "Kıyı Taşkını Riski",
+      "short": "Kıyı Taşkını",
+      "desc": "100 yılda bir kıyı taşkınlarına maruz kalan nüfus",
+      "detail": "Kıyı şeridine sahip iller için kıyı taşkını maruziyetini gösterir. İç bölge illeri sıfır veya minimum risk gösterir."
+    },
+    "untreated_wastewater": {
+      "name": "Arıtılmamış Atık Su",
+      "short": "Arıtılmamış Atık Su",
+      "desc": "Deşarj edilmeden önce arıtılmayan toplanan atık su yüzdesi",
+      "detail": "Arıtılmamış kanalizasyondan kaynaklanan su kalitesi tehditlerini gösterir. Yüksek değerler su kaynaklarına daha fazla kirlilik riski anlamına gelir."
+    },
+    "coastal_eutrophication": {
+      "name": "Kıyı Ötrofikasyonu Potansiyeli",
+      "short": "Ötrofikasyon",
+      "desc": "Kıyı sularına azot ve fosfor ihracı",
+      "detail": "Kıyı bölgelerinde alg patlamaları ve oksijen tükenmesine neden olabilen besin kirliliğini ölçer."
+    },
+    "unimproved_drinking_water": {
+      "name": "Güvenli Olmayan İçme Suyu",
+      "short": "Güvenli Olmayan Su Erişimi",
+      "desc": "Geliştirilmiş içme suyu kaynaklarına erişimi olmayan nüfus",
+      "detail": "Güvenli içme suyuna erişimi olmayan nüfus yüzdesi. Yüksek değerler daha büyük erişim zorlukları gösterir."
+    },
+    "unimproved_sanitation": {
+      "name": "Güvenli Olmayan Sanitasyon",
+      "short": "Güvenli Olmayan Sanitasyon",
+      "desc": "Geliştirilmiş sanitasyon tesislerine erişimi olmayan nüfus",
+      "detail": "Sanitasyon altyapı eksikliklerini gösterir. Yüksek değerler daha fazla sanitasyon iyileştirme ihtiyacı gösterir."
+    },
+    "reputational_risk": {
+      "name": "RepRisk Endeksi",
+      "short": "Yönetişim Riski",
+      "desc": "RepRisk ülke ÇSY risk endeksi zirvesi",
+      "detail": "Ülke düzeyinde çevresel, sosyal ve yönetişim risk göstergesi. Tüm illerde aynı değer."
     },
     "combined": {
-      "name": "Birleşik Su Riski",
-      "short": "Birleşik",
-      "desc": "Tüm risk kategorilerinin ağırlıklı ortalaması",
-      "detail": "WRI Aqueduct metodolojisi kullanılarak ağırlıklı göstergelerle hesaplanan genel su riski skoru."
+      "name": "Birleşik Fiziksel Risk",
+      "short": "Birleşik Risk",
+      "desc": "Fiziksel risk göstergelerinin ağırlıklı ortalaması",
+      "detail": "Miktar, değişkenlik, taşkın ve kalite göstergelerini birleştiren genel fiziksel su riski skoru. Erişim/itibar göstergeleri ayrı gösterilir."
     }
   },
   "methodology": {
     "title": "Metodoloji",
     "subtitle": "Su riski skorlarını nasıl hesaplıyoruz",
+    "tabs": {
+      "methodology": "Metodoloji",
+      "dataDictionary": "Veri Sözlüğü"
+    },
     "dataSource": "Veri Kaynağı",
     "dataSourceText": "Utrecht Üniversitesi tarafından geliştirilen PCR-GLOBWB 2 küresel hidrolojik modelinden türetilen resmi WRI Aqueduct 4.0 veri setlerini kullanıyoruz.",
+    "citation": "Kaynak",
+    "citationWri": "WRI Aqueduct 4.0",
+    "baseline": "Temel Dönem: 1960–2019",
+    "release": "Yayın: Temmuz 2023",
+    "version": "Versiyon: 4.0",
+    "linkText": "WRI Aqueduct Platformu",
     "processing": "Veri İşleme",
     "processingText": "Alt-havza seviyesindeki veriler, doğru temsili sağlamak için alan ağırlıklı ortalama kullanılarak Türkiye'nin 81 iline toplulaştırılır.",
+    "processingFormula": "toplulaştır(geometriler) → il_seviyesi → ortalama(skorlar)",
     "scoring": "Risk Skorlama",
     "scoringText": "Her gösterge, WRI'ın metodolojisini takip ederek 0-5 ölçeğinde skorlanır. Birleşik risk, WRI araştırmacıları tarafından atanan ağırlıklarla ağırlıklı aritmetik ortalama kullanır.",
+    "scoringFormula": "risk_skoru ∈ [0, 5] | Düşük: [0-1], Orta: [2-3], Yüksek: [4-5]",
     "weights": "Kategori Ağırlıkları",
-    "viewDetails": "Detaylı Metodolojiyi Görüntüle"
+    "viewDetails": "Detaylı Metodolojiyi Görüntüle",
+    "dataDictionary": {
+      "title": "Veri Sözlüğü",
+      "subtitle": "Su riski göstergeleri ve değişkenlerini anlamak",
+      "indicators": "Su Riski Göstergeleri",
+      "indicatorsDesc": "Bu analizde kullanılan tüm 13 Aqueduct 4.0 temel göstergesi",
+      "technical": "Teknik Değişkenler",
+      "technicalDesc": "Temel değişkenler ve anlamları",
+      "vars": {
+        "province_id": {
+          "name": "province_id",
+          "desc": "Her il için benzersiz tanımlayıcı (örn. TUR.1_1 Adana için)"
+        },
+        "name": {
+          "name": "name",
+          "desc": "İngilizce il adı"
+        },
+        "name_tr": {
+          "name": "name_tr",
+          "desc": "Türkçe il adı"
+        },
+        "combined_score": {
+          "name": "combined_score",
+          "desc": "Genel su riski skoru (0-5 ölçeği), tüm göstergelerin ağırlıklı ortalaması"
+        },
+        "area_km2": {
+          "name": "area_km2",
+          "desc": "İlin kilometrekare cinsinden alanı, alan ağırlıklı toplama için kullanılır"
+        },
+        "percentile": {
+          "name": "percentile",
+          "desc": "İlin 81 il içindeki sıralaması (0-100%)"
+        }
+      },
+      "scales": "Risk Ölçekleri",
+      "scalesDesc": "0-5 risk skorları nasıl yorumlanır",
+      "scaleLabels": {
+        "low": "Düşük (0.0-0.5): Minimum su stresi veya riski",
+        "lowMedium": "Düşük-Orta (0.5-1.0): Bazı su endişeleri",
+        "mediumHigh": "Orta-Yüksek (1.0-2.0): Orta düzey su stresi",
+        "high": "Yüksek (2.0-3.0): Önemli su zorlukları",
+        "extremelyHigh": "Son Derece Yüksek (3.0-5.0): Ciddi su krizi"
+      }
+    }
   },
   "about": {
     "title": "Proje Hakkında",
     "subtitle": "Türkiye için açık kaynak su riski değerlendirmesi",
     "description": "Bu proje, gerçek WRI Aqueduct 4.0 verilerini kullanarak Türkiye'nin 81 ili için şeffaf, veriye dayalı su riski değerlendirmeleri sağlar. Tüm kod ve veri işleme süreçleri açık kaynak ve yeniden üretilebilirdir.",
+    "overview": {
+      "purpose": "Amaç",
+      "purposeText": "Kamusal su riski değerlendirmesi",
+      "data": "Veri",
+      "dataText": "WRI Aqueduct 4.0 (2023)",
+      "license": "Lisans",
+      "licenseText": "MIT + CC BY 4.0"
+    },
     "dataTitle": "Veri Kaynakları",
     "dataText": "Birincil veriler, PCR-GLOBWB 2 hidrolojik modeline dayalı WRI Aqueduct 4.0'dan, Türk hükümet kaynaklarından (DSİ, TÜİK) ek doğrulama ile.",
     "licenseTitle": "Lisans",
@@ -141,10 +255,23 @@
   },
   "modal": {
     "combinedIndex": "Birleştirilmiş Su Risk İndeksi",
+    "combinedWaterRisk": "Birleşik Su Riski",
     "categoryScores": "Kategori Skorları",
+    "topDrivers": "Öncelikli Göstergeler",
+    "allIndicators": "Tüm Göstergeler",
+    "showTop3": "İlk 3'ü göster",
+    "showAll": "Tümünü göster",
     "percentile": "Yüzdelik",
     "outOf100": "100 üzerinden",
-    "riskLevel": "Risk Seviyesi"
+    "riskLevel": "Risk Seviyesi",
+    "coverage": "Kapsam",
+    "rank": "Sıralama",
+    "of": "/",
+    "indicators": "gösterge",
+    "indicator": "Gösterge",
+    "score": "Skor",
+    "level": "Seviye",
+    "footerNote": "Risk skorları WRI Aqueduct 4.0 metodolojisine dayanmaktadır (0-5 ölçeği). İl değerleri alt-havza verilerinin alan ağırlıklı ortalamalardır."
   },
   "common": {
     "loading": "Yükleniyor...",

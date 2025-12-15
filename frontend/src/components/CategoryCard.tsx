@@ -1,12 +1,34 @@
 import { motion } from 'motion/react'
-import type { Category } from '@/types'
+import type { Category, CategoryGroup } from '@/types'
 
 interface CategoryCardProps {
-  category: Category
+  category: Category | CategoryGroup
   index: number
 }
 
+// Color mapping for category groups
+const GROUP_COLORS: Record<string, string> = {
+  'quantity_variability': '#3b82f6', // blue
+  'flooding': '#f59e0b', // amber
+  'quality': '#10b981', // green
+  'access_reputational': '#8b5cf6', // purple
+}
+
 export function CategoryCard({ category, index }: CategoryCardProps) {
+  // Check if it's a CategoryGroup (has indicators array) or legacy Category
+  const isCategoryGroup = 'indicators' in category
+  
+  // Calculate total weight for groups from their indicators
+  const totalWeight = isCategoryGroup
+    ? category.indicators.reduce((sum, ind) => sum + ind.weight, 0)
+    : (category as Category).weight
+  
+  const color = isCategoryGroup
+    ? GROUP_COLORS[category.id] || '#64748b'
+    : (category as Category).color
+  
+  const indicatorCount = isCategoryGroup ? category.indicators.length : 1
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -20,7 +42,7 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
           </h3>
           <div
             className="w-5 h-5 md:w-6 md:h-6 rounded-full flex-shrink-0 ml-3 border-2 border-gray-200 dark:border-gray-600"
-            style={{ backgroundColor: category.color }}
+            style={{ backgroundColor: color }}
             role="img"
             aria-label={`Color indicator for ${category.name}`}
           />
@@ -30,9 +52,18 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
           {category.description}
         </p>
         
-        <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-50 dark:bg-gray-900/50 px-3 py-2 rounded-lg inline-block border border-gray-200 dark:border-gray-700">
-          <span className="text-gray-700">Weight: </span>
-          <span className="text-accent font-bold">{(category.weight * 100).toFixed(0)}%</span>
+        <div className="flex items-center gap-4 flex-wrap">
+          <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-50 dark:bg-gray-900/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
+            <span className="text-gray-700 dark:text-gray-400">Weight: </span>
+            <span className="text-accent font-bold">{(totalWeight * 100).toFixed(0)}%</span>
+          </div>
+          
+          {isCategoryGroup && (
+            <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-50 dark:bg-gray-900/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
+              <span className="text-gray-700 dark:text-gray-400">Indicators: </span>
+              <span className="text-accent font-bold">{indicatorCount}</span>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

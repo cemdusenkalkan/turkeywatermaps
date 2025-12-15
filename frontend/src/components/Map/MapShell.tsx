@@ -26,30 +26,59 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
     const protocol = new Protocol()
     maplibregl.addProtocol('pmtiles', protocol.tile)
     
-    // Initialize map with simple OSM basemap
+    // Detect dark mode
+    const isDarkMode = document.documentElement.classList.contains('dark')
+    
+    // Initialize map with CartoDB Positron (includes labels)
+    // This basemap has built-in place labels that stay on top of our choropleth
     map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: {
         version: 8,
         sources: {
-          'osm': {
+          'carto-base': {
             type: 'raster',
-            tiles: [
-              'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            tiles: isDarkMode ? [
+              'https://a.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png'
+            ] : [
+              'https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png'
             ],
             tileSize: 256,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            maxzoom: 19
+          },
+          'carto-labels': {
+            type: 'raster',
+            tiles: isDarkMode ? [
+              'https://a.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png'
+            ] : [
+              'https://a.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png'
+            ],
+            tileSize: 256,
             maxzoom: 19
           },
         },
         layers: [
           {
-            id: 'osm-tiles',
+            id: 'carto-base-tiles',
             type: 'raster',
-            source: 'osm',
+            source: 'carto-base',
             minzoom: 0,
             maxzoom: 22,
+            paint: {
+              'raster-opacity': isDarkMode ? 0.5 : 0.3
+            }
           },
+          // Province layers will be inserted here
+          // Labels layer will be added after province data
         ],
       },
       center: [35.0, 39.0], // Center of Turkey
@@ -79,15 +108,27 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
         })
       }
       
-      // Province fill layer
+      // Province fill layer - initialize with Combined Risk colors
+      // Set opacity to 0.6 so labels remain readable
       if (!map.current.getLayer('provinces-fill')) {
+        const colors = getColorScale()
+        const colorExpression: any = [
+          'step',
+          ['get', 'combined_score'],
+          colors[0], // Default color for score 0
+          1, colors[1],
+          2, colors[2],
+          3, colors[3],
+          4, colors[4],
+        ]
+        
         map.current.addLayer({
           id: 'provinces-fill',
           type: 'fill',
           source: 'provinces',
           paint: {
-            'fill-color': '#627d98',
-            'fill-opacity': 0.7,
+            'fill-color': colorExpression,
+            'fill-opacity': 0.6, // Reduced from 0.7 for better label visibility
           },
         })
       }
@@ -116,6 +157,18 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
             'line-width': 2,
           },
           filter: ['==', 'province_id', ''],
+        })
+      }
+      
+      // Add labels layer on top of everything
+      // This ensures city names stay visible above the choropleth
+      if (!map.current.getLayer('carto-labels')) {
+        map.current.addLayer({
+          id: 'carto-labels',
+          type: 'raster',
+          source: 'carto-labels',
+          minzoom: 0,
+          maxzoom: 22,
         })
       }
       

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { LanguageSelector } from './LanguageSelector'
 import { ThemeSelector } from './ThemeSelector'
+import { Mascots } from './Mascots'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
@@ -20,6 +21,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 transition-colors">
+      <Mascots />
       <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
@@ -31,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-6">
               <ul className="flex items-center space-x-1">
                 {navLinks.map(link => {
                   const isActive = location.pathname === link.path
@@ -59,7 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   )
                 })}
               </ul>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-2 pl-4 border-l border-gray-300 dark:border-gray-700">
                 <ThemeSelector />
                 <LanguageSelector />
               </div>

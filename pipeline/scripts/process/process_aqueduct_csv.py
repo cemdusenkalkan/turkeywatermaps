@@ -15,14 +15,29 @@ RAW_DATA = PROJECT_ROOT / "data" / "raw"
 PROCESSED_DATA = PROJECT_ROOT / "data" / "processed"
 PROCESSED_DATA.mkdir(parents=True, exist_ok=True)
 
-# Indicators we need (raw values and scores)
+# All 13 Aqueduct 4.0 baseline annual indicators
+# Organized into 4 groups (clean, defensible, matches user mental models)
 INDICATORS = {
+    # Group 1: Quantity & Variability (6 indicators)
     'bws': 'baseline_stress',
-    'sev': 'seasonal_variability', 
+    'bwd': 'baseline_depletion',
+    'gtd': 'groundwater_decline',
     'iav': 'interannual_variability',
-    'gtd': 'groundwater_stress',
-    'drr': 'drought_hazard',
-    'rfr': 'flood_hazard'
+    'sev': 'seasonal_variability',
+    'drr': 'drought_risk',
+    
+    # Group 2: Flooding (2 indicators)
+    'rfr': 'riverine_flood_risk',
+    'cfr': 'coastal_flood_risk',
+    
+    # Group 3: Quality (2 indicators)
+    'ucw': 'untreated_wastewater',
+    'cep': 'coastal_eutrophication',
+    
+    # Group 4: Access & Reputational (3 indicators)
+    'udw': 'unimproved_drinking_water',
+    'usa': 'unimproved_sanitation',
+    'rri': 'reputational_risk'
 }
 
 
@@ -137,14 +152,30 @@ def calculate_combined_index(df):
     """
     print("Calculating combined water risk index...")
     
-    # WRI Aqueduct weights
+    # WRI Aqueduct default composite weights (Physical Risk - Quantity focused)
+    # These are the standard weights; sector-specific weights will be added later
     weights = {
+        # Quantity & Variability (total: 0.875)
         'baseline_stress_score': 0.25,
-        'seasonal_variability_score': 0.25,
-        'interannual_variability_score': 0.25,
-        'groundwater_stress_score': 0.125,
-        'drought_hazard_score': 0.0625,
-        'flood_hazard_score': 0.0625
+        'baseline_depletion_score': 0.20,
+        'groundwater_decline_score': 0.125,
+        'interannual_variability_score': 0.125,
+        'seasonal_variability_score': 0.125,
+        'drought_risk_score': 0.05,
+        
+        # Flooding (total: 0.075)
+        'riverine_flood_risk_score': 0.05,
+        'coastal_flood_risk_score': 0.025,
+        
+        # Quality (total: 0.05)
+        'untreated_wastewater_score': 0.03,
+        'coastal_eutrophication_score': 0.02,
+        
+        # Access & Reputational (not included in default physical risk composite)
+        # These are displayed separately but not weighted in combined score
+        # 'unimproved_drinking_water_score': 0.0,
+        # 'unimproved_sanitation_score': 0.0,
+        # 'reputational_risk_score': 0.0
     }
     
     # Calculate weighted sum - only use valid scores (0-5 range)

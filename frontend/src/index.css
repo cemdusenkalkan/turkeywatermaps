@@ -1,3 +1,8 @@
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans/700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +32,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.6;
@@ -39,6 +44,49 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Academic background pattern - graph paper style */
+.page-bg-academic {
+  position: relative;
+  background-color: #fcfdfe;
+  background-image: 
+    linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+}
+
+.page-bg-academic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 1200px 600px at 30% 10%, rgba(37,99,235,0.03), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 80% 40%, rgba(2,132,199,0.02), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-bg-academic > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark mode: graph paper on dark background */
+.dark .page-bg-academic {
+  background-color: #0a0f1a;
+  background-image: 
+    linear-gradient(rgba(71, 85, 105, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 85, 105, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+}
+
+.dark .page-bg-academic::before {
+  background: 
+    radial-gradient(ellipse 1200px 600px at 30% 10%, rgba(59,130,246,0.04), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 80% 40%, rgba(6,182,212,0.03), transparent 55%);
 }
 
 /* MapLibre overrides */
@@ -111,3 +159,12 @@ select:focus-visible {
   }
 }
 
+/* Mascot animation */
+@keyframes bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bob {
+  animation: bob 3.4s ease-in-out infinite;
+}

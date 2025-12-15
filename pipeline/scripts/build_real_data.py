@@ -14,80 +14,189 @@ from datetime import datetime, timezone
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 PROCESSED_DIR = DATA_DIR / "processed"
+V4_DIR = PROCESSED_DIR / "v4.0" / "TUR" / "adm1"
+V4_DIR.mkdir(parents=True, exist_ok=True)
 
 def create_category_definitions():
     """
-    Define categories based on WRI Aqueduct indicators.
-    Uses actual WRI methodology and definitions.
+    Define all 13 Aqueduct 4.0 indicators organized into 4 groups.
+    Clean, defensible grouping that matches how users think about water risk.
     """
-    return [
-        {
-            "id": "baseline_stress",
-            "name": "Baseline Water Stress",
-            "short_name": "Water Stress",
-            "description": "Ratio of total water withdrawals to available renewable water supply (WRI Aqueduct indicator)",
-            "weight": 0.25,
-            "color": "#d73027",
-            "source": "WRI Aqueduct 4.0 - PCR-GLOBWB 2",
-            "methodology": "Total withdrawals / (Surface water + groundwater recharge)",
-            "units": "ratio"
-        },
-        {
-            "id": "seasonal_variability",
-            "name": "Seasonal Variability",
-            "short_name": "Seasonal Var",
-            "description": "Coefficient of variation of monthly available water supply (WRI Aqueduct indicator)",
-            "weight": 0.25,
-            "color": "#fc8d59",
-            "source": "WRI Aqueduct 4.0 - PCR-GLOBWB 2",
-            "methodology": "CV = StdDev(monthly_supply) / Mean(monthly_supply)",
-            "units": "coefficient_of_variation"
-        },
-        {
-            "id": "interannual_variability",
-            "name": "Interannual Variability",
-            "short_name": "Interannual Var",
-            "description": "Coefficient of variation of annual available water supply (WRI Aqueduct indicator)",
-            "weight": 0.25,
-            "color": "#e0f3f8",
-            "source": "WRI Aqueduct 4.0 - PCR-GLOBWB 2 (1960-2014)",
-            "methodology": "CV = StdDev(annual_supply) / Mean(annual_supply)",
-            "units": "coefficient_of_variation"
-        },
-        {
-            "id": "groundwater_stress",
-            "name": "Groundwater Table Decline",
-            "short_name": "Groundwater",
-            "description": "Average groundwater table decline rate (WRI Aqueduct indicator)",
-            "weight": 0.125,
-            "color": "#4575b4",
-            "source": "WRI Aqueduct 4.0 - PCR-GLOBWB 2",
-            "methodology": "Linear trend in groundwater head over time",
-            "units": "cm_per_year"
-        },
-        {
-            "id": "drought_hazard",
-            "name": "Drought Risk",
-            "short_name": "Drought",
-            "description": "Number of months with drought conditions (SPI < -1.5) from 1950-2014 (WRI Aqueduct indicator)",
-            "weight": 0.0625,
-            "color": "#fee08b",
-            "source": "WRI Aqueduct 4.0 - CRU TS 4.03",
-            "methodology": "Count of months where SPI-12 < -1.5",
-            "units": "drought_months"
-        },
-        {
-            "id": "flood_hazard",
-            "name": "Riverine Flood Risk",
-            "short_name": "Flood Risk",
-            "description": "Percentage of population exposed to 1-in-100 year riverine floods (WRI Aqueduct indicator)",
-            "weight": 0.0625,
-            "color": "#91bfdb",
-            "source": "WRI Aqueduct 4.0 - GLOFRIS",
-            "methodology": "% population in 100-year floodplain",
-            "units": "percent"
-        }
-    ]
+    return {
+        "groups": [
+            {
+                "id": "quantity_variability",
+                "name": "Quantity & Variability",
+                "description": "Physical water availability, demand, and temporal fluctuations",
+                "indicators": [
+                    {
+                        "id": "baseline_stress",
+                        "code": "bws",
+                        "name": "Baseline Water Stress",
+                        "short_name": "Water Stress",
+                        "description": "Ratio of total water withdrawals to available renewable water supply",
+                        "weight": 0.25,
+                        "color": "#d73027",
+                        "source": "PCR-GLOBWB 2",
+                        "units": "ratio"
+                    },
+                    {
+                        "id": "baseline_depletion",
+                        "code": "bwd",
+                        "name": "Baseline Water Depletion",
+                        "short_name": "Water Depletion",
+                        "description": "Ratio of consumption to available renewable water supply",
+                        "weight": 0.20,
+                        "color": "#fc8d59",
+                        "source": "PCR-GLOBWB 2",
+                        "units": "ratio"
+                    },
+                    {
+                        "id": "groundwater_decline",
+                        "code": "gtd",
+                        "name": "Groundwater Table Decline",
+                        "short_name": "Groundwater Decline",
+                        "description": "Average decline rate of groundwater table",
+                        "weight": 0.125,
+                        "color": "#4575b4",
+                        "source": "PCR-GLOBWB 2",
+                        "units": "cm/year"
+                    },
+                    {
+                        "id": "interannual_variability",
+                        "code": "iav",
+                        "name": "Interannual Variability",
+                        "short_name": "Year-to-Year Variation",
+                        "description": "Year-to-year variation in water supply",
+                        "weight": 0.125,
+                        "color": "#abd9e9",
+                        "source": "PCR-GLOBWB 2",
+                        "units": "coefficient"
+                    },
+                    {
+                        "id": "seasonal_variability",
+                        "code": "sev",
+                        "name": "Seasonal Variability",
+                        "short_name": "Seasonal Variation",
+                        "description": "Month-to-month variation in water supply",
+                        "weight": 0.125,
+                        "color": "#e0f3f8",
+                        "source": "PCR-GLOBWB 2",
+                        "units": "coefficient"
+                    },
+                    {
+                        "id": "drought_risk",
+                        "code": "drr",
+                        "name": "Drought Risk",
+                        "short_name": "Drought",
+                        "description": "Frequency of drought conditions (SPI < -1.5)",
+                        "weight": 0.05,
+                        "color": "#fee090",
+                        "source": "CRU TS 4.03",
+                        "units": "months"
+                    }
+                ]
+            },
+            {
+                "id": "flooding",
+                "name": "Flooding",
+                "description": "Flood risk from rivers and coastal areas",
+                "indicators": [
+                    {
+                        "id": "riverine_flood_risk",
+                        "code": "rfr",
+                        "name": "Riverine Flood Risk",
+                        "short_name": "River Flooding",
+                        "description": "Population exposed to 1-in-100 year riverine floods",
+                        "weight": 0.05,
+                        "color": "#91bfdb",
+                        "source": "GLOFRIS",
+                        "units": "percent"
+                    },
+                    {
+                        "id": "coastal_flood_risk",
+                        "code": "cfr",
+                        "name": "Coastal Flood Risk",
+                        "short_name": "Coastal Flooding",
+                        "description": "Population exposed to 1-in-100 year coastal floods",
+                        "weight": 0.025,
+                        "color": "#4393c3",
+                        "source": "WRI coastal model",
+                        "units": "percent"
+                    }
+                ]
+            },
+            {
+                "id": "quality",
+                "name": "Quality",
+                "description": "Water pollution and contamination indicators",
+                "indicators": [
+                    {
+                        "id": "untreated_wastewater",
+                        "code": "ucw",
+                        "name": "Untreated Connected Wastewater",
+                        "short_name": "Untreated Wastewater",
+                        "description": "Percentage of collected wastewater not treated before discharge",
+                        "weight": 0.03,
+                        "color": "#8c510a",
+                        "source": "Jones et al. 2021",
+                        "units": "percent"
+                    },
+                    {
+                        "id": "coastal_eutrophication",
+                        "code": "cep",
+                        "name": "Coastal Eutrophication Potential",
+                        "short_name": "Eutrophication",
+                        "description": "Nitrogen and phosphorus export to coastal waters",
+                        "weight": 0.02,
+                        "color": "#bf812d",
+                        "source": "NEWS2 model",
+                        "units": "kg/km²/year"
+                    }
+                ]
+            },
+            {
+                "id": "access_reputational",
+                "name": "Access & Reputational",
+                "description": "Water access, sanitation, and governance risk",
+                "indicators": [
+                    {
+                        "id": "unimproved_drinking_water",
+                        "code": "udw",
+                        "name": "Unimproved Drinking Water",
+                        "short_name": "Unsafe Water Access",
+                        "description": "Population without access to improved drinking water sources",
+                        "weight": 0.0,
+                        "color": "#762a83",
+                        "source": "WHO/UNICEF JMP",
+                        "units": "percent"
+                    },
+                    {
+                        "id": "unimproved_sanitation",
+                        "code": "usa",
+                        "name": "Unimproved Sanitation",
+                        "short_name": "Unsafe Sanitation",
+                        "description": "Population without access to improved sanitation facilities",
+                        "weight": 0.0,
+                        "color": "#9970ab",
+                        "source": "WHO/UNICEF JMP",
+                        "units": "percent"
+                    },
+                    {
+                        "id": "reputational_risk",
+                        "code": "rri",
+                        "name": "RepRisk Index",
+                        "short_name": "Governance Risk",
+                        "description": "Peak RepRisk country ESG risk index (country-level)",
+                        "weight": 0.0,
+                        "color": "#c2a5cf",
+                        "source": "RepRisk",
+                        "units": "index"
+                    }
+                ]
+            }
+        ]
+    }
 
 
 def load_processed_data():
@@ -104,33 +213,50 @@ def load_processed_data():
     return df, gdf
 
 
-def compute_statistics(df, categories):
-    """Compute min/max/mean for each category"""
-    stats = []
+def compute_statistics(df, category_structure):
+    """Compute min/max/mean for each indicator across all groups"""
+    groups_with_stats = []
     
-    for cat in categories:
-        score_col = f"{cat['id']}_score"
+    for group in category_structure['groups']:
+        indicators_with_stats = []
         
-        if score_col in df.columns:
-            values = df[score_col].dropna()
+        for indicator in group['indicators']:
+            score_col = f"{indicator['id']}_score"
             
-            stats.append({
-                **cat,
-                "min_score": float(values.min()) if len(values) > 0 else 0.0,
-                "max_score": float(values.max()) if len(values) > 0 else 5.0,
-                "mean_score": float(values.mean()) if len(values) > 0 else 2.5,
-                "std_score": float(values.std()) if len(values) > 0 else 1.0
-            })
-        else:
-            stats.append({
-                **cat,
-                "min_score": 0.0,
-                "max_score": 5.0,
-                "mean_score": 2.5,
-                "std_score": 1.0
-            })
+            if score_col in df.columns:
+                values = df[score_col].dropna()
+                
+                # Filter valid scores (0-5 range, exclude -9999)
+                values = values[(values >= 0) & (values <= 5)]
+                
+                indicator_stats = {
+                    **indicator,
+                    "min_score": float(values.min()) if len(values) > 0 else 0.0,
+                    "max_score": float(values.max()) if len(values) > 0 else 5.0,
+                    "mean_score": float(values.mean()) if len(values) > 0 else 2.5,
+                    "std_score": float(values.std()) if len(values) > 0 else 1.0,
+                    "coverage": float(len(values) / len(df) * 100) if len(df) > 0 else 0.0
+                }
+            else:
+                indicator_stats = {
+                    **indicator,
+                    "min_score": 0.0,
+                    "max_score": 5.0,
+                    "mean_score": 2.5,
+                    "std_score": 1.0,
+                    "coverage": 0.0
+                }
+            
+            indicators_with_stats.append(indicator_stats)
+        
+        groups_with_stats.append({
+            "id": group['id'],
+            "name": group['name'],
+            "description": group['description'],
+            "indicators": indicators_with_stats
+        })
     
-    return stats
+    return {"groups": groups_with_stats}
 
 
 def create_index_json(df, categories_with_stats):
@@ -138,29 +264,43 @@ def create_index_json(df, categories_with_stats):
     
     combined_scores = df['combined_risk_score'].dropna()
     
+    # Extract weighting scheme from indicator definitions
+    weighting_scheme = {}
+    for group in categories_with_stats['groups']:
+        for indicator in group['indicators']:
+            if indicator['weight'] > 0:
+                weighting_scheme[indicator['id']] = indicator['weight']
+    
     manifest = {
-        "version": "1.0.0",
+        "version": "4.0.0",
+        "aqueduct_version": "4.0 (July 2023)",
         "generated": datetime.now(timezone.utc).isoformat(),
-        "mode": "production",
+        "mode": "baseline_annual",
         "data_source": "WRI Aqueduct 4.0",
-        "spatial_resolution": "province",
-        "n_provinces": len(df),
-        "temporal_coverage": "Baseline (1960-2019, varies by indicator)",
-        "categories": categories_with_stats,
+        "baseline_period": "1960-2019 (varies by indicator)",
+        "spatial_resolution": "province (admin level 1)",
+        "country": "TUR",
+        "n_features": len(df),
+        "indicator_groups": categories_with_stats,
         "combined_index": {
+            "name": "Physical Water Risk (Default)",
             "method": "weighted_arithmetic_mean",
-            "description": "WRI Aqueduct aggregation: weighted average of physical risk indicators",
+            "description": "Weighted average of quantity, variability, and quality indicators. Access/reputational indicators displayed separately.",
+            "weighting_scheme": weighting_scheme,
             "min_score": float(combined_scores.min()) if len(combined_scores) > 0 else 0.0,
             "max_score": float(combined_scores.max()) if len(combined_scores) > 0 else 5.0,
-            "mean_score": float(combined_scores.mean()) if len(combined_scores) > 0 else 2.5
+            "mean_score": float(combined_scores.mean()) if len(combined_scores) > 0 else 2.5,
+            "aggregation_note": "Province scores are area-weighted averages of sub-basin data"
         },
-        "files": {
-            "geojson": "turkey_water_risk.geojson",
-            "main_data": "turkey_water_risk.json"
+        "available_datasets": {
+            "baseline_annual": "baseline_annual.json",
+            "baseline_monthly": None,
+            "future_annual": None
         },
         "license": "CC BY 4.0",
-        "citation": "WRI (2019). Aqueduct 4.0. World Resources Institute. https://www.wri.org/aqueduct",
-        "disclaimer": "Data derived from WRI Aqueduct global model. Province-level values are area-weighted averages of sub-basin data. For official water management decisions, consult Turkish government agencies (DSİ, MGM, TÜİK)."
+        "citation": "WRI (2023). Aqueduct 4.0. World Resources Institute. https://www.wri.org/aqueduct",
+        "attribution": "Data: WRI Aqueduct 4.0 | Boundaries: GADM 4.1",
+        "disclaimer": "Province-level values are area-weighted aggregations of WRI sub-basin data. For official water management decisions, consult Turkish government agencies (DSİ, MGM, TÜİK)."
     }
     
     return manifest
@@ -244,28 +384,39 @@ def main():
     print(f"  Loaded {len(df)} provinces with scores")
     
     # Define categories
-    categories = create_category_definitions()
-    print(f"\nDefined {len(categories)} categories from WRI Aqueduct")
+    category_structure = create_category_definitions()
+    total_indicators = sum(len(group['indicators']) for group in category_structure['groups'])
+    print(f"\nDefined {total_indicators} indicators in {len(category_structure['groups'])} groups")
     
     # Compute statistics
     print("\nComputing statistics...")
-    categories_with_stats = compute_statistics(df, categories)
+    categories_with_stats = compute_statistics(df, category_structure)
     
-    # Create index.json
-    print("\nCreating index.json manifest...")
+    # Create manifest.json
+    print("\nCreating manifest.json...")
     manifest = create_index_json(df, categories_with_stats)
-    manifest_file = PROCESSED_DIR / "index.json"
+    manifest_file = V4_DIR / "manifest.json"
     with open(manifest_file, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
     print(f"  Saved: {manifest_file}")
     
-    # Create main data JSON
-    print("\nCreating turkey_water_risk.json (GeoJSON with all data)...")
+    # Create baseline_annual.json (GeoJSON with all data)
+    print("\nCreating baseline_annual.json (GeoJSON with all indicators)...")
     main_data = create_main_data_json(df, gdf)
-    main_data_file = PROCESSED_DIR / "turkey_water_risk.json"
+    main_data_file = V4_DIR / "baseline_annual.json"
     with open(main_data_file, 'w', encoding='utf-8') as f:
         json.dump(main_data, f, indent=2, ensure_ascii=False)
     print(f"  Saved: {main_data_file}")
+    
+    # Also keep legacy files in old location for backward compatibility
+    print("\nCreating legacy files (backward compatibility)...")
+    legacy_index = PROCESSED_DIR / "index.json"
+    legacy_data = PROCESSED_DIR / "turkey_water_risk.json"
+    with open(legacy_index, 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    with open(legacy_data, 'w', encoding='utf-8') as f:
+        json.dump(main_data, f, indent=2, ensure_ascii=False)
+    print(f"  Saved: {legacy_index.name}, {legacy_data.name}")
     
     # File sizes
     print("\nOutput files:")
@@ -274,12 +425,18 @@ def main():
         print(f"  {file.name}: {size_mb:.2f} MB")
     
     print("\n" + "=" * 60)
-    print("BUILD COMPLETE - Real data ready for frontend!")
+    print("BUILD COMPLETE - 13 indicators ready!")
     print("=" * 60)
     print("\nNext steps:")
-    print("1. Copy data/processed/ to frontend/public/data/")
-    print("2. Update frontend data loader to use turkey_water_risk.json")
-    print("3. Deploy!")
+    print("1. Copy data/processed/v4.0/ to frontend/public/data/v4.0/")
+    print("2. Update frontend data loader to use v4.0/TUR/adm1/ paths")
+    print("3. Test locally, then deploy!")
+    print("\nDirectory structure:")
+    print(f"  {V4_DIR}/")
+    print("    ├── manifest.json")
+    print("    ├── baseline_annual.json")
+    print("    ├── baseline_monthly.json (TODO: Phase 3)")
+    print("    └── future_annual.json (TODO: Phase 3)")
 
 
 if __name__ == "__main__":

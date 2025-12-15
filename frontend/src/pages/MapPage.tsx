@@ -53,12 +53,16 @@ export function MapPage() {
     const allCombinedScores = geoData.features.map(f => f.properties.combined_score as number)
     const combinedPercentile = calculatePercentile(combinedScore, allCombinedScores)
 
-    // Build category scores
-    const categoryScores = manifest.categories.map(cat => {
+    // Build category scores - handle both old and new data structure
+    const allIndicators = manifest.indicator_groups 
+      ? manifest.indicator_groups.groups.flatMap(g => g.indicators)
+      : manifest.categories || []
+      
+    const categoryScores = allIndicators.map(cat => {
       const scoreKey = `${cat.id}_score`
       const score = props[scoreKey] as number || 0
-      const allScores = geoData.features.map(f => f.properties[scoreKey] as number)
-      const percentile = calculatePercentile(score, allScores)
+      const allScores = geoData.features.map(f => f.properties[scoreKey] as number).filter(s => !isNaN(s))
+      const percentile = allScores.length > 0 ? calculatePercentile(score, allScores) : 0
       
       return {
         categoryId: cat.id,
@@ -109,21 +113,25 @@ export function MapPage() {
     )
   }
   
-  // Get active category object
+  // Get active category object - handle both old and new data structure
+  const allIndicators = manifest.indicator_groups 
+    ? manifest.indicator_groups.groups.flatMap(g => g.indicators)
+    : manifest.categories || []
+    
   const activeCategory: Category | null = 
     activeCategoryId === 'combined_risk'
       ? {
           id: 'combined_risk',
-          name: 'Combined Water Risk Index',
+          name: manifest.combined_index?.name || 'Combined Water Risk Index',
           short_name: 'Combined Risk',
-          description: 'Weighted geometric mean of all risk categories',
+          description: manifest.combined_index?.description || 'Weighted mean of all risk categories',
           weight: 1.0,
           color: '#440154',
           min_score: manifest.combined_index.min_score,
           max_score: manifest.combined_index.max_score,
           mean_score: manifest.combined_index.mean_score,
         }
-      : manifest.categories.find(c => c.id === activeCategoryId) || null
+      : allIndicators.find(c => c.id === activeCategoryId) || null
   
   return (
     <div className="relative w-full h-[calc(100vh-4rem)]" style={{ minHeight: '600px' }}>
@@ -138,7 +146,8 @@ export function MapPage() {
             className="absolute top-0 left-0 z-20 h-full overflow-y-auto shadow-lg"
           >
             <LayerPanel
-              categories={manifest.categories}
+              categories={allIndicators}
+              categoryGroups={manifest.indicator_groups?.groups}
               activeCategoryId={activeCategoryId}
               onCategoryChange={setActiveCategoryId}
               activeCategory={activeCategory}
@@ -150,8 +159,8 @@ export function MapPage() {
       {/* Toggle Panel Button */}
       <button
         onClick={() => setShowPanel(!showPanel)}
-        className="absolute top-4 left-4 z-30 bg-white rounded-full shadow-lg p-3 
-          hover:bg-gray-50 transition-all hover:scale-105"
+        className="absolute top-4 left-4 z-30 bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 
+          hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:scale-105 text-gray-900 dark:text-white"
         style={{ marginLeft: showPanel ? '280px' : '0' }}
         aria-label={showPanel ? 'Hide panel' : 'Show panel'}
       >
@@ -164,17 +173,17 @@ export function MapPage() {
         </svg>
       </button>
       
-      {/* Info Badge */}
+      {/* Info Badge - moved below mascots */}
       <motion.div 
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="absolute top-4 right-4 z-20 bg-white rounded-xl shadow-md px-4 py-2.5 text-sm"
+        className="absolute top-[180px] right-4 z-20 bg-white dark:bg-gray-800 rounded-xl shadow-md px-4 py-2.5 text-sm border border-gray-200 dark:border-gray-700"
       >
-        <div className="text-gray-700">
-          Data: <span className="font-semibold text-gray-900">{manifest.mode === 'synthetic_demo' ? 'Synthetic Demo' : 'Production'}</span>
+        <div className="text-gray-700 dark:text-gray-300">
+          Data: <span className="font-semibold text-gray-900 dark:text-white">{manifest.mode === 'synthetic_demo' ? 'Synthetic Demo' : 'Production'}</span>
         </div>
-        <div className="text-xs text-gray-600">
+        <div className="text-xs text-gray-600 dark:text-gray-400">
           {manifest.temporal_coverage}
         </div>
       </motion.div>

@@ -1,38 +1,69 @@
-// Type definitions for Türkiye Water Risk Map
+// Type definitions for Türkiye Water Risk Map - Aqueduct 4.0
 
-export interface Category {
+export interface Indicator {
   id: string
+  code: string
   name: string
   short_name: string
   description: string
   weight: number
   color: string
+  source: string
+  units: string
   min_score: number
   max_score: number
   mean_score: number
   std_score?: number
+  coverage?: number
+}
+
+export interface CategoryGroup {
+  id: string
+  name: string
+  description: string
+  indicators: Indicator[]
+}
+
+export interface IndicatorGroups {
+  groups: CategoryGroup[]
 }
 
 export interface DataManifest {
   version: string
+  aqueduct_version: string
   generated: string
-  mode: 'synthetic_demo' | 'production'
+  mode: 'baseline_annual' | 'baseline_monthly' | 'future_annual'
+  data_source: string
+  baseline_period: string
   spatial_resolution: string
-  n_provinces: number
-  temporal_coverage: string
-  categories: Category[]
+  country: string
+  n_features: number
+  indicator_groups: IndicatorGroups
   combined_index: {
+    name: string
     method: string
+    description: string
+    weighting_scheme: Record<string, number>
     min_score: number
     max_score: number
     mean_score: number
+    aggregation_note: string
   }
-  files: {
-    geojson: string
-    csv_all: string
-    csv_categories: string[]
+  available_datasets: {
+    baseline_annual: string | null
+    baseline_monthly: string | null
+    future_annual: string | null
   }
+  license: string
+  citation: string
+  attribution: string
+  disclaimer: string
 }
+
+// Legacy support
+export interface Category extends Indicator {}
+
+export type CategoryCompat = Category
 
 export interface ProvinceProperties {
   province_id: string

@@ -14,7 +14,10 @@
     "stats": {
       "provinces": "Provinces Covered",
       "categories": "Risk Categories",
-      "openSource": "Open Source"
+      "openSource": "Open Source",
+      "provinceDetail": "Province-level aggregation",
+      "categoriesDetail": "Baseline 1960–2019",
+      "openSourceDetail": "Source: Aqueduct 4.0"
     },
     "whatsIncluded": "What's Included",
     "features": {
@@ -52,7 +55,7 @@
   "map": {
     "title": "Water Risk Map",
     "selectProvince": "Click a province to see details",
-    "layers": "Layers",
+    "layers": "Risk Indicators",
     "legend": "Legend",
     "riskLevels": {
       "veryLow": "Very Low",
@@ -63,67 +66,178 @@
     }
   },
   "categories": {
-    "title": "Risk Categories",
-    "subtitle": "Six water risk indicators from WRI Aqueduct 4.0",
+    "title": "Risk Indicators",
+    "subtitle": "13 water risk indicators from WRI Aqueduct 4.0",
+    "groups": {
+      "quantity_variability": "Quantity & Variability",
+      "flooding": "Flooding",
+      "quality": "Quality",
+      "access_reputational": "Access & Reputational"
+    },
     "baseline_stress": {
       "name": "Baseline Water Stress",
       "short": "Water Stress",
       "desc": "Ratio of total water withdrawals to available renewable water supply",
-      "detail": "Measures the competition for water resources. Higher values indicate greater stress on water supplies."
+      "detail": "Measures the competition for water resources. Higher values indicate greater stress on water supplies from human demand."
     },
-    "seasonal_variability": {
-      "name": "Seasonal Variability",
-      "short": "Seasonal Var",
-      "desc": "Coefficient of variation of monthly water supply",
-      "detail": "Indicates how much water availability changes throughout the year. Higher values mean less predictable seasonal patterns."
+    "baseline_depletion": {
+      "name": "Baseline Water Depletion",
+      "short": "Water Depletion",
+      "desc": "Ratio of water consumption to available renewable water supply",
+      "detail": "Indicates the portion of water withdrawn that is not returned to the system. Higher values mean more permanent water loss."
+    },
+    "groundwater_decline": {
+      "name": "Groundwater Table Decline",
+      "short": "Groundwater Decline",
+      "desc": "Average decline rate of groundwater table",
+      "detail": "Measures groundwater depletion trends. Higher values indicate faster decline in groundwater levels over time."
     },
     "interannual_variability": {
       "name": "Interannual Variability",
-      "short": "Interannual Var",
-      "desc": "Coefficient of variation of annual water supply",
-      "detail": "Shows year-to-year variation in water availability. Higher values indicate greater uncertainty between years."
+      "short": "Year-to-Year Variation",
+      "desc": "Year-to-year variation in water supply",
+      "detail": "Shows uncertainty between years. Higher values indicate less predictable water availability from one year to the next."
     },
-    "groundwater_stress": {
-      "name": "Groundwater Table Decline",
-      "short": "Groundwater",
-      "desc": "Average decline in groundwater table depth",
-      "detail": "Measures the rate of groundwater depletion. Negative values indicate declining groundwater levels."
+    "seasonal_variability": {
+      "name": "Seasonal Variability",
+      "short": "Seasonal Variation",
+      "desc": "Month-to-month variation in water supply",
+      "detail": "Indicates seasonal water availability patterns. Higher values mean greater differences between wet and dry seasons."
     },
-    "drought_hazard": {
+    "drought_risk": {
       "name": "Drought Risk",
       "short": "Drought",
-      "desc": "Frequency and severity of meteorological droughts",
-      "detail": "Based on Standardized Precipitation Index (SPI). Shows historical drought occurrence."
+      "desc": "Frequency of drought conditions (SPI < -1.5)",
+      "detail": "Based on historical drought events from 1950-2014. Shows areas with higher historical drought frequency."
     },
-    "flood_hazard": {
+    "riverine_flood_risk": {
       "name": "Riverine Flood Risk",
-      "short": "Flood",
-      "desc": "Population exposed to riverine flooding",
-      "detail": "Indicates areas at risk of river flooding based on historical flood models."
+      "short": "River Flooding",
+      "desc": "Population exposed to 1-in-100 year riverine floods",
+      "detail": "Indicates percentage of population living in areas at risk of major river flooding based on flood return period models."
+    },
+    "coastal_flood_risk": {
+      "name": "Coastal Flood Risk",
+      "short": "Coastal Flooding",
+      "desc": "Population exposed to 1-in-100 year coastal floods",
+      "detail": "Shows coastal flood exposure for provinces with coastline. Inland provinces show zero or minimal risk."
+    },
+    "untreated_wastewater": {
+      "name": "Untreated Connected Wastewater",
+      "short": "Untreated Wastewater",
+      "desc": "Percentage of collected wastewater not treated before discharge",
+      "detail": "Indicates water quality threats from untreated sewage. Higher values mean more pollution risk to water bodies."
+    },
+    "coastal_eutrophication": {
+      "name": "Coastal Eutrophication Potential",
+      "short": "Eutrophication",
+      "desc": "Nitrogen and phosphorus export to coastal waters",
+      "detail": "Measures nutrient pollution that can cause algae blooms and oxygen depletion in coastal areas."
+    },
+    "unimproved_drinking_water": {
+      "name": "Unimproved Drinking Water",
+      "short": "Unsafe Water Access",
+      "desc": "Population without access to improved drinking water sources",
+      "detail": "Percentage of population lacking safe drinking water access. Higher values indicate greater access challenges."
+    },
+    "unimproved_sanitation": {
+      "name": "Unimproved Sanitation",
+      "short": "Unsafe Sanitation",
+      "desc": "Population without access to improved sanitation facilities",
+      "detail": "Indicates sanitation infrastructure gaps. Higher values show greater need for sanitation improvements."
+    },
+    "reputational_risk": {
+      "name": "RepRisk Index",
+      "short": "Governance Risk",
+      "desc": "Peak RepRisk country ESG risk index",
+      "detail": "Country-level environmental, social, and governance risk indicator. Same value across all provinces."
     },
     "combined": {
-      "name": "Combined Water Risk",
-      "short": "Combined",
-      "desc": "Weighted average of all risk categories",
-      "detail": "Overall water risk score calculated using WRI Aqueduct methodology with weighted indicators."
+      "name": "Combined Physical Risk",
+      "short": "Combined Risk",
+      "desc": "Weighted average of physical risk indicators",
+      "detail": "Overall physical water risk score combining quantity, variability, flooding, and quality indicators. Access/reputational indicators displayed separately."
     }
   },
   "methodology": {
     "title": "Methodology",
     "subtitle": "How we calculate water risk scores",
+    "tabs": {
+      "methodology": "Methodology",
+      "dataDictionary": "Data Dictionary"
+    },
     "dataSource": "Data Source",
     "dataSourceText": "We use official WRI Aqueduct 4.0 datasets derived from the PCR-GLOBWB 2 global hydrological model developed by Utrecht University.",
+    "citation": "Citation",
+    "citationWri": "WRI Aqueduct 4.0",
+    "baseline": "Baseline: 1960–2019",
+    "release": "Release: July 2023",
+    "version": "Version: 4.0",
+    "linkText": "WRI Aqueduct Platform",
     "processing": "Data Processing",
     "processingText": "Sub-basin level data is aggregated to Turkey's 81 provinces using area-weighted averaging to ensure accurate representation.",
+    "processingFormula": "aggregate(geometries) → province_level → mean(scores)",
     "scoring": "Risk Scoring",
     "scoringText": "Each indicator is scored on a 0-5 scale following WRI's methodology. The combined risk uses weighted arithmetic mean with weights assigned by WRI researchers.",
+    "scoringFormula": "risk_score ∈ [0, 5] | Low: [0-1], Medium: [2-3], High: [4-5]",
     "weights": "Category Weights",
-    "viewDetails": "View Detailed Methodology"
+    "viewDetails": "View Detailed Methodology",
+    "dataDictionary": {
+      "title": "Data Dictionary",
+      "subtitle": "Understanding water risk indicators and variables",
+      "indicators": "Water Risk Indicators",
+      "indicatorsDesc": "All 13 Aqueduct 4.0 baseline indicators used in this analysis",
+      "technical": "Technical Variables",
+      "technicalDesc": "Key variables and their meanings",
+      "vars": {
+        "province_id": {
+          "name": "province_id",
+          "desc": "Unique identifier for each province (e.g., TUR.1_1 for Adana)"
+        },
+        "name": {
+          "name": "name",
+          "desc": "Province name in English"
+        },
+        "name_tr": {
+          "name": "name_tr",
+          "desc": "Province name in Turkish"
+        },
+        "combined_score": {
+          "name": "combined_score",
+          "desc": "Overall water risk score (0-5 scale), weighted average of all indicators"
+        },
+        "area_km2": {
+          "name": "area_km2",
+          "desc": "Province area in square kilometers, used for area-weighted aggregation"
+        },
+        "percentile": {
+          "name": "percentile",
+          "desc": "Province's rank relative to all 81 provinces (0-100%)"
+        }
+      },
+      "scales": "Risk Scales",
+      "scalesDesc": "How to interpret the 0-5 risk scores",
+      "scaleLabels": {
+        "low": "Low (0.0-0.5): Minimal water stress or risk",
+        "lowMedium": "Low-Medium (0.5-1.0): Some water concerns",
+        "mediumHigh": "Medium-High (1.0-2.0): Moderate water stress",
+        "high": "High (2.0-3.0): Significant water challenges",
+        "extremelyHigh": "Extremely High (3.0-5.0): Severe water crisis"
+      }
+    }
   },
   "about": {
     "title": "About This Project",
     "subtitle": "Open-source water risk assessment for Turkey",
     "description": "This project provides transparent, data-driven water risk assessments for Turkey's 81 provinces using real WRI Aqueduct 4.0 data. All code and data processing pipelines are open-source and reproducible.",
+    "overview": {
+      "purpose": "Purpose",
+      "purposeText": "Public water risk assessment",
+      "data": "Data",
+      "dataText": "WRI Aqueduct 4.0 (2023)",
+      "license": "License",
+      "licenseText": "MIT + CC BY 4.0"
+    },
     "dataTitle": "Data Sources",
     "dataText": "Primary data from WRI Aqueduct 4.0, based on PCR-GLOBWB 2 hydrological model, with additional validation from Turkish government sources (DSİ, TÜİK).",
     "licenseTitle": "License",
@@ -141,10 +255,23 @@
   },
   "modal": {
     "combinedIndex": "Combined Water Risk Index",
+    "combinedWaterRisk": "Combined Water Risk",
     "categoryScores": "Category Scores",
+    "topDrivers": "Top Drivers",
+    "allIndicators": "All Indicators",
+    "showTop3": "Show top 3",
+    "showAll": "Show all",
     "percentile": "Percentile",
     "outOf100": "out of 100",
-    "riskLevel": "Risk Level"
+    "riskLevel": "Risk Level",
+    "coverage": "Coverage",
+    "rank": "Rank",
+    "of": "of",
+    "indicators": "indicators",
+    "indicator": "Indicator",
+    "score": "Score",
+    "level": "Level",
+    "footerNote": "Risk scores based on WRI Aqueduct 4.0 methodology (0-5 scale). Province values are area-weighted averages of sub-basin data."
   },
   "common": {
     "loading": "Loading...",

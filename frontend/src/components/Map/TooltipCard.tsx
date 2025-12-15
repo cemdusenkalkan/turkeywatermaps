@@ -20,27 +20,27 @@ export function TooltipCard({ data, position }: TooltipCardProps) {
         top: position.y + 10,
       }}
     >
-      <div className="bg-white rounded-lg shadow-lg p-3 max-w-xs border border-gray-200">
-        <h4 className="font-semibold text-sm mb-2">{data.provinceName}</h4>
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3 max-w-xs border border-gray-200 dark:border-gray-700">
+        <h4 className="font-semibold text-sm mb-2 text-gray-900 dark:text-white">{data.provinceName}</h4>
         
         {data.category && (
-          <div className="text-xs text-gray-600 mb-2">{data.category}</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">{data.category}</div>
         )}
         
         <div className="space-y-1 text-xs">
           <div className="flex justify-between">
-            <span className="text-gray-600">Score:</span>
-            <span className="font-medium">{data.score.toFixed(2)} / 5.0</span>
+            <span className="text-gray-600 dark:text-gray-400">Score:</span>
+            <span className="font-medium text-gray-900 dark:text-white">{data.score.toFixed(2)} / 5.0</span>
           </div>
           
           <div className="flex justify-between">
-            <span className="text-gray-600">Risk Level:</span>
-            <span className="font-medium">{getRiskLabel(data.score)}</span>
+            <span className="text-gray-600 dark:text-gray-400">Risk Level:</span>
+            <span className="font-medium text-gray-900 dark:text-white">{getRiskLabel(data.score)}</span>
           </div>
           
           <div className="flex justify-between">
-            <span className="text-gray-600">Percentile:</span>
-            <span className="font-medium">{data.percentile}th</span>
+            <span className="text-gray-600 dark:text-gray-400">Percentile:</span>
+            <span className="font-medium text-gray-900 dark:text-white">{data.percentile}th</span>
           </div>
         </div>
       </div>
