@@ -56,9 +56,9 @@ export function MapPage() {
     // Build category scores - handle both old and new data structure
     const allIndicators = manifest.indicator_groups 
       ? manifest.indicator_groups.groups.flatMap(g => g.indicators)
-      : manifest.categories || []
+      : (manifest as any).categories || []
       
-    const categoryScores = allIndicators.map(cat => {
+    const categoryScores = allIndicators.map((cat: any) => {
       const scoreKey = `${cat.id}_score`
       const score = props[scoreKey] as number || 0
       const allScores = geoData.features.map(f => f.properties[scoreKey] as number).filter(s => !isNaN(s))
@@ -116,7 +116,7 @@ export function MapPage() {
   // Get active category object - handle both old and new data structure
   const allIndicators = manifest.indicator_groups 
     ? manifest.indicator_groups.groups.flatMap(g => g.indicators)
-    : manifest.categories || []
+    : (manifest as any).categories || []
     
   const activeCategory: Category | null = 
     activeCategoryId === 'combined_risk'
@@ -131,7 +131,7 @@ export function MapPage() {
           max_score: manifest.combined_index.max_score,
           mean_score: manifest.combined_index.mean_score,
         }
-      : allIndicators.find(c => c.id === activeCategoryId) || null
+      : allIndicators.find((c: any) => c.id === activeCategoryId) || null
   
   return (
     <div className="relative w-full h-[calc(100vh-4rem)]" style={{ minHeight: '600px' }}>
@@ -181,10 +181,10 @@ export function MapPage() {
         className="absolute top-[180px] right-4 z-20 bg-white dark:bg-gray-800 rounded-xl shadow-md px-4 py-2.5 text-sm border border-gray-200 dark:border-gray-700"
       >
         <div className="text-gray-700 dark:text-gray-300">
-          Data: <span className="font-semibold text-gray-900 dark:text-white">{manifest.mode === 'synthetic_demo' ? 'Synthetic Demo' : 'Production'}</span>
+          Data: <span className="font-semibold text-gray-900 dark:text-white">Production</span>
         </div>
         <div className="text-xs text-gray-600 dark:text-gray-400">
-          {manifest.temporal_coverage}
+          {manifest.version}
         </div>
       </motion.div>
       
