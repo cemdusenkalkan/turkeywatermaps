@@ -258,6 +258,7 @@ export function Methodology() {
           </>
         )}
       </div>
+      </div>
     </div>
   )
 }
