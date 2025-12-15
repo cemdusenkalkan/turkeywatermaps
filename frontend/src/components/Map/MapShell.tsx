@@ -39,9 +39,9 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
           'carto-base': {
             type: 'raster',
             tiles: isDarkMode ? [
-              'https://a.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
-              'https://b.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
-              'https://c.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png'
+              'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png'
             ] : [
               'https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
               'https://b.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
@@ -54,9 +54,9 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
           'carto-labels': {
             type: 'raster',
             tiles: isDarkMode ? [
-              'https://a.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png',
-              'https://b.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png',
-              'https://c.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png'
+              'https://a.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}.png'
             ] : [
               'https://a.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png',
               'https://b.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png',
@@ -74,7 +74,7 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
             minzoom: 0,
             maxzoom: 22,
             paint: {
-              'raster-opacity': isDarkMode ? 0.5 : 0.3
+              'raster-opacity': 1.0
             }
           },
           // Province layers will be inserted here
@@ -128,7 +128,7 @@ export function MapShell({ data, activeCategory, onProvinceClick }: MapShellProp
           source: 'provinces',
           paint: {
             'fill-color': colorExpression,
-            'fill-opacity': 0.6, // Reduced from 0.7 for better label visibility
+            'fill-opacity': 0.35, // Reduced significantly for much better basemap visibility
           },
         })
       }

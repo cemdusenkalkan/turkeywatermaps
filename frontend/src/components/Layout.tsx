@@ -123,41 +123,41 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       
-      <footer className="bg-navy-800 dark:bg-gray-900 text-white py-12 mt-auto border-t border-gray-200 dark:border-gray-800" role="contentinfo">
+      <footer className="bg-navy-800 dark:bg-gray-900 text-white py-8 md:py-12 mt-auto border-t border-gray-200 dark:border-gray-800" role="contentinfo">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
             {/* About Section */}
             <div>
-              <h3 className="font-semibold mb-3 text-lg">Türkiye Water Risk Map</h3>
-              <p className="text-sm text-gray-300 dark:text-gray-400 leading-relaxed">
-                Open-source water risk assessment platform using real WRI Aqueduct 4.0 data. Free, transparent, and reproducible.
+              <h3 className="font-semibold mb-3 text-base md:text-lg">{t('footer.title')}</h3>
+              <p className="text-xs md:text-sm text-gray-300 dark:text-gray-400 leading-relaxed">
+                {t('footer.subtitle')}
               </p>
             </div>
             
             {/* Resources Section */}
             <div>
-              <h3 className="font-semibold mb-3 text-lg">Resources</h3>
-              <ul className="space-y-2 text-sm text-gray-300 dark:text-gray-400">
-                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/map" className="hover:text-white transition-colors">Interactive Map</Link></li>
-                <li><Link to="/categories" className="hover:text-white transition-colors">Risk Categories</Link></li>
-                <li><Link to="/methodology" className="hover:text-white transition-colors">Methodology</Link></li>
+              <h3 className="font-semibold mb-3 text-base md:text-lg">{t('footer.resources')}</h3>
+              <ul className="space-y-2 text-xs md:text-sm text-gray-300 dark:text-gray-400">
+                <li><Link to="/" className="hover:text-white transition-colors">{t('footer.home')}</Link></li>
+                <li><Link to="/map" className="hover:text-white transition-colors">{t('footer.interactiveMap')}</Link></li>
+                <li><Link to="/categories" className="hover:text-white transition-colors">{t('footer.riskCategories')}</Link></li>
+                <li><Link to="/methodology" className="hover:text-white transition-colors">{t('footer.methodology')}</Link></li>
               </ul>
             </div>
             
             {/* External Links Section */}
             <div>
-              <h3 className="font-semibold mb-3 text-lg">External Links</h3>
-              <ul className="space-y-2 text-sm text-gray-300 dark:text-gray-400">
+              <h3 className="font-semibold mb-3 text-base md:text-lg">{t('footer.externalLinks')}</h3>
+              <ul className="space-y-2 text-xs md:text-sm text-gray-300 dark:text-gray-400">
                 <li>
                   <a 
                     href="https://github.com/cemdusenkalkan/turkeywatermaps" 
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white transition-colors break-words"
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label="GitHub Repository"
                   >
-                    GitHub Repository
+                    {t('footer.githubRepo')}
                   </a>
                 </li>
                 <li>
@@ -168,7 +168,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     rel="noopener noreferrer"
                     aria-label="WRI Aqueduct"
                   >
-                    WRI Aqueduct
+                    {t('footer.wriAqueduct')}
                   </a>
                 </li>
                 <li>
@@ -179,7 +179,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
                   >
-                    LinkedIn Profile
+                    {t('footer.linkedinProfile')}
                   </a>
                 </li>
               </ul>
@@ -187,20 +187,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
             
             {/* Info Section */}
             <div>
-              <h3 className="font-semibold mb-3 text-lg">About</h3>
+              <h3 className="font-semibold mb-3 text-base md:text-lg">{t('footer.about')}</h3>
               <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
-                Community-driven, non-official product. Consult official Turkish government agencies (DSİ, MGM, TÜİK) for authoritative information.
+                {t('footer.aboutText')}
               </p>
             </div>
           </div>
           
           {/* Divider and Copyright */}
-          <div className="border-t border-navy-700 dark:border-gray-700 pt-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400 dark:text-gray-500">
-              <p>&copy; 2025 Türkiye Water Risk Map. All rights reserved.</p>
+          <div className="border-t border-navy-700 dark:border-gray-700 pt-4 md:pt-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-400 dark:text-gray-500">
+              <p className="text-center md:text-left">{t('footer.copyright')}</p>
               <div className="flex gap-4">
-                <Link to="/about" className="hover:text-white transition-colors">Terms</Link>
-                <a href="https://opensource.org/licenses/MIT" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">License (MIT)</a>
+                <Link to="/about" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
+                <a href="https://opensource.org/licenses/MIT" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">{t('footer.license')}</a>
               </div>
             </div>
           </div>

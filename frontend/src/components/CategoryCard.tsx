@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { useLanguage } from '../contexts/LanguageContext'
 import type { Category, CategoryGroup } from '@/types'
 
 interface CategoryCardProps {
@@ -15,6 +16,7 @@ const GROUP_COLORS: Record<string, string> = {
 }
 
 export function CategoryCard({ category, index }: CategoryCardProps) {
+  const { t } = useLanguage()
   // Check if it's a CategoryGroup (has indicators array) or legacy Category
   const isCategoryGroup = 'indicators' in category
   
@@ -54,13 +56,13 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
         
         <div className="flex items-center gap-4 flex-wrap">
           <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-50 dark:bg-gray-900/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
-            <span className="text-gray-700 dark:text-gray-400">Weight: </span>
+            <span className="text-gray-700 dark:text-gray-400">{t('methodology.weights')}: </span>
             <span className="text-accent font-bold">{(totalWeight * 100).toFixed(0)}%</span>
           </div>
           
           {isCategoryGroup && (
             <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-50 dark:bg-gray-900/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
-              <span className="text-gray-700 dark:text-gray-400">Indicators: </span>
+              <span className="text-gray-700 dark:text-gray-400">{t('categories.indicatorCount')}: </span>
               <span className="text-accent font-bold">{indicatorCount}</span>
             </div>
           )}

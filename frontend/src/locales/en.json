@@ -74,6 +74,19 @@
       "quality": "Quality",
       "access_reputational": "Access & Reputational"
     },
+    "groupDescriptions": {
+      "quantity_variability": "Physical water availability, demand, and temporal fluctuations",
+      "flooding": "Flood risk from rivers and coastal areas",
+      "quality": "Water pollution and contamination indicators",
+      "access_reputational": "Water access, sanitation, and governance risk"
+    },
+    "groupWeights": {
+      "quantity_variability": "Weight: 88%",
+      "flooding": "Weight: 8%",
+      "quality": "Weight: 5%",
+      "access_reputational": "Weight: 0%"
+    },
+    "indicatorCount": "Indicators",
     "baseline_stress": {
       "name": "Baseline Water Stress",
       "short": "Water Stress",
@@ -182,6 +195,9 @@
     "scoringFormula": "risk_score ∈ [0, 5] | Low: [0-1], Medium: [2-3], High: [4-5]",
     "weights": "Category Weights",
     "viewDetails": "View Detailed Methodology",
+    "githubRepo": "GitHub Repository",
+    "githubRepoDesc": "Full code, data processing pipeline, and documentation available.",
+    "citation": "Citation",
     "dataDictionary": {
       "title": "Data Dictionary",
       "subtitle": "Understanding water risk indicators and variables",
@@ -249,8 +265,23 @@
     "contactText": "Questions or feedback? Open an issue on GitHub or reach out via email."
   },
   "footer": {
+    "title": "Türkiye Water Risk Map",
+    "subtitle": "Open-source water risk assessment platform using real WRI Aqueduct 4.0 data. Free, transparent, and reproducible.",
+    "resources": "Resources",
+    "home": "Home",
+    "interactiveMap": "Interactive Map",
+    "riskCategories": "Risk Categories",
+    "methodology": "Methodology",
+    "externalLinks": "External Links",
+    "githubRepo": "GitHub Repository",
+    "wriAqueduct": "WRI Aqueduct",
+    "linkedinProfile": "LinkedIn Profile",
+    "about": "About",
+    "aboutText": "Community-driven, non-official product. Consult official Turkish government agencies (DSİ, MGM, TÜİK) for authoritative information.",
+    "copyright": "© 2025 Türkiye Water Risk Map. All rights reserved.",
+    "terms": "Terms",
+    "license": "License (MIT)",
     "dataSource": "Data: WRI Aqueduct 4.0",
-    "license": "Licensed under MIT & CC BY 4.0",
     "github": "GitHub"
   },
   "modal": {
