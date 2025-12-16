@@ -1,0 +1,70 @@
+{
+  "source": "HydroRIVERS v1.0",
+  "attribution": "HydroSHEDS (https://www.hydrosheds.org)",
+  "region": "Europe",
+  "extraction_date": "2025-12-16",
+  "bbox": {
+    "west": 25.5,
+    "south": 35.8,
+    "east": 44.8,
+    "north": 42.1
+  },
+  "total_segments": 48769,
+  "stream_orders": {
+    "1": 25200,
+    "2": 11460,
+    "3": 5791,
+    "4": 3312,
+    "5": 1963,
+    "6": 814,
+    "7": 229
+  },
+  "layers": [
+    {
+      "name": "small",
+      "filename": "rivers_turkey_small.geojson",
+      "stream_orders": [1, 2, 3],
+      "segments": 42451,
+      "size_mb": 20.7,
+      "description": "Headwaters and small streams"
+    },
+    {
+      "name": "medium",
+      "filename": "rivers_turkey_medium.geojson",
+      "stream_orders": [4, 5, 6],
+      "segments": 6089,
+      "size_mb": 2.7,
+      "description": "Medium streams and small rivers"
+    },
+    {
+      "name": "large",
+      "filename": "rivers_turkey_large.geojson",
+      "stream_orders": [7, 8, 9, 10],
+      "segments": 229,
+      "size_mb": 0.1,
+      "description": "Major rivers and tributaries"
+    },
+    {
+      "name": "full",
+      "filename": "rivers_turkey_full.geojson",
+      "stream_orders": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "segments": 48769,
+      "size_mb": 23.5,
+      "description": "Complete river network for Turkey"
+    }
+  ],
+  "attributes": {
+    "HYRIV_ID": "Unique river segment ID (HydroRIVERS)",
+    "MAIN_RIV": "Main river ID to which segment belongs",
+    "ORD_STRA": "Strahler stream order (1-10, higher = larger river)",
+    "LENGTH_KM": "Segment length in kilometers",
+    "UPLAND_SKM": "Upstream drainage area in square kilometers",
+    "order_category": "Categorical classification (small/medium/large)"
+  },
+  "methodology": {
+    "extraction": "Filtered HydroRIVERS Europe v1.0 to Turkey bounding box using geopandas",
+    "simplification": "Douglas-Peucker algorithm with tolerance=0.001 degrees (~100m)",
+    "classification": "Stream order based on Strahler method from HydroRIVERS"
+  },
+  "license": "HydroSHEDS data is free for non-commercial and commercial use. See: https://www.hydrosheds.org/page/license"
+}

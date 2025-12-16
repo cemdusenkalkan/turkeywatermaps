@@ -88,6 +88,16 @@
     "layerPanel": {
       "hint": "Click a category to visualize. Hover provinces for details."
     },
+    "rivers": {
+      "title": "River Network",
+      "toggle": "Show Rivers",
+      "small": "Small Streams (Order 1-3)",
+      "medium": "Medium Streams (Order 4-6)",
+      "large": "Major Rivers (Order 7+)",
+      "streamOrder": "Stream Order",
+      "length": "Length",
+      "upstreamArea": "Upstream Area"
+    },
     "riskLevels": {
       "veryLow": "Very Low",
       "low": "Low",
@@ -453,5 +463,22 @@
       "hpa": "hPa"
     },
     "attribution": "Weather data by Open-Meteo.com"
+  },
+  "map": {
+    "layerPanel": {
+      "hint": "Click a category to visualize. Hover provinces for details."
+    },
+    "adminUnit": {
+      "title": "Aggregation Unit",
+      "province": "Provinces",
+      "provinceDesc": "Administrative boundaries (81 provinces)",
+      "basin": "Basins (Large)",
+      "basinDesc": "Hydrological basins - natural water flow units (~138 basins)",
+      "subbasin": "Sub-basins (Medium)",
+      "subbasinDesc": "Detailed sub-basin network",
+      "microbasin": "Micro-basins (Detailed)",
+      "microbasinDesc": "Highest resolution basin network (~981 basins)",
+      "hint": "Basins show natural water flow boundaries, while provinces show political boundaries."
+    }
   }
 }

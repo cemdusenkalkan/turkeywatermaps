@@ -85,9 +85,60 @@ export interface WeatherCondition {
   color: string
 }
 
+// Simplified types for components
+export interface CurrentWeather {
+  temperature: number
+  feelsLike: number
+  humidity: number
+  windSpeed: number
+  windDirection: string
+  precipitation: number
+  cloudCover: number
+  pressure: number
+  condition: WeatherCondition
+  weatherCode: number
+  time: Date
+  isDay: boolean
+}
+
+export interface DailyForecast {
+  date: Date
+  dateString: string
+  tempMax: number
+  tempMin: number
+  precipitation: number
+  precipitationProb: number
+  windSpeed: number
+  windGusts: number
+  uvIndex: number
+  sunrise: Date
+  sunset: Date
+  weatherCode: number
+  condition: WeatherCondition
+}
+
+export interface WeatherForecast {
+  current: CurrentWeather
+  daily: DailyForecast[]
+  location: {
+    name: string
+    latitude: number
+    longitude: number
+  }
+}
+
 // ============================================================================
 // Weather Code Mapping (WMO Weather interpretation codes)
 // ============================================================================
+
+// Helper functions for backward compatibility
+export function getWeatherIcon(code: number, isDay: boolean = true): string {
+  return getWeatherCondition(code, isDay).icon
+}
+
+export function getWeatherDescription(code: number, isDay: boolean = true): string {
+  return getWeatherCondition(code, isDay).description
+}
 
 export function getWeatherCondition(code: number, isDay: boolean = true): WeatherCondition {
   // Returns translation key for description - must be translated in component using t()
@@ -349,4 +400,36 @@ export function getCacheAge(): number | null {
 /**
  * Fetch current weather for Ankara (representing Turkey)
  */
+export async function fetchCurrentWeather(): Promise<CurrentWeather | null> {
+  const conditions = await getCurrentConditions('Ankara', 'en')
+  if (!conditions) return null
+  
+  return {
+    ...conditions,
+    weatherCode: conditions.condition.code
+  }
+}
+
+/**
+ * Fetch weather forecast for Ankara
+ */
+export async function fetchWeatherForecast(): Promise<WeatherForecast | null> {
+  const current = await fetchCurrentWeather()
+  const forecast = await getSevenDayForecast('Ankara')
+  
+  if (!current || !forecast) return null
+  
+  return {
+    current,
+    daily: forecast.map(day => ({
+      ...day,
+      weatherCode: day.condition.code
+    })),
+    location: {
+      name: 'Ankara',
+      latitude: 39.9334,
+      longitude: 32.8597
+    }
+  }
+}
 

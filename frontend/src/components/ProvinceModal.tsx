@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import { useState, useEffect } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import type { ProvinceDetailData } from '@/types'
-import { formatOrdinal, getWRIRiskLabel, getWRIRiskColor } from '@/lib/calculations'
+import { getWRIRiskLabel, getWRIRiskColor } from '@/lib/calculations'
 import { RiskStripIndicator } from './RiskStripIndicator'
 import { WeatherCard } from './WeatherCard'
 import { getCurrentConditions } from '../lib/weather-service'
@@ -56,7 +56,7 @@ export function ProvinceModal({ isOpen, data, onClose, totalProvinces = 81 }: Pr
   const displayIndicators = showAllIndicators ? sortedIndicators : topDrivers
 
   // Count available indicators (coverage check)
-  const availableCount = data.categoryScores.filter(c => c.score > 0).length
+  // const availableCount = data.categoryScores.filter(c => c.score > 0).length
   const totalCount = data.categoryScores.length
 
   return (
@@ -308,7 +308,7 @@ export function ProvinceModal({ isOpen, data, onClose, totalProvinces = 81 }: Pr
 
                         {/* Coverage Note */}
                         <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 italic">
-                          {t('modal.coverage', { available: availableCount, total: totalCount })}
+                          {t('modal.coverage')}
                         </p>
                       </div>
 

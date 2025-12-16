@@ -12,7 +12,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.2.5",
+    "@deck.gl/geo-layers": "^9.2.5",
+    "@deck.gl/layers": "^9.2.5",
     "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@turf/turf": "^7.3.1",
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",
     "maplibre-gl": "^5.0.0",

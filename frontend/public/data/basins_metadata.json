@@ -1,0 +1,29 @@
+{
+  "source": "WRI Aqueduct 4.0 baseline_annual layer",
+  "date_processed": "2025-12-16",
+  "total_subbasins": 981,
+  "level6_basins": 138,
+  "level7_basins": 138,
+  "indicators": [
+    "bws_raw",
+    "bwd_raw",
+    "iav_raw",
+    "sev_raw",
+    "gtd_raw",
+    "rfr_raw",
+    "cfr_raw",
+    "drr_raw",
+    "ucw_raw",
+    "cep_raw",
+    "udw_raw",
+    "usa_raw",
+    "rri_raw"
+  ],
+  "crs": "EPSG:4326",
+  "bbox": [
+    25.5,
+    35.8,
+    44.8,
+    42.1
+  ]
+}

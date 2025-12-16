@@ -82,11 +82,21 @@
   },
   "map": {
     "title": "Su Riski Haritası",
-    "selectProvince": "Detayları görmek için bir ile tıklayın",
+    "selectProvince": "Detaylar için bir il seçin",
     "layers": "Risk Göstergeleri",
     "legend": "Lejant",
     "layerPanel": {
-      "hint": "Görselleştirmek için bir kategori seçin. Detaylar için illerin üzerine gelin."
+      "hint": "Bir kategori seçerek haritada görselleştirin. Detaylar için illerin üzerine gelin."
+    },
+    "rivers": {
+      "title": "Akarsu Ağı",
+      "toggle": "Akarsuları Göster",
+      "small": "Küçük Dereler (Derece 1-3)",
+      "medium": "Orta Dereler (Derece 4-6)",
+      "large": "Büyük Nehirler (Derece 7+)",
+      "streamOrder": "Akarsu Derecesi",
+      "length": "Uzunluk",
+      "upstreamArea": "Yukarı Havza Alanı"
     },
     "riskLevels": {
       "veryLow": "Çok Düşük",
@@ -453,5 +463,22 @@
       "hpa": "hPa"
     },
     "attribution": "Hava durumu verisi Open-Meteo.com tarafından sağlanmaktadır"
+  },
+  "map": {
+    "layerPanel": {
+      "hint": "Görselleştirmek için bir kategori seçin. Detaylar için illerin üzerine gelin."
+    },
+    "adminUnit": {
+      "title": "Toplama Birimi",
+      "province": "İller",
+      "provinceDesc": "İdari sınırlar (81 il)",
+      "basin": "Havzalar (Büyük)",
+      "basinDesc": "Hidrolojik havzalar - doğal su akış birimleri (~138 havza)",
+      "subbasin": "Alt Havzalar (Orta)",
+      "subbasinDesc": "Detaylı alt havza ağı",
+      "microbasin": "Mikro Havzalar (Detaylı)",
+      "microbasinDesc": "En yüksek çözünürlüklü havza ağı (~981 havza)",
+      "hint": "Havzalar doğal su akış sınırlarını, iller ise politik sınırları gösterir."
+    }
   }
 }

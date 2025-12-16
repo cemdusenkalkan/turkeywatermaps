@@ -107,7 +107,7 @@ export function Weather() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {forecast.daily.map((day, index) => (
             <motion.div
-              key={day.date}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05 }}
@@ -115,7 +115,7 @@ export function Weather() {
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="font-semibold text-gray-900 dark:text-white">
-                  {formatDate(day.date)}
+                  {formatDate(day.dateString)}
                 </div>
                 <div className="text-3xl">
                   {getWeatherIcon(day.weatherCode)}
@@ -127,10 +127,10 @@ export function Weather() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">Temperature</div>
                   <div className="flex items-center space-x-2">
                     <span className="text-lg font-bold text-gray-900 dark:text-white">
-                      {day.temperatureMax.toFixed(0)}°
+                      {day.tempMax.toFixed(0)}°
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      / {day.temperatureMin.toFixed(0)}°
+                      / {day.tempMin.toFixed(0)}°
                     </span>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export function Weather() {
                 <div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">Wind</div>
                   <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {day.windSpeedMax.toFixed(1)} km/h
+                    {day.windSpeed.toFixed(1)} km/h
                   </div>
                 </div>
                 
