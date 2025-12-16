@@ -1,9 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import type { Category, Indicator, CategoryGroup } from '@/types'
 import { getColorScale, getRiskLabel } from '@/lib/color-scales'
-import { fetchCurrentWeather, getWeatherIcon } from '@/lib/weather-service'
-import type { CurrentWeather } from '@/lib/weather-service'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface LayerPanelProps {
@@ -18,25 +16,12 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
   const { t } = useLanguage()
   const colors = activeCategory ? getColorScale() : []
   const breaks = [0, 1, 2, 3, 4, 5]
-  const [showWeather, setShowWeather] = useState(false)
-  const [weather, setWeather] = useState<CurrentWeather | null>(null)
-  const [weatherLoading, setWeatherLoading] = useState(false)
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
     quantity_variability: true, // Start with first group expanded
     flooding: false,
     quality: false,
     access_reputational: false
   })
-  
-  useEffect(() => {
-    if (showWeather && !weather) {
-      setWeatherLoading(true)
-      fetchCurrentWeather()
-        .then(setWeather)
-        .catch(console.error)
-        .finally(() => setWeatherLoading(false))
-    }
-  }, [showWeather, weather])
   
   const toggleGroup = (groupId: string) => {
     setExpandedGroups(prev => ({
@@ -201,50 +186,8 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
       </div>
       
       <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
-        {/* Weather Toggle */}
-        <button
-          onClick={() => setShowWeather(!showWeather)}
-          className="w-full flex items-center justify-between px-3 py-2 mb-3 rounded-lg text-sm bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-        >
-          <span className="font-medium text-gray-700 dark:text-gray-300">Show Weather</span>
-          <div className={`transform transition-transform ${showWeather ? 'rotate-180' : ''}`}>
-            <svg className="w-4 h-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </button>
-        
-        {/* Weather Display */}
-        {showWeather && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mb-3"
-          >
-            {weatherLoading ? (
-              <div className="text-center py-4">
-                <div className="inline-block animate-spin rounded-full h-6 w-6 border-2 border-gray-300 dark:border-gray-700 border-b-accent" />
-              </div>
-            ) : weather ? (
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white rounded-lg p-3">
-                <div className="flex items-center justify-between mb-2">
-                  <div>
-                    <div className="text-xs opacity-80">Ankara</div>
-                    <div className="text-xl font-bold">{weather.temperature.toFixed(1)}°C</div>
-                  </div>
-                  <div className="text-3xl">{getWeatherIcon(weather.weatherCode)}</div>
-                </div>
-                <div className="text-xs opacity-90">
-                  Wind: {weather.windSpeed.toFixed(1)} km/h
-                </div>
-              </div>
-            ) : null}
-          </motion.div>
-        )}
-        
         <p className="text-xs text-gray-600 dark:text-gray-400">
-          Click a category to visualize. Hover provinces for details.
+          {t('map.layerPanel.hint')}
         </p>
       </div>
     </motion.div>

@@ -74,16 +74,19 @@ export function Methodology() {
             <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed">{pageSubtitle}</p>
         
         <div className="space-y-6 md:space-y-8">
-          {/* Step 1: Data Source */}
+          {/* Step 1: Data Sources */}
           <div className="bg-white dark:bg-gray-800 border-l-4 border-l-blue-500 border border-gray-200 dark:border-gray-700 p-6 md:p-8 rounded-2xl shadow-sm">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
               <div className="flex-1">
                 <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{t('methodology.dataSource')}</h2>
+                
+                {/* Water Risk Data Source */}
+                <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">{t('methodology.waterRiskData')}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-4">
                   {t('methodology.dataSourceText')}
                 </p>
-                <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700 mb-6">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 font-mono">
                     <strong className="text-gray-900 dark:text-white">{t('methodology.citation')}:</strong> {t('methodology.citationWri')}
                   </p>
@@ -100,6 +103,31 @@ export function Methodology() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     {t('methodology.linkText')}
+                  </a>
+                </div>
+
+                {/* Weather Data Source */}
+                <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">{t('methodology.weatherData')}</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-4">
+                  {t('methodology.weatherDataText')}
+                </p>
+                <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 font-mono">
+                    <strong className="text-gray-900 dark:text-white">{t('methodology.citation')}:</strong> {t('methodology.citationOpenMeteo')}
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 mb-3">
+                    {t('methodology.weatherSource')}
+                  </p>
+                  <a 
+                    href="https://open-meteo.com/" 
+                    className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    {t('methodology.linkTextWeather')}
                   </a>
                 </div>
               </div>

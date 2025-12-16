@@ -126,7 +126,7 @@ export function Mascots() {
   return (
     <div 
       ref={ref} 
-      className="fixed right-6 top-32 z-[9999] flex gap-4 items-center pointer-events-auto transition-all duration-300"
+      className="fixed right-6 top-32 z-[9999] flex gap-4 items-center pointer-events-auto transition-all duration-300 print:hidden"
       style={{ 
         color: '#2563eb',
         filter: 'drop-shadow(0 8px 18px rgba(0,0,0,0.12))',

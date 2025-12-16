@@ -50,13 +50,44 @@
       "title": "Haritayı Görüntüle",
       "subtitle": "Tüm Türkiye illeri için etkileşimli su riski veri görselleştirmesi.",
       "button": "Haritayı Aç"
+    },
+    "about": {
+      "title": "Proje Hakkında",
+      "description": "Türkiye'nin 81 ilindeki su ile ilgili riskleri görselleştirmek için açık kaynaklı bir platform. Dünya Kaynakları Enstitüsü'nün Aqueduct 4.0 veri seti ile gerçek veriler kullanılarak oluşturuldu ve kapsamlı su riski değerlendirmeleri sağlamak için gerçek zamanlı hava durumu bilgileri ile birleştirildi.",
+      "indicators": {
+        "title": "13 Risk Göstergesi",
+        "description": "Su stresinden ve kuraklıktan taşkın riskine ve su kalitesine kadar - tüm WRI Aqueduct 4.0 temel göstergeleri dahil."
+      },
+      "openSource": {
+        "title": "Açık Kaynak",
+        "description": "Tam kod tabanı, veri işleme hattı ve metodoloji dokümantasyonu GitHub'da Apache 2.0 lisansı altında mevcut."
+      },
+      "weather": {
+        "title": "Gerçek Zamanlı Hava Durumu",
+        "description": "Tüm 81 il için mevcut koşullar ve 7 günlük tahminler, Open-Meteo API'den saatlik olarak güncellenir."
+      },
+      "community": {
+        "title": "Topluluk Odaklı Araştırma",
+        "description": "Bu resmi olmayan, topluluk odaklı bir projedir. Yetkili su kaynakları bilgileri için lütfen resmi Türk devlet kurumlarına başvurun: DSİ (Devlet Su İşleri), MGM (Meteoroloji), ve TÜİK (İstatistik)."
+      }
+    },
+    "mapPreview": {
+      "title": "Etkileşimli Risk Haritası",
+      "clickToExplore": "81 ili keşfetmek için tıklayın"
+    },
+    "dataSource": {
+      "title": "Veri Kaynağı",
+      "text": "WRI Aqueduct 4.0 • Temel veri 1960-2019 • Open-Meteo'dan gerçek zamanlı hava durumu"
     }
   },
   "map": {
     "title": "Su Riski Haritası",
-    "selectProvince": "Detayları görmek için bir il seçin",
+    "selectProvince": "Detayları görmek için bir ile tıklayın",
     "layers": "Risk Göstergeleri",
     "legend": "Lejant",
+    "layerPanel": {
+      "hint": "Görselleştirmek için bir kategori seçin. Detaylar için illerin üzerine gelin."
+    },
     "riskLevels": {
       "veryLow": "Çok Düşük",
       "low": "Düşük",
@@ -170,6 +201,26 @@
       "short": "Birleşik Risk",
       "desc": "Fiziksel risk göstergelerinin ağırlıklı ortalaması",
       "detail": "Miktar, değişkenlik, taşkın ve kalite göstergelerini birleştiren genel fiziksel su riski skoru. Erişim/itibar göstergeleri ayrı gösterilir."
+    },
+    "weather": {
+      "name": "Hava Durumu Verileri",
+      "description": "Open-Meteo API'den saatlik güncellenen, 81 ilin tamamı için gerçek zamanlı ve tahmin hava durumu bilgileri.",
+      "currentConditions": "Güncel Durum",
+      "forecast": "7 Günlük Tahmin",
+      "dataSource": "Veri Kaynağı",
+      "dataSourceText": "Open-Meteo API - CC BY 4.0 lisanslı ücretsiz hava durumu verileri, NOAA, DWD, Met Office ve diğer ulusal meteoroloji servislerini bir araya getirir.",
+      "metrics": {
+        "temperature": "Sıcaklık (°C)",
+        "feelsLike": "Hissedilen Sıcaklık",
+        "humidity": "Nem Oranı (%)",
+        "windSpeed": "Rüzgar Hızı ve Yönü",
+        "precipitation": "Yağış Miktarı (mm)",
+        "pressure": "Atmosferik Basınç (hPa)",
+        "forecast7day": "7 Günlük Sıcaklık ve Yağış Tahmini",
+        "tempMinMax": "Günlük Min/Maks Sıcaklıklar",
+        "precipProb": "Yağış Olasılığı",
+        "weatherCodes": "Hava Durumu Kodları (WMO)"
+      }
     }
   },
   "methodology": {
@@ -179,14 +230,20 @@
       "methodology": "Metodoloji",
       "dataDictionary": "Veri Sözlüğü"
     },
-    "dataSource": "Veri Kaynağı",
+    "dataSource": "Veri Kaynakları",
+    "waterRiskData": "Su Riski Verileri",
     "dataSourceText": "Utrecht Üniversitesi tarafından geliştirilen PCR-GLOBWB 2 küresel hidrolojik modelinden türetilen resmi WRI Aqueduct 4.0 veri setlerini kullanıyoruz.",
+    "weatherData": "Hava Durumu Verileri",
+    "weatherDataText": "NOAA, DWD ve diğer ulusal meteoroloji servislerinin verilerini toplayan Open-Meteo API tarafından sağlanan gerçek zamanlı ve geçmiş hava durumu verileri.",
     "citation": "Kaynak",
     "citationWri": "WRI Aqueduct 4.0",
+    "citationOpenMeteo": "Open-Meteo Hava Durumu API (CC BY 4.0)",
+    "weatherSource": "Kaynaklar: NOAA, DWD, Met Office, JMA | Güncelleme: Saatlik",
     "baseline": "Temel Dönem: 1960–2019",
     "release": "Yayın: Temmuz 2023",
     "version": "Versiyon: 4.0",
     "linkText": "WRI Aqueduct Platformu",
+    "linkTextWeather": "Open-Meteo API Dokümantasyonu",
     "processing": "Veri İşleme",
     "processingText": "Alt-havza seviyesindeki veriler, doğru temsili sağlamak için alan ağırlıklı ortalama kullanılarak Türkiye'nin 81 iline toplulaştırılır.",
     "processingFormula": "toplulaştır(geometriler) → il_seviyesi → ortalama(skorlar)",
@@ -197,7 +254,6 @@
     "viewDetails": "Detaylı Metodolojiyi Görüntüle",
     "githubRepo": "GitHub Deposu",
     "githubRepoDesc": "Tam kod, veri işleme hattı ve dokümantasyon mevcut.",
-    "citation": "Alıntı",
     "dataDictionary": {
       "title": "Veri Sözlüğü",
       "subtitle": "Su riski göstergeleri ve değişkenlerini anlamak",
@@ -280,7 +336,7 @@
     "aboutText": "Topluluk odaklı, resmi olmayan ürün. Yetkili bilgi için resmi Türk devlet kurumlarına (DSİ, MGM, TÜİK) danışın.",
     "copyright": "© 2025 Türkiye Su Riski Haritası. Tüm hakları saklıdır.",
     "terms": "Şartlar",
-    "license": "Lisans (MIT)",
+    "license": "Lisans (Apache 2.0)",
     "dataSource": "Veri: WRI Aqueduct 4.0",
     "github": "GitHub"
   },
@@ -302,7 +358,12 @@
     "indicator": "Gösterge",
     "score": "Skor",
     "level": "Seviye",
-    "footerNote": "Risk skorları WRI Aqueduct 4.0 metodolojisine dayanmaktadır (0-5 ölçeği). İl değerleri alt-havza verilerinin alan ağırlıklı ortalamalardır."
+    "footerNote": "Risk skorları WRI Aqueduct 4.0 metodolojisine dayanmaktadır (0-5 ölçeği). İl değerleri, alt havza verilerinin alan ağırlıklı ortalamasıdır.",
+    "exportPDF": "PDF İndir",
+    "tabs": {
+      "risk": "Risk",
+      "weather": "Hava Durumu"
+    }
   },
   "common": {
     "loading": "Yükleniyor...",
@@ -315,5 +376,82 @@
     "close": "Kapat",
     "darkMode": "Koyu Mod",
     "lightMode": "Açık Mod"
+  },
+  "weather": {
+    "title": "Hava Durumu",
+    "currentConditions": "Mevcut Koşullar",
+    "forecast": "7 Günlük Tahmin",
+    "temperature": "Sıcaklık",
+    "feelsLike": "Hissedilen",
+    "humidity": "Nem",
+    "wind": "Rüzgar",
+    "precipitation": "Yağış",
+    "pressure": "Basınç",
+    "cloudCover": "Bulutluluk",
+    "uvIndex": "UV İndeksi",
+    "sunrise": "Gün Doğumu",
+    "sunset": "Gün Batımı",
+    "windSpeed": "Rüzgar Hızı",
+    "windDirection": "Rüzgar Yönü",
+    "lastUpdated": "Son güncelleme",
+    "today": "Bugün",
+    "minutesAgo": "{{minutes}} dakika önce",
+    "hoursAgo": "{{hours}} saat önce",
+    "justNow": "Az önce",
+    "loading": "Hava durumu yükleniyor...",
+    "error": "Hava durumu yüklenemedi",
+    "noData": "Hava durumu verisi mevcut değil",
+    "refreshCache": "Yenile",
+    "currentWeather": "Güncel Hava Durumu",
+    "dailyForecast": "Günlük Tahmin",
+    "days": {
+      "monday": "Pzt",
+      "tuesday": "Sal",
+      "wednesday": "Çar",
+      "thursday": "Per",
+      "friday": "Cum",
+      "saturday": "Cmt",
+      "sunday": "Paz"
+    },
+    "conditions": {
+      "clearSky": "Açık hava",
+      "mainlyClear": "Genellikle açık",
+      "partlyCloudy": "Parçalı bulutlu",
+      "overcast": "Kapalı",
+      "foggy": "Sisli",
+      "depositingRimeFog": "Kırağılı sis",
+      "lightDrizzle": "Hafif çisenti",
+      "moderateDrizzle": "Orta çisenti",
+      "denseDrizzle": "Yoğun çisenti",
+      "lightFreezingDrizzle": "Hafif dondurucu çisenti",
+      "denseFreezingDrizzle": "Yoğun dondurucu çisenti",
+      "slightRain": "Hafif yağmur",
+      "moderateRain": "Orta yağmur",
+      "heavyRain": "Şiddetli yağmur",
+      "lightFreezingRain": "Hafif dondurucu yağmur",
+      "heavyFreezingRain": "Şiddetli dondurucu yağmur",
+      "slightSnowfall": "Hafif kar yağışı",
+      "moderateSnowfall": "Orta kar yağışı",
+      "heavySnowfall": "Şiddetli kar yağışı",
+      "snowGrains": "Kar taneleri",
+      "slightRainShowers": "Hafif sağanak yağmur",
+      "moderateRainShowers": "Orta sağanak yağmur",
+      "violentRainShowers": "Şiddetli sağanak yağmur",
+      "slightSnowShowers": "Hafif kar sağanağı",
+      "heavySnowShowers": "Şiddetli kar sağanağı",
+      "thunderstorm": "Gök gürültülü fırtına",
+      "thunderstormLightHail": "Hafif dolu ile gök gürültülü fırtına",
+      "thunderstormHeavyHail": "Şiddetli dolu ile gök gürültülü fırtına"
+    },
+    "units": {
+      "celsius": "°C",
+      "fahrenheit": "°F",
+      "kmh": "km/s",
+      "mph": "mil/s",
+      "mm": "mm",
+      "percent": "%",
+      "hpa": "hPa"
+    },
+    "attribution": "Hava durumu verisi Open-Meteo.com tarafından sağlanmaktadır"
   }
 }

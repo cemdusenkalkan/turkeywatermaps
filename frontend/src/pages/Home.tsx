@@ -8,7 +8,7 @@ export function Home() {
   return (
     <div className="page-bg-academic">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 dark:from-blue-900 dark:via-blue-950 dark:to-gray-950 text-white py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-800 via-blue-900 to-blue-950 dark:from-blue-900 dark:via-blue-950 dark:to-gray-950 text-white py-16 md:py-24 overflow-hidden">
         {/* Animated Contour Lines Background */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1000 400" preserveAspectRatio="none">
@@ -86,40 +86,72 @@ export function Home() {
               </div>
             </motion.div>
 
-            {/* Mini Map Preview */}
+            {/* Project Info Cards */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block"
+              className="hidden lg:block space-y-4"
             >
-              <div className="bg-blue-950/40 dark:bg-gray-900/40 backdrop-blur-sm border border-blue-400/20 dark:border-gray-700 rounded-2xl p-6 shadow-2xl">
+              {/* Map Preview Card */}
+              <Link 
+                to="/map"
+                className="block bg-blue-950/40 dark:bg-gray-900/40 backdrop-blur-sm border border-blue-400/20 dark:border-gray-700 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-700 ease-out group overflow-hidden"
+              >
                 <div className="text-sm font-semibold text-blue-200 dark:text-gray-400 mb-4 flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  Risk Layer Preview
+                  {t('home.mapPreview.title')}
+                  <svg className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-green-400 to-green-500"></div>
-                    <span className="text-sm text-blue-100 dark:text-gray-300">Low (0-1)</span>
+                
+                {/* Turkey Map Preview */}
+                <div className="relative bg-gradient-to-br from-blue-900/30 to-blue-950/30 dark:from-gray-900/30 dark:to-gray-950/30 rounded-lg p-8 border border-blue-400/20 dark:border-gray-700/50 overflow-hidden transition-all duration-1000 ease-in-out group-hover:bg-blue-900/50 group-hover:border-blue-400/40">
+                  <div 
+                    className="relative w-full h-full flex items-center justify-center transition-all duration-[1500ms] ease-in-out group-hover:scale-[2.5] group-hover:translate-y-4"
+                    style={{
+                      filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))',
+                      transformOrigin: 'center center'
+                    }}
+                  >
+                    <img 
+                      src={`${import.meta.env.BASE_URL}tr.svg`}
+                      alt="Turkey Map"
+                      className="w-full h-auto opacity-95 group-hover:opacity-100 transition-all duration-1000"
+                      style={{
+                        filter: 'brightness(1.4) saturate(1.5) contrast(1.1)',
+                      }}
+                      onError={(e) => {
+                        console.error('Failed to load Turkey map')
+                        e.currentTarget.style.display = 'none'
+                      }}
+                    />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-yellow-400 to-yellow-500"></div>
-                    <span className="text-sm text-blue-100 dark:text-gray-300">Low-Medium (1-2)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-orange-400 to-orange-500"></div>
-                    <span className="text-sm text-blue-100 dark:text-gray-300">Medium-High (2-3)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-red-500 to-red-600"></div>
-                    <span className="text-sm text-blue-100 dark:text-gray-300">High (3-4)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-gradient-to-br from-red-700 to-red-800"></div>
-                    <span className="text-sm text-blue-100 dark:text-gray-300">Extremely High (4-5)</span>
+                  {/* Gradient overlay for risk colors */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 via-yellow-500/20 via-orange-500/20 to-red-500/20 mix-blend-screen pointer-events-none transition-opacity duration-1000 group-hover:opacity-50"></div>
+                  {/* Bottom fade */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 via-transparent to-transparent pointer-events-none transition-opacity duration-1000 group-hover:opacity-0"></div>
+                </div>
+                
+                <div className="mt-3 text-xs text-blue-200/80 dark:text-gray-400 text-center">
+                  {t('home.mapPreview.clickToExplore')}
+                </div>
+              </Link>
+
+              {/* Data Source Card */}
+              <div className="bg-blue-950/40 dark:bg-gray-900/40 backdrop-blur-sm border border-blue-400/20 dark:border-gray-700 rounded-2xl p-6 shadow-xl">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-blue-300 dark:text-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <div>
+                    <div className="text-sm font-semibold text-blue-200 dark:text-gray-300 mb-1">{t('home.dataSource.title')}</div>
+                    <div className="text-xs text-blue-200/80 dark:text-gray-400 leading-relaxed">
+                      {t('home.dataSource.text')}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -168,6 +200,102 @@ export function Home() {
         </div>
       </section>
       
+      {/* About Project Section */}
+      <section className="py-12 md:py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-8 md:mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-navy-900 dark:text-white">
+                {t('home.about.title')}
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto px-4">
+                {t('home.about.description')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 px-4 md:px-0">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-700 p-4 md:p-6 rounded-xl border border-blue-200 dark:border-gray-600"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500 dark:bg-blue-600 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white">{t('home.about.indicators.title')}</h3>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {t('home.about.indicators.description')}
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 p-4 md:p-6 rounded-xl border border-green-200 dark:border-gray-600"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 dark:bg-green-600 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white">{t('home.about.openSource.title')}</h3>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {t('home.about.openSource.description')}
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-800 dark:to-gray-700 p-4 md:p-6 rounded-xl border border-sky-200 dark:border-gray-600"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-500 dark:bg-sky-600 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                </div>
+                <h3 className="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white">{t('home.about.weather.title')}</h3>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {t('home.about.weather.description')}
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-800 border-l-4 border-amber-500 dark:border-amber-600 p-4 md:p-6 rounded-r-xl mx-4 md:mx-0"
+            >
+              <div className="flex gap-3 md:gap-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-amber-600 dark:text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h3 className="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white">{t('home.about.community.title')}</h3>
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {t('home.about.community.description')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-12 md:py-16 bg-white/60 dark:bg-gray-800/20">
         <div className="container mx-auto px-4">

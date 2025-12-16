@@ -180,8 +180,8 @@ export function MapPage() {
         transition={{ delay: 0.3 }}
         className="absolute top-[180px] right-4 z-20 bg-white dark:bg-gray-800 rounded-xl shadow-md px-4 py-2.5 text-sm border border-gray-200 dark:border-gray-700"
       >
-        <div className="text-gray-700 dark:text-gray-300">
-          Data: <span className="font-semibold text-gray-900 dark:text-white">Production</span>
+        <div className="text-gray-700 dark:text-gray-300 font-semibold">
+          Aqueduct 4.0
         </div>
         <div className="text-xs text-gray-600 dark:text-gray-400">
           {manifest.version}
@@ -199,7 +199,11 @@ export function MapPage() {
       <ProvinceModal
         isOpen={modalOpen}
         data={modalData}
-        onClose={() => setModalOpen(false)}
+        onClose={() => {
+          setModalOpen(false)
+          // Clear modal data after animation completes
+          setTimeout(() => setModalData(null), 300)
+        }}
       />
     </div>
   )
