@@ -354,8 +354,11 @@
       "licenseText": "MIT + CC BY 4.0"
     },
     "dataTitle": "Veri Kaynakları",
-    "dataText": "Birincil veriler, PCR-GLOBWB 2 hidrolojik modeline dayalı WRI Aqueduct 4.0'dan, Türk hükümet kaynaklarından (DSİ, TÜİK) ek doğrulama ile.",
-    "licenseTitle": "Lisans",
+    "dataText": "Birincil veriler, PCR-GLOBWB 2 hidrolojik modeline dayalı WRI Aqueduct 4.0'dan, Türk hükümet kaynaklarından (DSİ, TÜİK) ek doğrulama ile.",      "techTitle": "Teknoloji Yığını",
+      "openSourceTitle": "Açık Kaynak",
+      "openSourceText": "Tüm kod, veri işleme hatları ve metodoloji dokümantasyonu Apache 2.0 lisansı altında GitHub'da mevcuttur. Türkiye için su riski değerlendirmesini geliştirmek için çatallayın, değiştirin ve katkıda bulunun.",
+      "disclaimerTitle": "Önemli Uyarı",
+      "disclaimerText": "Bu topluluk odaklı, resmi olmayan bir projedir. Yetkili su kaynakları bilgisi için lütfen resmi Türk devlet kurumlarına danışın: DSİ (Devlet Su İşleri), MGM (Meteoroloji), ve TÜİK (İstatistik).",    "licenseTitle": "Lisans",
     "licenseText": "Kod: MIT Lisansı. Veri: Creative Commons Atıf 4.0 (CC BY 4.0). Atıf ile ücretsiz kullanım.",
     "contributeTitle": "Katkıda Bulun",
     "contributeText": "Bu açık kaynak bir projedir. Katkılar, öneriler ve veri iyileştirmeleri memnuniyetle karşılanır.",
