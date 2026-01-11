@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { WeatherIcon } from './WeatherIcon'
-import { getCurrentConditions, getSevenDayForecast } from '../lib/weather-service'
+import { getCurrentConditions, getCurrentConditionsByCoords, getSevenDayForecast } from '../lib/weather-service'
 import type { WeatherCondition } from '../lib/weather-service'
 
 interface WeatherCardProps {
   provinceName: string
+  coordinates?: { lat: number; lon: number }
 }
 
 interface CurrentConditionsData {
@@ -38,7 +39,7 @@ interface ForecastDay {
   condition: WeatherCondition
 }
 
-export function WeatherCard({ provinceName }: WeatherCardProps) {
+export function WeatherCard({ provinceName, coordinates }: WeatherCardProps) {
   const { t, language } = useLanguage()
   const [current, setCurrent] = useState<CurrentConditionsData | null>(null)
   const [forecast, setForecast] = useState<ForecastDay[] | null>(null)
@@ -51,13 +52,19 @@ export function WeatherCard({ provinceName }: WeatherCardProps) {
         setLoading(true)
         setError(false)
         
-        const [currentData, forecastData] = await Promise.all([
-          getCurrentConditions(provinceName, language),
-          getSevenDayForecast(provinceName)
-        ])
-        
-        setCurrent(currentData)
-        setForecast(forecastData)
+        // Use coordinates if provided (for districts), otherwise use province name
+        if (coordinates) {
+          const currentData = await getCurrentConditionsByCoords(coordinates.lat, coordinates.lon, language)
+          setCurrent(currentData)
+          setForecast(null) // 7-day forecast only available for provinces
+        } else {
+          const [currentData, forecastData] = await Promise.all([
+            getCurrentConditions(provinceName, language),
+            getSevenDayForecast(provinceName)
+          ])
+          setCurrent(currentData)
+          setForecast(forecastData)
+        }
       } catch (err) {
         console.error('Error loading weather:', err)
         setError(true)
@@ -67,7 +74,7 @@ export function WeatherCard({ provinceName }: WeatherCardProps) {
     }
     
     loadWeather()
-  }, [provinceName, language])
+  }, [provinceName, coordinates, language])
 
   if (loading) {
     return (

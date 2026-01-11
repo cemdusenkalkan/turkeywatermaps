@@ -13,6 +13,7 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # GADM Turkey data (administrative level 1 = provinces)
 GADM_TURKEY_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_TUR_1.json"
+GADM_TURKEY_DISTRICTS_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_TUR_2.json"
 
 
 def download_turkey_provinces():
@@ -48,13 +49,48 @@ def download_turkey_provinces():
         return output_file
         
     except Exception as e:
-        print(f"  Error: {e}")
+        print(f"  Error downloading provinces: {e}")
         return None
 
+def download_turkey_districts():
+    """Download Turkey district boundaries from GADM"""
+    print("Downloading Turkey district boundaries from GADM...")
+    
+    output_file = DATA_DIR / "turkey_districts.geojson"
+    
+    if output_file.exists():
+        print(f"  File already exists: {output_file}")
+        return output_file
+    
+    try:
+        response = requests.get(GADM_TURKEY_DISTRICTS_URL)
+        response.raise_for_status()
+        
+        with open(output_file, 'wb') as f:
+            f.write(response.content)
+        
+        print(f"  Downloaded: {output_file}")
+        
+        # Load and verify
+        gdf = gpd.read_file(output_file)
+        print(f"  Loaded {len(gdf)} districts")
+        print(f"  CRS: {gdf.crs}")
+        
+        # Ensure WGS84
+        if gdf.crs.to_string() != 'EPSG:4326':
+            gdf = gdf.to_crs('EPSG:4326')
+            gdf.to_file(output_file, driver="GeoJSON")
+            print("  Reprojected to EPSG:4326")
+        
+        return output_file
+        
+    except Exception as e:
+        print(f"  Error downloading districts: {e}")
+        return None
 
-def main():
-    print("=" * 60)
-    print("Turkey Boundaries Download")
+if __name__ == "__main__":
+    download_turkey_provinces()
+    download_turkey_districts()
     print("=" * 60)
     
     provinces_file = download_turkey_provinces()

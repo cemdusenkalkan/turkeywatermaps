@@ -10,6 +10,19 @@ spatial:
     id_field: GID_1  # GADM province ID field
     name_field: NAME_1
     name_field_turkish: VARNAME_1  # if available
+  districts:
+    source: gadm
+    url: https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_TUR_2.json
+    crs: EPSG:4326
+    id_field: GID_2
+    name_field: NAME_2
+    name_field_turkish: VARNAME_2
+
+wri_aqueduct:
+  baseline:
+    url: https://wri-public-data.s3.amazonaws.com/Aqueduct40/baseline/annual/y2019m07d11_aqueduct40_annual_baseline_v01.gpkg
+  future:
+    url: https://wri-public-data.s3.amazonaws.com/Aqueduct40/future/annual/y2019m07d11_aqueduct40_future_annual_v01.gpkg
 
 climate:
   era5_land:

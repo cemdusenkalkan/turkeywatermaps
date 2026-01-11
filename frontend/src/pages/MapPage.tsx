@@ -5,7 +5,7 @@ import { LayerPanel } from '@/components/Map/LayerPanel'
 import { ProvinceModal } from '@/components/ProvinceModal'
 import { loadManifest, loadProvincesGeoJSON } from '@/lib/data-loader'
 import { calculatePercentile } from '@/lib/calculations'
-import type { DataManifest, ProvincesGeoJSON, Category, ProvinceDetailData } from '@/types'
+import type { DataManifest, ProvincesGeoJSON, Category, ProvinceDetailData, AreaDetailData } from '@/types'
 
 export function MapPage() {
   const [manifest, setManifest] = useState<DataManifest | null>(null)
@@ -15,7 +15,7 @@ export function MapPage() {
   const [error, setError] = useState<string | null>(null)
   const [showPanel, setShowPanel] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
-  const [modalData, setModalData] = useState<ProvinceDetailData | null>(null)
+  const [modalData, setModalData] = useState<ProvinceDetailData | AreaDetailData | null>(null)
   
   useEffect(() => {
     async function loadData() {
@@ -78,6 +78,51 @@ export function MapPage() {
       combinedScore,
       combinedPercentile,
       categoryScores,
+    }
+
+    setModalData(modalContent)
+    setModalOpen(true)
+  }
+
+  // Handle district click
+  const handleDistrictClick = (_districtId: string, districtName: string, districtData: any) => {
+    if (!manifest) return
+
+    const allIndicators = manifest.indicator_groups 
+      ? manifest.indicator_groups.groups.flatMap(g => g.indicators)
+      : (manifest as any).categories || []
+
+    const categoryScores = allIndicators.map((ind: any) => {
+      const codeMap: Record<string, string> = {
+        'baseline_stress': 'bws',
+        'baseline_depletion': 'bwd',
+        'groundwater_decline': 'gtd',
+        'interannual_variability': 'iav',
+        'seasonal_variability': 'sev',
+        'drought_risk': 'drr',
+        'riverine_flood_risk': 'rfr',
+        'coastal_flood_risk': 'cfr'
+      }
+      
+      const code = codeMap[ind.id] || ind.id
+      const scoreKey = `${code}_score`
+      const score = districtData[scoreKey]
+      
+      return {
+        categoryId: ind.id,
+        categoryName: ind.name,
+        score: score || 0,
+        percentile: 0,
+      }
+    }).filter((cs: any) => cs.score > 0 && cs.score > -9999)
+
+    const modalContent: AreaDetailData = {
+      name: districtName,
+      nameTr: districtName,
+      type: 'district',
+      combinedScore: districtData.combined_score || 0,
+      categoryScores,
+      coordinates: districtData.coordinates
     }
 
     setModalData(modalContent)
@@ -193,6 +238,7 @@ export function MapPage() {
         data={geoData}
         activeCategory={activeCategory}
         onProvinceClick={handleProvinceClick}
+        onDistrictClick={handleDistrictClick}
       />
 
       {/* Province Detail Modal */}
@@ -201,9 +247,10 @@ export function MapPage() {
         data={modalData}
         onClose={() => {
           setModalOpen(false)
-          // Clear modal data after animation completes
           setTimeout(() => setModalData(null), 300)
         }}
+        totalProvinces={geoData?.features.length || 81}
+        selectedCategoryId={activeCategoryId}
       />
     </div>
   )

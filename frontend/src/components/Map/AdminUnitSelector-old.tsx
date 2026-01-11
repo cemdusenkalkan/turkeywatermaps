@@ -35,9 +35,8 @@ export function AdminUnitSelector({ value, onChange, className = '' }: AdminUnit
   ];
 
   return (
-    <div className={`bg-[#faf9f7] dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-5 ${className}`}>
-      {/* Academic Header */}
-      <label className="block text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4 font-medium">
+    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 ${className}`}>
+      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-3">
         {t('map.adminUnit.title') || 'Aggregation Unit'}
       </label>
       
@@ -46,29 +45,23 @@ export function AdminUnitSelector({ value, onChange, className = '' }: AdminUnit
           <div
             key={option.value}
             className={`
-              relative border-l-4 p-4 cursor-pointer transition-all
+              relative rounded-md border-2 p-3 cursor-pointer transition-all
               ${value === option.value
-                ? 'border-gray-900 dark:border-white bg-white dark:bg-gray-900/50'
-                : 'border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600'
+                ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
+                : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600'
               }
             `}
             onClick={() => onChange(option.value)}
           >
             <div className="flex items-start">
-              {/* Custom Radio - Academic Style */}
-              <div className={`mt-0.5 mr-3 w-4 h-4 border-2 flex items-center justify-center
-                ${value === option.value 
-                  ? 'border-gray-900 dark:border-white' 
-                  : 'border-gray-400 dark:border-gray-600'
-                }`}
-              >
-                {value === option.value && (
-                  <div className="w-2 h-2 bg-gray-900 dark:bg-white"></div>
-                )}
-              </div>
-              
+              <input
+                type="radio"
+                checked={value === option.value}
+                onChange={() => onChange(option.value)}
+                className="mt-1 mr-3"
+              />
               <div className="flex-1">
-                <div className="font-medium text-sm text-gray-900 dark:text-white tracking-tight">
+                <div className="font-medium text-gray-900 dark:text-gray-100">
                   {option.label}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -80,10 +73,9 @@ export function AdminUnitSelector({ value, onChange, className = '' }: AdminUnit
         ))}
       </div>
 
-      {/* Academic Info Box */}
-      <div className="mt-5 pt-5 border-t border-gray-200 dark:border-gray-800">
-        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-          {t('map.adminUnit.hint') || 'Basins show natural water flow boundaries, while provinces show political boundaries.'}
+      <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-md">
+        <p className="text-xs text-blue-800 dark:text-blue-300">
+          💡 {t('map.adminUnit.hint') || 'Basins show natural water flow boundaries, while provinces show political boundaries.'}
         </p>
       </div>
     </div>

@@ -6,6 +6,27 @@
     "methodology": "Metodoloji",
     "about": "Hakkında"
   },
+  "map": {
+    "layerPanel": {
+      "hint": "Görselleştirmek için bir kategori seçin. Detaylar için illerin üzerine gelin."
+    },
+    "zoomHint": {
+      "title": "İlçeleri Görmek İçin Yakınlaştırın",
+      "message": "Detaylı ilçe düzeyinde su riski verilerini görüntülemek için haritayı yakınlaştırın"
+    },
+    "adminUnit": {
+      "title": "Toplama Birimi",
+      "province": "İller",
+      "provinceDesc": "İdari sınırlar (81 il)",
+      "basin": "Havzalar (Büyük)",
+      "basinDesc": "Hidrolojik havzalar - doğal su akış birimleri (~138 havza)",
+      "subbasin": "Alt Havzalar (Orta)",
+      "subbasinDesc": "Detaylı alt havza ağı",
+      "microbasin": "Mikro Havzalar (Detaylı)",
+      "microbasinDesc": "En yüksek çözünürlüklü havza ağı (~981 havza)",
+      "hint": "Havzalar doğal su akış sınırlarını, iller ise politik sınırları gösterir."
+    }
+  },
   "home": {
     "title": "Türkiye Su Riski Haritası",
     "subtitle": "Türkiye'nin 81 ilindeki su risklerini görselleştirin. WRI Aqueduct 4.0'dan açık kaynak veriler. Ücretsiz kullanım ve keşif.",
@@ -53,7 +74,15 @@
     },
     "about": {
       "title": "Proje Hakkında",
+      "subtitle": "Proje Genel Bakış",
       "description": "Türkiye'nin 81 ilindeki su ile ilgili riskleri görselleştirmek için açık kaynaklı bir platform. Dünya Kaynakları Enstitüsü'nün Aqueduct 4.0 veri seti ile gerçek veriler kullanılarak oluşturuldu ve kapsamlı su riski değerlendirmeleri sağlamak için gerçek zamanlı hava durumu bilgileri ile birleştirildi.",
+      "dataTitle": "Veri Kaynakları",
+      "dataText": "Bu platform, WRI Aqueduct 4.0 temel su riski verilerini (1960-2019) Open-Meteo API'den alınan gerçek zamanlı hava durumu bilgileriyle entegre eder. Tüm risk göstergeleri, bilimsel titizlik ve uluslararası karşılaştırılabilirlik sağlayan WRI'ın standardlaştırılmış 0-5 skorlama metodolojisini takip eder.",
+      "techTitle": "Teknoloji Yığını",
+      "openSourceTitle": "Açık Kaynak ve Topluluk",
+      "openSourceText": "Bu proje Apache 2.0 lisansı altında tamamen açık kaynaklıdır. Tüm kod, veri işleme hatları ve dokümantasyon GitHub'da herkese açık olarak mevcuttur. Topluluktan katkılar, geri bildirimler ve iyileştirmeler memnuniyetle karşılanır.",
+      "disclaimerTitle": "Önemli Uyarı",
+      "disclaimerText": "Bu bağımsız, resmi olmayan bir topluluk projesidir. Veriler küresel model çıktılarını yansıtır ve son yerel koşulları veya altyapı değişikliklerini yakalamayabilir. Yetkili su kaynakları bilgisi için lütfen resmi Türk devlet kurumlarına danışın: DSİ (Devlet Su İşleri), MGM (Meteoroloji Genel Müdürlüğü) ve TÜİK (Türkiye İstatistik Kurumu).",
       "indicators": {
         "title": "13 Risk Göstergesi",
         "description": "Su stresinden ve kuraklıktan taşkın riskine ve su kalitesine kadar - tüm WRI Aqueduct 4.0 temel göstergeleri dahil."
@@ -68,42 +97,29 @@
       },
       "community": {
         "title": "Topluluk Odaklı Araştırma",
-        "description": "Bu resmi olmayan, topluluk odaklı bir projedir. Yetkili su kaynakları bilgileri için lütfen resmi Türk devlet kurumlarına başvurun: DSİ (Devlet Su İşleri), MGM (Meteoroloji), ve TÜİK (İstatistik)."
-      }
+        "description": "Bu resmi olmayan, topluluk odaklı bir projedir. Yetkili su kaynakları bilgileri için lütfen resmi Türk devlet kurumlarına başvurun: DSİ (Devlet Su İşleri), MGM (Meteoroloji), ve TÜİK (İstatistik)."      },
+      "overview": {
+        "purpose": "Amaç",
+        "purposeText": "Açık kaynak su riski görselleştirmesi",
+        "data": "Veri Kaynağı",
+        "dataText": "WRI Aqueduct 4.0 (1960-2019)",
+        "license": "Lisans",
+        "licenseText": "Apache 2.0 Açık Kaynak"      }
     },
     "mapPreview": {
       "title": "Etkileşimli Risk Haritası",
-      "clickToExplore": "81 ili keşfetmek için tıklayın"
+      "clickToExplore": "81 ili keşfetmek için tıklayın",
+      "clickToView": "Tıkla — İnteraktif Su Risk Haritası"
+    },
+    "sections": {
+      "overview": "Genel Bakış",
+      "features": "Özellikler",
+      "getStarted": "Başlayın",
+      "note": "Not"
     },
     "dataSource": {
       "title": "Veri Kaynağı",
       "text": "WRI Aqueduct 4.0 • Temel veri 1960-2019 • Open-Meteo'dan gerçek zamanlı hava durumu"
-    }
-  },
-  "map": {
-    "title": "Su Riski Haritası",
-    "selectProvince": "Detaylar için bir il seçin",
-    "layers": "Risk Göstergeleri",
-    "legend": "Lejant",
-    "layerPanel": {
-      "hint": "Bir kategori seçerek haritada görselleştirin. Detaylar için illerin üzerine gelin."
-    },
-    "rivers": {
-      "title": "Akarsu Ağı",
-      "toggle": "Akarsuları Göster",
-      "small": "Küçük Dereler (Derece 1-3)",
-      "medium": "Orta Dereler (Derece 4-6)",
-      "large": "Büyük Nehirler (Derece 7+)",
-      "streamOrder": "Akarsu Derecesi",
-      "length": "Uzunluk",
-      "upstreamArea": "Yukarı Havza Alanı"
-    },
-    "riskLevels": {
-      "veryLow": "Çok Düşük",
-      "low": "Düşük",
-      "medium": "Orta",
-      "high": "Yüksek",
-      "veryHigh": "Çok Yüksek"
     }
   },
   "categories": {
@@ -226,11 +242,19 @@
         "windSpeed": "Rüzgar Hızı ve Yönü",
         "precipitation": "Yağış Miktarı (mm)",
         "pressure": "Atmosferik Basınç (hPa)",
-        "forecast7day": "7 Günlük Sıcaklık ve Yağış Tahmini",
-        "tempMinMax": "Günlük Min/Maks Sıcaklıklar",
+        "cloudCover": "Bulut Örtüsü (%)",
+        "forecast7day": "7-Günlük Sıcaklık ve Yağış Tahmini",
+        "tempMinMax": "Günlük Min/Max Sıcaklıklar",
         "precipProb": "Yağış Olasılığı",
         "weatherCodes": "Hava Durumu Kodları (WMO)"
-      }
+      },
+      "forecastMetrics": {
+        "daily": "7-Günlük Sıcaklık ve Yağış Tahmini",
+        "range": "Günlük Min/Max Sıcaklık Aralığı",
+        "conditions": "Hava Durumu Kodları (WMO)",
+        "precipitation": "Yağış Olasılığı ve Miktarı"
+      },
+      "source": "Veri Kaynağı: Open-Meteo API (NOAA, DWD, Met Office)"
     }
   },
   "methodology": {
@@ -257,6 +281,15 @@
     "processing": "Veri İşleme",
     "processingText": "Alt-havza seviyesindeki veriler, doğru temsili sağlamak için alan ağırlıklı ortalama kullanılarak Türkiye'nin 81 iline toplulaştırılır.",
     "processingFormula": "toplulaştır(geometriler) → il_seviyesi → ortalama(skorlar)",
+    "step1": "Aqueduct 4.0 temel su riski verilerini alt-havza seviyesinde indir (HydroBASINS Seviye 6)",
+    "step2": "Türkiye idari sınırlarını yükle ve alt-havzalarla mekansal kesişim yap",
+    "step3": "Her il için her göstergenin alan ağırlıklı ortalamalarını hesapla",
+    "step4": "Toplulaştırılmış skorları metadata ile birlikte GeoJSON ve CSV formatlarına aktar",
+    "aggregation": "Mekansal Toplulaştırma Yöntemi",
+    "aggregationText": "İl düzeyindeki skorlar alan ağırlıklı ortalama kullanılarak hesaplanır. Her alt-havzanın skoru, il sınırı içindeki alan oranına göre ağırlıklandırılır, bu da coğrafi doğruluğu sağlar ve keyfi idari sınırlardan kaynaklanan bozulmayı önler.",
+    "limitations": "Kısıtlamalar",
+    "limitationsText": "Bu bağımsız, resmi olmayan bir projedir. Veriler küresel model çıktılarını yansıtır ve yerel koşulları veya son altyapı değişikliklerini yakalamayabilir. Yetkili su kaynakları bilgisi için Türk devlet kurumlarına (DSİ, MGM, TÜİK) danışın.",
+    "visitWri": "WRI Aqueduct'u Ziyaret Et",
     "scoring": "Risk Skorlama",
     "scoringText": "Her gösterge, WRI'ın metodolojisini takip ederek 0-5 ölçeğinde skorlanır. Birleşik risk, WRI araştırmacıları tarafından atanan ağırlıklarla ağırlıklı aritmetik ortalama kullanır.",
     "scoringFormula": "risk_skoru ∈ [0, 5] | Düşük: [0-1], Orta: [2-3], Yüksek: [4-5]",
@@ -381,6 +414,7 @@
     "noData": "Veri mevcut değil",
     "score": "Skor",
     "province": "İl",
+    "district": "İlçe",
     "risk": "Risk",
     "viewMore": "Daha Fazla",
     "close": "Kapat",
@@ -463,22 +497,5 @@
       "hpa": "hPa"
     },
     "attribution": "Hava durumu verisi Open-Meteo.com tarafından sağlanmaktadır"
-  },
-  "map": {
-    "layerPanel": {
-      "hint": "Görselleştirmek için bir kategori seçin. Detaylar için illerin üzerine gelin."
-    },
-    "adminUnit": {
-      "title": "Toplama Birimi",
-      "province": "İller",
-      "provinceDesc": "İdari sınırlar (81 il)",
-      "basin": "Havzalar (Büyük)",
-      "basinDesc": "Hidrolojik havzalar - doğal su akış birimleri (~138 havza)",
-      "subbasin": "Alt Havzalar (Orta)",
-      "subbasinDesc": "Detaylı alt havza ağı",
-      "microbasin": "Mikro Havzalar (Detaylı)",
-      "microbasinDesc": "En yüksek çözünürlüklü havza ağı (~981 havza)",
-      "hint": "Havzalar doğal su akış sınırlarını, iller ise politik sınırları gösterir."
-    }
   }
 }

@@ -1,6 +1,5 @@
 /**
  * Weather Icon Component - Professional SVG Icons
- * Replaces emoji icons with proper SVG weather icons
  */
 
 interface WeatherIconProps {

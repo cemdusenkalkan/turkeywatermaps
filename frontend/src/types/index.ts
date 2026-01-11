@@ -116,3 +116,13 @@ export interface ProvinceDetailData {
   combinedPercentile: number
   categoryScores: ProvinceCategoryScore[]
 }
+
+export interface AreaDetailData {
+  name: string
+  nameTr?: string
+  type: 'province' | 'district'
+  combinedScore: number
+  percentile?: number
+  categoryScores: ProvinceCategoryScore[]
+  coordinates?: { lat: number; lon: number }
+}

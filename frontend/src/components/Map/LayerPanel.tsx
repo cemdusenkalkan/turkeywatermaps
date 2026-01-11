@@ -35,41 +35,49 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
   
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-      className="bg-white dark:bg-gray-900 h-full rounded-r-2xl shadow-xl p-5 w-72 flex flex-col"
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-[#faf9f7] dark:bg-gray-950 h-full border-r border-gray-200 dark:border-gray-800 p-6 w-80 flex flex-col"
     >
-      <h3 className="font-semibold text-base mb-3 text-gray-900 dark:text-white">
-        {t('map.layers')}
-      </h3>
+      {/* Header - Academic Style */}
+      <div className="mb-6">
+        <h3 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+          {t('map.layers')}
+        </h3>
+        <div className="h-px bg-gray-200 dark:bg-gray-800"></div>
+      </div>
       
       <div className="flex-1 overflow-y-auto">
-        <div className="space-y-1.5">
-          {/* Combined Index */}
+        <div className="space-y-2">
+          {/* Combined Index - Academic Button */}
           <button
             onClick={() => onCategoryChange('combined_risk')}
-            className={`w-full text-left px-2.5 py-2 rounded-lg text-sm transition-all transform hover:scale-[1.01]
+            className={`w-full text-left px-4 py-3 border-l-4 transition-all
               ${activeCategoryId === 'combined_risk' 
-                ? 'bg-blue-600 dark:bg-blue-500 text-white shadow-md' 
-                : 'bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'border-gray-900 dark:border-white bg-white dark:bg-gray-900/50' 
+                : 'border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 bg-transparent'
               }`}
           >
-            <div className="font-semibold text-xs">{t('categories.combined.short')}</div>
-            <div className="text-[10px] opacity-70">Physical risk composite</div>
+            <div className="font-medium text-sm tracking-tight text-gray-900 dark:text-white">
+              {t('categories.combined.short')}
+            </div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Physical risk composite
+            </div>
           </button>
           
-          <div className="border-t border-gray-200 dark:border-gray-700 my-1.5" />
+          <div className="h-px bg-gray-200 dark:border-gray-800 my-3" />
           
           {/* Grouped indicators (v4.0) or flat list (legacy) */}
           {useGroupedLayout ? (
-            // New: Collapsible category groups
+            // New: Collapsible category groups - Academic Style
             categoryGroups.map(group => (
-              <div key={group.id} className="mb-2">
-                {/* Group header */}
+              <div key={group.id} className="mb-3">
+                {/* Group header - Minimal */}
                 <button
                   onClick={() => toggleGroup(group.id)}
-                  className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+                  className="w-full flex items-center justify-between px-2 py-2 text-xs uppercase tracking-wider font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   <span>{t(`categories.groups.${group.id}` as any) || group.name}</span>
                   <svg 
@@ -82,7 +90,7 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
                   </svg>
                 </button>
                 
-                {/* Group indicators */}
+                {/* Group indicators - Border-based */}
                 <AnimatePresence>
                   {expandedGroups[group.id] && (
                     <motion.div
@@ -90,24 +98,26 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="space-y-1 mt-1"
+                      className="space-y-1 mt-2"
                     >
                       {group.indicators.map(indicator => (
                         <button
                           key={indicator.id}
                           onClick={() => onCategoryChange(indicator.id)}
-                          className={`w-full text-left px-2.5 py-1.5 rounded-lg text-sm transition-all transform hover:scale-[1.01]
+                          className={`w-full text-left px-4 py-2.5 border-l-4 transition-all
                             ${activeCategoryId === indicator.id 
-                              ? 'bg-blue-600 dark:bg-blue-500 text-white shadow-md' 
-                              : 'bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                              ? 'border-gray-900 dark:border-white bg-white dark:bg-gray-900/50' 
+                              : 'border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600'
                             }`}
                         >
-                          <div className="font-semibold text-xs">{indicator.short_name}</div>
-                          <div className="text-[10px] opacity-70 flex items-center justify-between">
-                            <span>{indicator.weight > 0 ? `${(indicator.weight * 100).toFixed(0)}%` : 'Info only'}</span>
+                          <div className="font-medium text-xs text-gray-900 dark:text-white">
+                            {t(`categories.${indicator.id}.short` as any) || t(`categories.${indicator.id}.name` as any) || indicator.short_name}
+                          </div>
+                          <div className="text-[10px] text-gray-500 dark:text-gray-400 flex items-center justify-between mt-1">
+                            <span>{indicator.weight > 0 ? `${t('categories.weight')}: ${(indicator.weight * 100).toFixed(0)}%` : t('categories.referenceOnly')}</span>
                             {indicator.coverage !== undefined && indicator.coverage < 100 && (
-                              <span className="text-[9px] bg-yellow-500/20 text-yellow-700 dark:text-yellow-400 px-1 rounded">
-                                {indicator.coverage.toFixed(0)}% coverage
+                              <span className="text-[9px] text-amber-600 dark:text-amber-500">
+                                {indicator.coverage.toFixed(0)}%
                               </span>
                             )}
                           </div>
@@ -119,78 +129,68 @@ export function LayerPanel({ categories, categoryGroups, activeCategoryId, onCat
               </div>
             ))
           ) : (
-            // Legacy: Flat list of categories
+            // Legacy: Flat list of categories - Academic Style
             categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => onCategoryChange(cat.id)}
-                className={`w-full text-left px-2.5 py-2 rounded-lg text-sm transition-all transform hover:scale-[1.01]
+                className={`w-full text-left px-4 py-3 border-l-4 transition-all
                   ${activeCategoryId === cat.id 
-                    ? 'bg-blue-600 dark:bg-blue-500 text-white shadow-md' 
-                    : 'bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'border-gray-900 dark:border-white bg-white dark:bg-gray-900/50' 
+                    : 'border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600'
                   }`}
               >
-                <div className="font-semibold text-xs">{cat.short_name}</div>
-                <div className="text-[10px] opacity-70">Weight: {(cat.weight * 100).toFixed(0)}%</div>
+                <div className="font-medium text-xs text-gray-900 dark:text-white">
+                  {t(`categories.${cat.id}.short` as any) || t(`categories.${cat.id}.name` as any) || cat.short_name}
+                </div>
+                <div className="text-[10px] text-gray-500 dark:text-gray-400 mt-1">
+                  {t('categories.weight')}: {(cat.weight * 100).toFixed(0)}%
+                </div>
               </button>
             ))
           )}
         </div>
         
-        {/* Legend integrated in sidebar */}
+        {/* Legend integrated in sidebar - Academic Style */}
         {activeCategory && (
-          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <h4 className="font-semibold text-sm mb-3 text-gray-900 dark:text-white">
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+            <h4 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">
               {activeCategory.short_name}
             </h4>
             
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               {colors.map((color, i) => {
                 const min = breaks[i]
                 const max = breaks[i + 1] || 5
                 
                 return (
-                  <div key={i} className="flex items-center space-x-2">
-                    <div
-                      className="w-5 h-5 rounded border border-gray-300 dark:border-gray-600 flex-shrink-0"
+                  <div key={i} className="flex items-center gap-3">
+                    <div 
+                      className="w-10 h-4 border border-gray-300 dark:border-gray-700"
                       style={{ backgroundColor: color }}
                     />
-                    <div className="text-xs text-gray-700 dark:text-gray-300 flex-1">
-                      <span className="font-medium">{min.toFixed(1)}-{max.toFixed(1)}</span>
-                      <span className="text-gray-500 dark:text-gray-400 ml-1">({getRiskLabel(min)})</span>
+                    <div className="flex-1">
+                      <div className="text-xs text-gray-900 dark:text-white font-medium">
+                        {getRiskLabel(min + 0.5)}
+                      </div>
+                      <div className="text-[10px] text-gray-500 dark:text-gray-400">
+                        {min.toFixed(1)} – {max.toFixed(1)}
+                      </div>
                     </div>
                   </div>
                 )
               })}
             </div>
-            
-            <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-              <div className="text-[11px] text-gray-600 dark:text-gray-400 space-y-1">
-                <div className="flex justify-between">
-                  <span>Min:</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">{activeCategory.min_score.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Max:</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">{activeCategory.max_score.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Mean:</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">{activeCategory.mean_score.toFixed(2)}</span>
-                </div>
-                <div className="text-[10px] text-gray-500 dark:text-gray-500 mt-2 italic">Scale: 0–5</div>
-              </div>
-            </div>
           </div>
         )}
       </div>
       
-      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
-        <p className="text-xs text-gray-600 dark:text-gray-400">
+      {/* Hint Text - Academic Style */}
+      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+        <p className="text-[10px] text-gray-500 dark:text-gray-400 leading-relaxed">
           {t('map.layerPanel.hint')}
         </p>
       </div>
     </motion.div>
   )
 }
-

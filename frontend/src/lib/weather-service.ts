@@ -8,6 +8,34 @@
 // TypeScript Interfaces
 // ============================================================================
 
+// Weather cache to prevent repeated API calls
+interface CacheEntry<T> {
+  data: T
+  timestamp: number
+}
+
+const weatherCache = new Map<string, CacheEntry<any>>()
+const CACHE_DURATION = 10 * 60 * 1000 // 10 minutes
+
+function getCachedData<T>(key: string): T | null {
+  const entry = weatherCache.get(key)
+  if (!entry) return null
+  
+  if (Date.now() - entry.timestamp > CACHE_DURATION) {
+    weatherCache.delete(key)
+    return null
+  }
+  
+  return entry.data
+}
+
+function setCachedData<T>(key: string, data: T): void {
+  weatherCache.set(key, {
+    data,
+    timestamp: Date.now()
+  })
+}
+
 export interface WeatherCurrent {
   time: string
   interval: number
@@ -190,11 +218,11 @@ export function getWindDirection(degrees: number, language: 'en' | 'tr' = 'en'):
 }
 
 // ============================================================================
-// Caching
+// LocalStorage Caching (for full weather data)
 // ============================================================================
 
 const CACHE_KEY = 'turkey_water_map_weather'
-const CACHE_DURATION = 60 * 60 * 1000 // 1 hour in milliseconds
+const CACHE_DURATION_LOCALSTORAGE = 60 * 60 * 1000
 
 interface CachedWeather {
   data: WeatherData
@@ -209,12 +237,10 @@ function getCachedWeather(): WeatherData | null {
     const { data, timestamp }: CachedWeather = JSON.parse(cached)
     const now = Date.now()
     
-    // Check if cache is still valid
-    if (now - timestamp < CACHE_DURATION) {
+    if (now - timestamp < CACHE_DURATION_LOCALSTORAGE) {
       return data
     }
     
-    // Cache expired, remove it
     localStorage.removeItem(CACHE_KEY)
     return null
   } catch (error) {
@@ -332,12 +358,16 @@ export async function getProvinceWeather(provinceName: string): Promise<Province
  * Get current conditions for a province
  */
 export async function getCurrentConditions(provinceName: string, language: 'en' | 'tr' = 'en') {
+  const cacheKey = `current_${provinceName}_${language}`
+  const cached = getCachedData<any>(cacheKey)
+  if (cached) return cached
+  
   const weather = await getProvinceWeather(provinceName)
   if (!weather) return null
   
   const condition = getWeatherCondition(weather.current.weather_code, weather.current.is_day === 1)
   
-  return {
+  const result = {
     temperature: Math.round(weather.current.temperature_2m),
     feelsLike: Math.round(weather.current.apparent_temperature),
     humidity: weather.current.relative_humidity_2m,
@@ -349,6 +379,50 @@ export async function getCurrentConditions(provinceName: string, language: 'en' 
     condition,
     time: new Date(weather.current.time),
     isDay: weather.current.is_day === 1
+  }
+  
+  setCachedData(cacheKey, result)
+  return result
+}
+
+/**
+ * Get current conditions by coordinates (for districts)
+ */
+export async function getCurrentConditionsByCoords(lat: number, lon: number, language: 'en' | 'tr' = 'en') {
+  const cacheKey = `coords_${lat.toFixed(2)}_${lon.toFixed(2)}_${language}`
+  const cached = getCachedData<any>(cacheKey)
+  if (cached) return cached
+  
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m,is_day&timezone=Europe/Istanbul`
+    
+    const response = await fetch(url)
+    if (!response.ok) return null
+    
+    const data = await response.json()
+    if (!data.current) return null
+    
+    const condition = getWeatherCondition(data.current.weather_code, data.current.is_day === 1)
+    
+    const result = {
+      temperature: Math.round(data.current.temperature_2m),
+      feelsLike: Math.round(data.current.apparent_temperature),
+      humidity: data.current.relative_humidity_2m,
+      windSpeed: Math.round(data.current.wind_speed_10m),
+      windDirection: getWindDirection(data.current.wind_direction_10m, language),
+      precipitation: data.current.precipitation,
+      cloudCover: data.current.cloud_cover,
+      pressure: Math.round(data.current.pressure_msl),
+      condition,
+      time: new Date(data.current.time),
+      isDay: data.current.is_day === 1
+    }
+    
+    setCachedData(cacheKey, result)
+    return result
+  } catch (error) {
+    console.error('Error fetching weather by coordinates:', error)
+    return null
   }
 }
 

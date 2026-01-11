@@ -6,6 +6,27 @@
     "methodology": "Methodology",
     "about": "About"
   },
+  "map": {
+    "layerPanel": {
+      "hint": "Click a category to visualize. Hover provinces for details."
+    },
+    "zoomHint": {
+      "title": "Zoom In to See Districts",
+      "message": "Zoom in on the map to view detailed district-level water risk data"
+    },
+    "adminUnit": {
+      "title": "Aggregation Unit",
+      "province": "Provinces",
+      "provinceDesc": "Administrative boundaries (81 provinces)",
+      "basin": "Basins (Large)",
+      "basinDesc": "Hydrological basins - natural water flow units (~138 basins)",
+      "subbasin": "Sub-basins (Medium)",
+      "subbasinDesc": "Detailed sub-basin network",
+      "microbasin": "Micro-basins (Detailed)",
+      "microbasinDesc": "Highest resolution basin network (~981 basins)",
+      "hint": "Basins show natural water flow boundaries, while provinces show political boundaries."
+    }
+  },
   "home": {
     "title": "Turkey Water Risk Map",
     "subtitle": "Visualize water-related risks across Turkey's 81 provinces. Open-source data from WRI Aqueduct 4.0. Free to use and explore.",
@@ -53,7 +74,15 @@
     },
     "about": {
       "title": "About This Project",
+      "subtitle": "Project Overview",
       "description": "An open-source platform for visualizing water-related risks across Turkey's 81 provinces. Built with real data from the World Resources Institute's Aqueduct 4.0 dataset, combined with real-time weather information to provide comprehensive water risk assessments.",
+      "dataTitle": "Data Sources",
+      "dataText": "This platform integrates WRI Aqueduct 4.0 baseline water risk data (1960-2019) with real-time weather information from Open-Meteo API. All risk indicators follow WRI's standardized 0-5 scoring methodology, ensuring scientific rigor and international comparability.",
+      "techTitle": "Technology Stack",
+      "openSourceTitle": "Open Source & Community",
+      "openSourceText": "This project is fully open-source under the Apache 2.0 license. All code, data processing pipelines, and documentation are publicly available on GitHub. Contributions, feedback, and improvements are welcome from the community.",
+      "disclaimerTitle": "Important Disclaimer",
+      "disclaimerText": "This is an independent, non-official community project. Data reflects global model outputs and may not capture recent local conditions or infrastructure changes. For authoritative water resource information, please consult official Turkish government agencies: DSİ (State Hydraulic Works), MGM (Turkish State Meteorological Service), and TÜİK (Turkish Statistical Institute).",
       "indicators": {
         "title": "13 Risk Indicators",
         "description": "From water stress and drought to flood risk and water quality - all WRI Aqueduct 4.0 baseline indicators included."
@@ -69,41 +98,30 @@
       "community": {
         "title": "Community-Driven Research",
         "description": "This is a non-official, community-driven project. For authoritative water resource information, please consult official Turkish government agencies: DSİ (State Hydraulic Works), MGM (Meteorology), and TÜİK (Statistics)."
+      },
+      "overview": {
+        "purpose": "Purpose",
+        "purposeText": "Open-source water risk visualization",
+        "data": "Data Source",
+        "dataText": "WRI Aqueduct 4.0 (1960-2019)",
+        "license": "License",
+        "licenseText": "Apache 2.0 Open Source"
       }
     },
     "mapPreview": {
       "title": "Interactive Risk Map",
-      "clickToExplore": "Click to explore 81 provinces"
+      "clickToExplore": "Click to explore 81 provinces",
+      "clickToView": "Click — Interactive Water Risk Map"
+    },
+    "sections": {
+      "overview": "Overview",
+      "features": "Features",
+      "getStarted": "Get Started",
+      "note": "Note"
     },
     "dataSource": {
       "title": "Data Source",
       "text": "WRI Aqueduct 4.0 • Baseline 1960-2019 • Real-time weather from Open-Meteo"
-    }
-  },
-  "map": {
-    "title": "Water Risk Map",
-    "selectProvince": "Click a province to see details",
-    "layers": "Risk Indicators",
-    "legend": "Legend",
-    "layerPanel": {
-      "hint": "Click a category to visualize. Hover provinces for details."
-    },
-    "rivers": {
-      "title": "River Network",
-      "toggle": "Show Rivers",
-      "small": "Small Streams (Order 1-3)",
-      "medium": "Medium Streams (Order 4-6)",
-      "large": "Major Rivers (Order 7+)",
-      "streamOrder": "Stream Order",
-      "length": "Length",
-      "upstreamArea": "Upstream Area"
-    },
-    "riskLevels": {
-      "veryLow": "Very Low",
-      "low": "Low",
-      "medium": "Medium",
-      "high": "High",
-      "veryHigh": "Very High"
     }
   },
   "categories": {
@@ -226,11 +244,19 @@
         "windSpeed": "Wind Speed & Direction",
         "precipitation": "Precipitation (mm)",
         "pressure": "Atmospheric Pressure (hPa)",
+        "cloudCover": "Cloud Cover (%)",
         "forecast7day": "7-Day Temperature & Precipitation Forecast",
         "tempMinMax": "Daily Min/Max Temperatures",
         "precipProb": "Precipitation Probability",
         "weatherCodes": "Weather Condition Codes (WMO)"
-      }
+      },
+      "forecastMetrics": {
+        "daily": "7-Day Temperature & Precipitation Forecast",
+        "range": "Daily Min/Max Temperature Range",
+        "conditions": "Weather Condition Codes (WMO)",
+        "precipitation": "Precipitation Probability & Amount"
+      },
+      "source": "Data Source: Open-Meteo API (NOAA, DWD, Met Office)"
     }
   },
   "methodology": {
@@ -257,6 +283,15 @@
     "processing": "Data Processing",
     "processingText": "Sub-basin level data is aggregated to Turkey's 81 provinces using area-weighted averaging to ensure accurate representation.",
     "processingFormula": "aggregate(geometries) → province_level → mean(scores)",
+    "step1": "Download Aqueduct 4.0 baseline water risk data at sub-basin level (HydroBASINS Level 6)",
+    "step2": "Load Turkey administrative boundaries and perform spatial intersection with sub-basins",
+    "step3": "Calculate area-weighted averages for each indicator per province",
+    "step4": "Export aggregated scores with metadata to GeoJSON and CSV formats",
+    "aggregation": "Spatial Aggregation Method",
+    "aggregationText": "Province-level scores are computed using area-weighted averaging. Each sub-basin's score is weighted by the proportion of its area within the province boundary, ensuring geographic accuracy and preventing distortion from arbitrary administrative boundaries.",
+    "limitations": "Limitations",
+    "limitationsText": "This is an independent, non-official project. Data reflects global model outputs and may not capture local conditions or recent infrastructure changes. For authoritative water resource information, consult Turkish government agencies (DSİ, MGM, TÜİK).",
+    "visitWri": "Visit WRI Aqueduct",
     "scoring": "Risk Scoring",
     "scoringText": "Each indicator is scored on a 0-5 scale following WRI's methodology. The combined risk uses weighted arithmetic mean with weights assigned by WRI researchers.",
     "scoringFormula": "risk_score ∈ [0, 5] | Low: [0-1], Medium: [2-3], High: [4-5]",
@@ -322,6 +357,11 @@
     },
     "dataTitle": "Data Sources",
     "dataText": "Primary data from WRI Aqueduct 4.0, based on PCR-GLOBWB 2 hydrological model, with additional validation from Turkish government sources (DSİ, TÜİK).",
+    "techTitle": "Technology Stack",
+    "openSourceTitle": "Open Source",
+    "openSourceText": "All code, data processing pipelines, and methodology documentation are available on GitHub under Apache 2.0 license. Fork, modify, and contribute to improve water risk assessment for Turkey.",
+    "disclaimerTitle": "Important Notice",
+    "disclaimerText": "This is a community-driven, non-official project. For authoritative water resource information, please consult official Turkish government agencies: DSİ (State Hydraulic Works), MGM (Meteorology), and TÜİK (Statistics).",
     "licenseTitle": "License",
     "licenseText": "Code: MIT License. Data: Creative Commons Attribution 4.0 (CC BY 4.0). Free to use with attribution.",
     "contributeTitle": "Contribute",
@@ -381,6 +421,7 @@
     "noData": "No data available",
     "score": "Score",
     "province": "Province",
+    "district": "District",
     "risk": "Risk",
     "viewMore": "View More",
     "close": "Close",
@@ -463,22 +504,5 @@
       "hpa": "hPa"
     },
     "attribution": "Weather data by Open-Meteo.com"
-  },
-  "map": {
-    "layerPanel": {
-      "hint": "Click a category to visualize. Hover provinces for details."
-    },
-    "adminUnit": {
-      "title": "Aggregation Unit",
-      "province": "Provinces",
-      "provinceDesc": "Administrative boundaries (81 provinces)",
-      "basin": "Basins (Large)",
-      "basinDesc": "Hydrological basins - natural water flow units (~138 basins)",
-      "subbasin": "Sub-basins (Medium)",
-      "subbasinDesc": "Detailed sub-basin network",
-      "microbasin": "Micro-basins (Detailed)",
-      "microbasinDesc": "Highest resolution basin network (~981 basins)",
-      "hint": "Basins show natural water flow boundaries, while provinces show political boundaries."
-    }
   }
 }
