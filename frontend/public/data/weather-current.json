@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdate": "2026-02-18T01:42:03.930Z",
-    "updateTimestamp": 1771378923930,
+    "lastUpdate": "2026-02-18T03:11:50.997Z",
+    "updateTimestamp": 1771384310997,
     "provincesCount": 81,
     "expectedCount": 81,
     "source": "Open-Meteo API",
@@ -13,7 +13,7 @@
     "Adana": {
       "latitude": 37,
       "longitude": 35.3125,
-      "generationtime_ms": 0.7042884826660156,
+      "generationtime_ms": 0.9818077087402344,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -33,18 +33,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 13.5,
-        "relative_humidity_2m": 95,
-        "apparent_temperature": 13,
+        "temperature_2m": 14.1,
+        "relative_humidity_2m": 90,
+        "apparent_temperature": 12.8,
         "is_day": 0,
         "precipitation": 0.3,
         "weather_code": 80,
-        "cloud_cover": 89,
-        "pressure_msl": 1008.1,
-        "wind_speed_10m": 9,
-        "wind_direction_10m": 157
+        "cloud_cover": 100,
+        "pressure_msl": 1007.1,
+        "wind_speed_10m": 14.1,
+        "wind_direction_10m": 165
       },
       "hourly_units": {
         "time": "iso8601",
@@ -1053,7 +1053,7 @@
     "Adıyaman": {
       "latitude": 37.75,
       "longitude": 38.25,
-      "generationtime_ms": 0.7128715515136719,
+      "generationtime_ms": 0.7787942886352539,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -1074,18 +1074,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.8,
-        "relative_humidity_2m": 93,
-        "apparent_temperature": 6.2,
+        "temperature_2m": 8,
+        "relative_humidity_2m": 91,
+        "apparent_temperature": 5.8,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 45,
-        "cloud_cover": 92,
-        "pressure_msl": 1012.8,
-        "wind_speed_10m": 5.3,
-        "wind_direction_10m": 62
+        "weather_code": 3,
+        "cloud_cover": 96,
+        "pressure_msl": 1012.6,
+        "wind_speed_10m": 8.8,
+        "wind_direction_10m": 71
       },
       "hourly_units": {
         "time": "iso8601",
@@ -2094,7 +2094,7 @@
     "Afyonkarahisar": {
       "latitude": 38.75,
       "longitude": 30.5625,
-      "generationtime_ms": 3.0878782272338867,
+      "generationtime_ms": 0.7566213607788086,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -2115,18 +2115,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.4,
-        "relative_humidity_2m": 64,
-        "apparent_temperature": 2.3,
+        "temperature_2m": 5.9,
+        "relative_humidity_2m": 69,
+        "apparent_temperature": 2.8,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 61,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 995.1,
-        "wind_speed_10m": 14,
-        "wind_direction_10m": 203
+        "pressure_msl": 995.8,
+        "wind_speed_10m": 7.4,
+        "wind_direction_10m": 194
       },
       "hourly_units": {
         "time": "iso8601",
@@ -3135,7 +3135,7 @@
     "Ağrı": {
       "latitude": 39.75,
       "longitude": 43.0625,
-      "generationtime_ms": 2.692580223083496,
+      "generationtime_ms": 1.1426210403442383,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -3156,18 +3156,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 0.2,
+        "temperature_2m": 0.5,
         "relative_humidity_2m": 93,
-        "apparent_temperature": -2.5,
+        "apparent_temperature": -2.1,
         "is_day": 0,
-        "precipitation": 0,
+        "precipitation": 0.1,
         "weather_code": 71,
-        "cloud_cover": 98,
-        "pressure_msl": 1015.1,
-        "wind_speed_10m": 2.9,
-        "wind_direction_10m": 30
+        "cloud_cover": 93,
+        "pressure_msl": 1015.5,
+        "wind_speed_10m": 2.6,
+        "wind_direction_10m": 106
       },
       "hourly_units": {
         "time": "iso8601",
@@ -4176,7 +4176,7 @@
     "Amasya": {
       "latitude": 40.625,
       "longitude": 35.8125,
-      "generationtime_ms": 0.8618831634521484,
+      "generationtime_ms": 1.4293193817138672,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -4197,18 +4197,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 11.8,
+        "temperature_2m": 11.9,
         "relative_humidity_2m": 51,
-        "apparent_temperature": 8.2,
+        "apparent_temperature": 8.1,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 999.6,
-        "wind_speed_10m": 12.3,
-        "wind_direction_10m": 140
+        "pressure_msl": 998.8,
+        "wind_speed_10m": 13.8,
+        "wind_direction_10m": 123
       },
       "hourly_units": {
         "time": "iso8601",
@@ -5217,7 +5217,7 @@
     "Ankara": {
       "latitude": 39.9375,
       "longitude": 32.875,
-      "generationtime_ms": 0.542759895324707,
+      "generationtime_ms": 0.6579160690307617,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -5238,18 +5238,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.8,
-        "relative_humidity_2m": 70,
-        "apparent_temperature": 3.9,
+        "temperature_2m": 8.2,
+        "relative_humidity_2m": 79,
+        "apparent_temperature": 4.8,
         "is_day": 0,
-        "precipitation": 0.1,
+        "precipitation": 0.7,
         "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 995.5,
-        "wind_speed_10m": 23.3,
-        "wind_direction_10m": 163
+        "pressure_msl": 995.7,
+        "wind_speed_10m": 14.2,
+        "wind_direction_10m": 204
       },
       "hourly_units": {
         "time": "iso8601",
@@ -6258,7 +6258,7 @@
     "Antalya": {
       "latitude": 36.875,
       "longitude": 30.6875,
-      "generationtime_ms": 0.6769895553588867,
+      "generationtime_ms": 0.45108795166015625,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -6279,18 +6279,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 15.1,
-        "relative_humidity_2m": 69,
-        "apparent_temperature": 11.2,
+        "temperature_2m": 14.5,
+        "relative_humidity_2m": 71,
+        "apparent_temperature": 12.1,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 61,
-        "cloud_cover": 70,
-        "pressure_msl": 996.6,
-        "wind_speed_10m": 25.6,
-        "wind_direction_10m": 200
+        "weather_code": 3,
+        "cloud_cover": 100,
+        "pressure_msl": 996.9,
+        "wind_speed_10m": 15.5,
+        "wind_direction_10m": 205
       },
       "hourly_units": {
         "time": "iso8601",
@@ -7299,7 +7299,7 @@
     "Artvin": {
       "latitude": 41.1875,
       "longitude": 41.8125,
-      "generationtime_ms": 1.9183158874511719,
+      "generationtime_ms": 1.1453628540039062,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -7320,18 +7320,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.7,
-        "relative_humidity_2m": 52,
-        "apparent_temperature": 7.1,
+        "temperature_2m": 10.6,
+        "relative_humidity_2m": 51,
+        "apparent_temperature": 7,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 1,
-        "cloud_cover": 28,
-        "pressure_msl": 1007.8,
-        "wind_speed_10m": 11.2,
-        "wind_direction_10m": 135
+        "weather_code": 2,
+        "cloud_cover": 51,
+        "pressure_msl": 1007.4,
+        "wind_speed_10m": 10.9,
+        "wind_direction_10m": 136
       },
       "hourly_units": {
         "time": "iso8601",
@@ -8340,7 +8340,7 @@
     "Aydın": {
       "latitude": 37.875,
       "longitude": 27.8125,
-      "generationtime_ms": 0.5214214324951172,
+      "generationtime_ms": 1.348257064819336,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -8361,18 +8361,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.8,
+        "temperature_2m": 9.3,
         "relative_humidity_2m": 90,
-        "apparent_temperature": 8,
+        "apparent_temperature": 7.7,
         "is_day": 0,
-        "precipitation": 0.8,
-        "weather_code": 81,
+        "precipitation": 0.3,
+        "weather_code": 95,
         "cloud_cover": 100,
-        "pressure_msl": 997.9,
-        "wind_speed_10m": 9.7,
-        "wind_direction_10m": 270
+        "pressure_msl": 998.7,
+        "wind_speed_10m": 7.3,
+        "wind_direction_10m": 279
       },
       "hourly_units": {
         "time": "iso8601",
@@ -9381,7 +9381,7 @@
     "Balıkesir": {
       "latitude": 39.625,
       "longitude": 27.875,
-      "generationtime_ms": 0.79345703125,
+      "generationtime_ms": 1.2590885162353516,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -9402,18 +9402,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.1,
-        "relative_humidity_2m": 84,
-        "apparent_temperature": 6.4,
+        "temperature_2m": 9.8,
+        "relative_humidity_2m": 87,
+        "apparent_temperature": 6.5,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 993.1,
-        "wind_speed_10m": 20.8,
-        "wind_direction_10m": 210
+        "pressure_msl": 993.9,
+        "wind_speed_10m": 18.7,
+        "wind_direction_10m": 218
       },
       "hourly_units": {
         "time": "iso8601",
@@ -10422,7 +10422,7 @@
     "Bilecik": {
       "latitude": 40.0625,
       "longitude": 30.0625,
-      "generationtime_ms": 1.1671781539916992,
+      "generationtime_ms": 0.5325078964233398,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -10442,18 +10442,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9,
-        "relative_humidity_2m": 67,
-        "apparent_temperature": 6,
+        "temperature_2m": 8.8,
+        "relative_humidity_2m": 65,
+        "apparent_temperature": 5.8,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 992.3,
-        "wind_speed_10m": 9.5,
-        "wind_direction_10m": 191
+        "pressure_msl": 992.8,
+        "wind_speed_10m": 9.1,
+        "wind_direction_10m": 189
       },
       "hourly_units": {
         "time": "iso8601",
@@ -11462,7 +11462,7 @@
     "Bingöl": {
       "latitude": 39.0625,
       "longitude": 40.75,
-      "generationtime_ms": 1.7850399017333984,
+      "generationtime_ms": 0.7114410400390625,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -11483,18 +11483,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 4,
-        "relative_humidity_2m": 92,
-        "apparent_temperature": 1,
+        "temperature_2m": 3.9,
+        "relative_humidity_2m": 95,
+        "apparent_temperature": 0.6,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 87,
-        "pressure_msl": 1014,
-        "wind_speed_10m": 9.8,
-        "wind_direction_10m": 188
+        "precipitation": 0.1,
+        "weather_code": 80,
+        "cloud_cover": 100,
+        "pressure_msl": 1014.3,
+        "wind_speed_10m": 12.2,
+        "wind_direction_10m": 182
       },
       "hourly_units": {
         "time": "iso8601",
@@ -12503,7 +12503,7 @@
     "Bitlis": {
       "latitude": 38.375,
       "longitude": 42.125,
-      "generationtime_ms": 0.7636547088623047,
+      "generationtime_ms": 0.7927417755126953,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -12524,18 +12524,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 5.1,
-        "relative_humidity_2m": 89,
-        "apparent_temperature": 1.9,
+        "relative_humidity_2m": 87,
+        "apparent_temperature": 1.7,
         "is_day": 0,
-        "precipitation": 0.6,
-        "weather_code": 63,
-        "cloud_cover": 100,
-        "pressure_msl": 1014.4,
-        "wind_speed_10m": 11.5,
-        "wind_direction_10m": 194
+        "precipitation": 0.1,
+        "weather_code": 80,
+        "cloud_cover": 92,
+        "pressure_msl": 1014.6,
+        "wind_speed_10m": 12.8,
+        "wind_direction_10m": 202
       },
       "hourly_units": {
         "time": "iso8601",
@@ -13544,7 +13544,7 @@
     "Bolu": {
       "latitude": 40.5625,
       "longitude": 31.5625,
-      "generationtime_ms": 0.8851289749145508,
+      "generationtime_ms": 1.073002815246582,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -13565,18 +13565,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 2.6,
-        "relative_humidity_2m": 91,
-        "apparent_temperature": -2.5,
+        "temperature_2m": 2.5,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": -1.9,
         "is_day": 0,
-        "precipitation": 1,
-        "weather_code": 63,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 994.6,
-        "wind_speed_10m": 21.4,
-        "wind_direction_10m": 173
+        "pressure_msl": 994,
+        "wind_speed_10m": 15.9,
+        "wind_direction_10m": 167
       },
       "hourly_units": {
         "time": "iso8601",
@@ -14585,7 +14585,7 @@
     "Burdur": {
       "latitude": 37.4375,
       "longitude": 30.0625,
-      "generationtime_ms": 0.5414485931396484,
+      "generationtime_ms": 0.8008480072021484,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -14606,18 +14606,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 5.9,
+        "temperature_2m": 5.1,
         "relative_humidity_2m": 77,
-        "apparent_temperature": 1.4,
+        "apparent_temperature": 0.9,
         "is_day": 0,
-        "precipitation": 0.1,
+        "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 997.8,
-        "wind_speed_10m": 18.4,
-        "wind_direction_10m": 219
+        "cloud_cover": 80,
+        "pressure_msl": 998.4,
+        "wind_speed_10m": 15.6,
+        "wind_direction_10m": 214
       },
       "hourly_units": {
         "time": "iso8601",
@@ -15626,7 +15626,7 @@
     "Bursa": {
       "latitude": 40.25,
       "longitude": 29.0625,
-      "generationtime_ms": 0.7842779159545898,
+      "generationtime_ms": 0.47338008880615234,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -15647,17 +15647,17 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 11.9,
-        "relative_humidity_2m": 64,
-        "apparent_temperature": 8.9,
+        "temperature_2m": 11.4,
+        "relative_humidity_2m": 65,
+        "apparent_temperature": 7.5,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 991.4,
-        "wind_speed_10m": 12.7,
+        "pressure_msl": 992.3,
+        "wind_speed_10m": 18.5,
         "wind_direction_10m": 241
       },
       "hourly_units": {
@@ -16667,7 +16667,7 @@
     "Çanakkale": {
       "latitude": 40.125,
       "longitude": 26.4375,
-      "generationtime_ms": 0.5221366882324219,
+      "generationtime_ms": 0.41925907135009766,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -16688,18 +16688,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.2,
-        "relative_humidity_2m": 88,
-        "apparent_temperature": 2.3,
+        "temperature_2m": 4.6,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": 0,
         "is_day": 0,
-        "precipitation": 0.6,
-        "weather_code": 80,
+        "precipitation": 0.4,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 994.4,
-        "wind_speed_10m": 26.3,
-        "wind_direction_10m": 2
+        "pressure_msl": 997.3,
+        "wind_speed_10m": 19.7,
+        "wind_direction_10m": 18
       },
       "hourly_units": {
         "time": "iso8601",
@@ -17708,7 +17708,7 @@
     "Çankırı": {
       "latitude": 40.625,
       "longitude": 33.625,
-      "generationtime_ms": 0.5776882171630859,
+      "generationtime_ms": 0.537872314453125,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -17729,18 +17729,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 8.1,
-        "relative_humidity_2m": 77,
-        "apparent_temperature": 5.3,
+        "relative_humidity_2m": 81,
+        "apparent_temperature": 5.5,
         "is_day": 0,
-        "precipitation": 0.1,
+        "precipitation": 0.3,
         "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 998,
-        "wind_speed_10m": 10,
-        "wind_direction_10m": 128
+        "pressure_msl": 996.8,
+        "wind_speed_10m": 9.6,
+        "wind_direction_10m": 124
       },
       "hourly_units": {
         "time": "iso8601",
@@ -18749,7 +18749,7 @@
     "Çorum": {
       "latitude": 40.5625,
       "longitude": 34.9375,
-      "generationtime_ms": 0.8652210235595703,
+      "generationtime_ms": 0.7826089859008789,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -18770,18 +18770,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.4,
-        "relative_humidity_2m": 67,
-        "apparent_temperature": 5.2,
+        "temperature_2m": 9,
+        "relative_humidity_2m": 60,
+        "apparent_temperature": 5.9,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 999.5,
-        "wind_speed_10m": 10.8,
-        "wind_direction_10m": 159
+        "pressure_msl": 998,
+        "wind_speed_10m": 8.1,
+        "wind_direction_10m": 167
       },
       "hourly_units": {
         "time": "iso8601",
@@ -19790,7 +19790,7 @@
     "Denizli": {
       "latitude": 37.8125,
       "longitude": 29.0625,
-      "generationtime_ms": 0.7910728454589844,
+      "generationtime_ms": 0.7387399673461914,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -19811,18 +19811,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.9,
-        "relative_humidity_2m": 83,
-        "apparent_temperature": 7.6,
+        "temperature_2m": 7.7,
+        "relative_humidity_2m": 94,
+        "apparent_temperature": 6.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 996.5,
-        "wind_speed_10m": 1.8,
-        "wind_direction_10m": 360
+        "pressure_msl": 997.6,
+        "wind_speed_10m": 4.4,
+        "wind_direction_10m": 305
       },
       "hourly_units": {
         "time": "iso8601",
@@ -20831,7 +20831,7 @@
     "Diyarbakır": {
       "latitude": 37.9375,
       "longitude": 40.25,
-      "generationtime_ms": 0.7929801940917969,
+      "generationtime_ms": 0.9137392044067383,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -20851,18 +20851,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.4,
-        "relative_humidity_2m": 90,
-        "apparent_temperature": 6.8,
+        "temperature_2m": 8.3,
+        "relative_humidity_2m": 93,
+        "apparent_temperature": 6.9,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 80,
-        "cloud_cover": 91,
-        "pressure_msl": 1014.1,
-        "wind_speed_10m": 5,
-        "wind_direction_10m": 111
+        "precipitation": 0,
+        "weather_code": 3,
+        "cloud_cover": 89,
+        "pressure_msl": 1014.3,
+        "wind_speed_10m": 4.5,
+        "wind_direction_10m": 119
       },
       "hourly_units": {
         "time": "iso8601",
@@ -21871,7 +21871,7 @@
     "Edirne": {
       "latitude": 41.6875,
       "longitude": 26.5625,
-      "generationtime_ms": 0.9421110153198242,
+      "generationtime_ms": 0.9715557098388672,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -21892,18 +21892,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 2.2,
-        "relative_humidity_2m": 89,
-        "apparent_temperature": -3,
+        "temperature_2m": 2,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": -3.3,
         "is_day": 0,
         "precipitation": 0.2,
         "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 995.5,
-        "wind_speed_10m": 21.2,
-        "wind_direction_10m": 312
+        "pressure_msl": 996.6,
+        "wind_speed_10m": 21.9,
+        "wind_direction_10m": 316
       },
       "hourly_units": {
         "time": "iso8601",
@@ -22912,7 +22912,7 @@
     "Elazığ": {
       "latitude": 38.6875,
       "longitude": 39.25,
-      "generationtime_ms": 0.7284879684448242,
+      "generationtime_ms": 0.5642175674438477,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -22933,18 +22933,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.9,
-        "relative_humidity_2m": 82,
-        "apparent_temperature": 4.1,
+        "temperature_2m": 7.1,
+        "relative_humidity_2m": 80,
+        "apparent_temperature": 3.9,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 2,
-        "cloud_cover": 81,
+        "weather_code": 3,
+        "cloud_cover": 87,
         "pressure_msl": 1012.1,
-        "wind_speed_10m": 9.5,
-        "wind_direction_10m": 115
+        "wind_speed_10m": 11.8,
+        "wind_direction_10m": 113
       },
       "hourly_units": {
         "time": "iso8601",
@@ -23953,7 +23953,7 @@
     "Erzincan": {
       "latitude": 39.75,
       "longitude": 39.5,
-      "generationtime_ms": 0.5271434783935547,
+      "generationtime_ms": 0.7684230804443359,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -23974,17 +23974,17 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 4.9,
+        "temperature_2m": 4.7,
         "relative_humidity_2m": 77,
-        "apparent_temperature": 1.9,
+        "apparent_temperature": 1.3,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 2,
-        "cloud_cover": 62,
-        "pressure_msl": 1009.4,
-        "wind_speed_10m": 7.2,
+        "cloud_cover": 46,
+        "pressure_msl": 1009.1,
+        "wind_speed_10m": 10.1,
         "wind_direction_10m": 96
       },
       "hourly_units": {
@@ -24994,7 +24994,7 @@
     "Erzurum": {
       "latitude": 39.875,
       "longitude": 41.25,
-      "generationtime_ms": 0.6324052810668945,
+      "generationtime_ms": 0.9649991989135742,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -25015,18 +25015,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 1.4,
-        "relative_humidity_2m": 73,
-        "apparent_temperature": -2.1,
+        "temperature_2m": 2,
+        "relative_humidity_2m": 69,
+        "apparent_temperature": -2.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1011.9,
-        "wind_speed_10m": 6.9,
-        "wind_direction_10m": 223
+        "cloud_cover": 94,
+        "pressure_msl": 1011.3,
+        "wind_speed_10m": 11.2,
+        "wind_direction_10m": 213
       },
       "hourly_units": {
         "time": "iso8601",
@@ -26035,7 +26035,7 @@
     "Eskişehir": {
       "latitude": 39.75,
       "longitude": 30.5,
-      "generationtime_ms": 0.5041360855102539,
+      "generationtime_ms": 0.5604028701782227,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -26056,18 +26056,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.7,
-        "relative_humidity_2m": 77,
-        "apparent_temperature": 3.9,
+        "temperature_2m": 6.5,
+        "relative_humidity_2m": 72,
+        "apparent_temperature": 3.1,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 994,
-        "wind_speed_10m": 7.9,
-        "wind_direction_10m": 137
+        "pressure_msl": 994.3,
+        "wind_speed_10m": 11.2,
+        "wind_direction_10m": 159
       },
       "hourly_units": {
         "time": "iso8601",
@@ -27076,7 +27076,7 @@
     "Gaziantep": {
       "latitude": 37.0625,
       "longitude": 37.375,
-      "generationtime_ms": 0.6649494171142578,
+      "generationtime_ms": 0.8118152618408203,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -27097,18 +27097,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.2,
-        "relative_humidity_2m": 93,
-        "apparent_temperature": 6.4,
+        "temperature_2m": 8,
+        "relative_humidity_2m": 96,
+        "apparent_temperature": 5.4,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 61,
-        "cloud_cover": 97,
+        "precipitation": 0.1,
+        "weather_code": 80,
+        "cloud_cover": 94,
         "pressure_msl": 1012,
-        "wind_speed_10m": 7.5,
-        "wind_direction_10m": 145
+        "wind_speed_10m": 13.4,
+        "wind_direction_10m": 149
       },
       "hourly_units": {
         "time": "iso8601",
@@ -28117,7 +28117,7 @@
     "Giresun": {
       "latitude": 40.875,
       "longitude": 38.375,
-      "generationtime_ms": 0.523686408996582,
+      "generationtime_ms": 1.2372732162475586,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -28138,18 +28138,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 15,
-        "relative_humidity_2m": 50,
-        "apparent_temperature": 12.5,
+        "temperature_2m": 14.8,
+        "relative_humidity_2m": 51,
+        "apparent_temperature": 12.6,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1000.8,
-        "wind_speed_10m": 7.9,
-        "wind_direction_10m": 183
+        "cloud_cover": 91,
+        "pressure_msl": 1000.3,
+        "wind_speed_10m": 6.6,
+        "wind_direction_10m": 171
       },
       "hourly_units": {
         "time": "iso8601",
@@ -29158,7 +29158,7 @@
     "Gümüşhane": {
       "latitude": 40.4375,
       "longitude": 39.5,
-      "generationtime_ms": 0.5109310150146484,
+      "generationtime_ms": 0.6293058395385742,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -29179,18 +29179,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 5.7,
-        "relative_humidity_2m": 72,
-        "apparent_temperature": 2.5,
+        "relative_humidity_2m": 70,
+        "apparent_temperature": 2.4,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1007.7,
-        "wind_speed_10m": 9,
-        "wind_direction_10m": 106
+        "weather_code": 2,
+        "cloud_cover": 51,
+        "pressure_msl": 1007.6,
+        "wind_speed_10m": 8.7,
+        "wind_direction_10m": 107
       },
       "hourly_units": {
         "time": "iso8601",
@@ -30199,7 +30199,7 @@
     "Hakkari": {
       "latitude": 37.5625,
       "longitude": 43.75,
-      "generationtime_ms": 0.7224082946777344,
+      "generationtime_ms": 0.7839202880859375,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -30220,18 +30220,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 2.6,
-        "relative_humidity_2m": 100,
-        "apparent_temperature": 0.7,
+        "temperature_2m": 3.6,
+        "relative_humidity_2m": 95,
+        "apparent_temperature": 1,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 85,
-        "cloud_cover": 96,
-        "pressure_msl": 1018.1,
-        "wind_speed_10m": 1.8,
-        "wind_direction_10m": 217
+        "weather_code": 3,
+        "cloud_cover": 75,
+        "pressure_msl": 1016.9,
+        "wind_speed_10m": 6.4,
+        "wind_direction_10m": 223
       },
       "hourly_units": {
         "time": "iso8601",
@@ -31240,7 +31240,7 @@
     "Hatay": {
       "latitude": 36.375,
       "longitude": 36.375,
-      "generationtime_ms": 1.0225772857666016,
+      "generationtime_ms": 1.2122392654418945,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -31260,18 +31260,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12.2,
+        "temperature_2m": 12.1,
         "relative_humidity_2m": 91,
-        "apparent_temperature": 11.6,
+        "apparent_temperature": 11.1,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 80,
-        "cloud_cover": 76,
-        "pressure_msl": 1010.9,
-        "wind_speed_10m": 5.4,
-        "wind_direction_10m": 110
+        "precipitation": 0,
+        "weather_code": 2,
+        "cloud_cover": 66,
+        "pressure_msl": 1010.4,
+        "wind_speed_10m": 7.6,
+        "wind_direction_10m": 98
       },
       "hourly_units": {
         "time": "iso8601",
@@ -32280,7 +32280,7 @@
     "Isparta": {
       "latitude": 37.75,
       "longitude": 30.5625,
-      "generationtime_ms": 0.49948692321777344,
+      "generationtime_ms": 0.7715225219726562,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -32301,18 +32301,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.3,
-        "relative_humidity_2m": 66,
-        "apparent_temperature": 2,
+        "temperature_2m": 5.8,
+        "relative_humidity_2m": 70,
+        "apparent_temperature": 1,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 61,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 996.9,
-        "wind_speed_10m": 15.8,
-        "wind_direction_10m": 201
+        "pressure_msl": 997.8,
+        "wind_speed_10m": 19.1,
+        "wind_direction_10m": 202
       },
       "hourly_units": {
         "time": "iso8601",
@@ -33321,7 +33321,7 @@
     "Mersin": {
       "latitude": 36.8125,
       "longitude": 34.625,
-      "generationtime_ms": 0.698089599609375,
+      "generationtime_ms": 0.9270906448364258,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -33342,18 +33342,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 14.1,
-        "relative_humidity_2m": 93,
-        "apparent_temperature": 13.7,
+        "temperature_2m": 15.4,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": 12.9,
         "is_day": 0,
-        "precipitation": 0.2,
+        "precipitation": 0.7,
         "weather_code": 80,
         "cloud_cover": 100,
-        "pressure_msl": 1007.1,
-        "wind_speed_10m": 9.4,
-        "wind_direction_10m": 212
+        "pressure_msl": 1005.8,
+        "wind_speed_10m": 23.5,
+        "wind_direction_10m": 198
       },
       "hourly_units": {
         "time": "iso8601",
@@ -34362,7 +34362,7 @@
     "İstanbul": {
       "latitude": 41,
       "longitude": 29,
-      "generationtime_ms": 0.7346868515014648,
+      "generationtime_ms": 0.4570484161376953,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -34383,18 +34383,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12,
-        "relative_humidity_2m": 75,
-        "apparent_temperature": 7.8,
+        "temperature_2m": 11.4,
+        "relative_humidity_2m": 80,
+        "apparent_temperature": 7.6,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 991.1,
-        "wind_speed_10m": 24,
-        "wind_direction_10m": 210
+        "cloud_cover": 92,
+        "pressure_msl": 991.4,
+        "wind_speed_10m": 21.9,
+        "wind_direction_10m": 216
       },
       "hourly_units": {
         "time": "iso8601",
@@ -35403,7 +35403,7 @@
     "İzmir": {
       "latitude": 38.4375,
       "longitude": 27.1875,
-      "generationtime_ms": 0.6088018417358398,
+      "generationtime_ms": 0.6623268127441406,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -35424,18 +35424,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.9,
+        "temperature_2m": 10.6,
         "relative_humidity_2m": 88,
-        "apparent_temperature": 10.1,
+        "apparent_temperature": 9.4,
         "is_day": 0,
-        "precipitation": 0.3,
-        "weather_code": 80,
-        "cloud_cover": 100,
-        "pressure_msl": 996.5,
-        "wind_speed_10m": 3.1,
-        "wind_direction_10m": 216
+        "precipitation": 0,
+        "weather_code": 3,
+        "cloud_cover": 89,
+        "pressure_msl": 997.4,
+        "wind_speed_10m": 5.4,
+        "wind_direction_10m": 176
       },
       "hourly_units": {
         "time": "iso8601",
@@ -36444,7 +36444,7 @@
     "Kars": {
       "latitude": 40.625,
       "longitude": 43.125,
-      "generationtime_ms": 0.5823373794555664,
+      "generationtime_ms": 0.7475614547729492,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -36465,18 +36465,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": -4.8,
-        "relative_humidity_2m": 96,
-        "apparent_temperature": -8.4,
+        "temperature_2m": -5.1,
+        "relative_humidity_2m": 93,
+        "apparent_temperature": -8.7,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 45,
-        "cloud_cover": 75,
-        "pressure_msl": 1014.1,
-        "wind_speed_10m": 5.4,
-        "wind_direction_10m": 20
+        "weather_code": 2,
+        "cloud_cover": 79,
+        "pressure_msl": 1014.7,
+        "wind_speed_10m": 4.9,
+        "wind_direction_10m": 144
       },
       "hourly_units": {
         "time": "iso8601",
@@ -37485,7 +37485,7 @@
     "Kastamonu": {
       "latitude": 41.375,
       "longitude": 33.8125,
-      "generationtime_ms": 0.6902217864990234,
+      "generationtime_ms": 0.61798095703125,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -37506,18 +37506,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.5,
-        "relative_humidity_2m": 69,
-        "apparent_temperature": 4.7,
+        "temperature_2m": 7.4,
+        "relative_humidity_2m": 75,
+        "apparent_temperature": 5.5,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 3,
+        "precipitation": 0.1,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 996.7,
-        "wind_speed_10m": 7.6,
-        "wind_direction_10m": 183
+        "pressure_msl": 995.7,
+        "wind_speed_10m": 2.4,
+        "wind_direction_10m": 117
       },
       "hourly_units": {
         "time": "iso8601",
@@ -38526,7 +38526,7 @@
     "Kayseri": {
       "latitude": 38.75,
       "longitude": 35.5,
-      "generationtime_ms": 0.752568244934082,
+      "generationtime_ms": 0.5223751068115234,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -38547,18 +38547,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 9.3,
-        "relative_humidity_2m": 55,
-        "apparent_temperature": 3.5,
+        "relative_humidity_2m": 53,
+        "apparent_temperature": 3,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 1000.1,
-        "wind_speed_10m": 25.5,
-        "wind_direction_10m": 138
+        "pressure_msl": 999,
+        "wind_speed_10m": 28.7,
+        "wind_direction_10m": 153
       },
       "hourly_units": {
         "time": "iso8601",
@@ -39567,7 +39567,7 @@
     "Kırklareli": {
       "latitude": 41.75,
       "longitude": 27.1875,
-      "generationtime_ms": 0.624537467956543,
+      "generationtime_ms": 0.5729198455810547,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -39588,18 +39588,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 2.8,
-        "relative_humidity_2m": 88,
-        "apparent_temperature": -3.1,
+        "temperature_2m": 1.4,
+        "relative_humidity_2m": 89,
+        "apparent_temperature": -4.2,
         "is_day": 0,
-        "precipitation": 0.2,
+        "precipitation": 0.1,
         "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 993.3,
-        "wind_speed_10m": 26.6,
-        "wind_direction_10m": 319
+        "pressure_msl": 995,
+        "wind_speed_10m": 23.2,
+        "wind_direction_10m": 317
       },
       "hourly_units": {
         "time": "iso8601",
@@ -40608,7 +40608,7 @@
     "Kırşehir": {
       "latitude": 39.125,
       "longitude": 34.1875,
-      "generationtime_ms": 0.5927085876464844,
+      "generationtime_ms": 0.47409534454345703,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -40629,18 +40629,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 8.7,
-        "relative_humidity_2m": 60,
-        "apparent_temperature": 5.1,
+        "relative_humidity_2m": 62,
+        "apparent_temperature": 4.5,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 998.9,
-        "wind_speed_10m": 12,
-        "wind_direction_10m": 136
+        "pressure_msl": 997.4,
+        "wind_speed_10m": 16.6,
+        "wind_direction_10m": 138
       },
       "hourly_units": {
         "time": "iso8601",
@@ -41649,7 +41649,7 @@
     "Kocaeli": {
       "latitude": 40.875,
       "longitude": 29.875,
-      "generationtime_ms": 0.47338008880615234,
+      "generationtime_ms": 0.7752180099487305,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -41669,18 +41669,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.3,
-        "relative_humidity_2m": 78,
-        "apparent_temperature": 7.8,
+        "temperature_2m": 9,
+        "relative_humidity_2m": 80,
+        "apparent_temperature": 7.1,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 61,
+        "precipitation": 0.1,
+        "weather_code": 80,
         "cloud_cover": 100,
-        "pressure_msl": 991.1,
-        "wind_speed_10m": 2.9,
-        "wind_direction_10m": 180
+        "pressure_msl": 992,
+        "wind_speed_10m": 5.4,
+        "wind_direction_10m": 228
       },
       "hourly_units": {
         "time": "iso8601",
@@ -42689,7 +42689,7 @@
     "Konya": {
       "latitude": 37.875,
       "longitude": 32.5,
-      "generationtime_ms": 0.4304647445678711,
+      "generationtime_ms": 0.8909702301025391,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -42710,18 +42710,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6,
-        "relative_humidity_2m": 88,
-        "apparent_temperature": 2,
+        "temperature_2m": 4.9,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": 0,
         "is_day": 0,
-        "precipitation": 0.7,
-        "weather_code": 63,
+        "precipitation": 0.6,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 999,
-        "wind_speed_10m": 18,
-        "wind_direction_10m": 192
+        "pressure_msl": 1000.7,
+        "wind_speed_10m": 22.7,
+        "wind_direction_10m": 190
       },
       "hourly_units": {
         "time": "iso8601",
@@ -43730,7 +43730,7 @@
     "Kütahya": {
       "latitude": 39.4375,
       "longitude": 30,
-      "generationtime_ms": 0.5590915679931641,
+      "generationtime_ms": 1.340031623840332,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -43751,18 +43751,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 5.7,
+        "temperature_2m": 5.2,
         "relative_humidity_2m": 75,
-        "apparent_temperature": 1.7,
+        "apparent_temperature": 1.1,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 993.8,
-        "wind_speed_10m": 14.9,
-        "wind_direction_10m": 188
+        "pressure_msl": 994.7,
+        "wind_speed_10m": 14.6,
+        "wind_direction_10m": 190
       },
       "hourly_units": {
         "time": "iso8601",
@@ -44771,7 +44771,7 @@
     "Malatya": {
       "latitude": 38.375,
       "longitude": 38.3125,
-      "generationtime_ms": 0.4647970199584961,
+      "generationtime_ms": 0.7947683334350586,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -44792,18 +44792,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.3,
-        "relative_humidity_2m": 76,
-        "apparent_temperature": 4,
+        "temperature_2m": 6,
+        "relative_humidity_2m": 78,
+        "apparent_temperature": 3.7,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 2,
-        "cloud_cover": 61,
-        "pressure_msl": 1010.6,
-        "wind_speed_10m": 4.2,
-        "wind_direction_10m": 149
+        "weather_code": 3,
+        "cloud_cover": 86,
+        "pressure_msl": 1010.4,
+        "wind_speed_10m": 3.5,
+        "wind_direction_10m": 156
       },
       "hourly_units": {
         "time": "iso8601",
@@ -45812,7 +45812,7 @@
     "Manisa": {
       "latitude": 38.625,
       "longitude": 27.4375,
-      "generationtime_ms": 0.47218799591064453,
+      "generationtime_ms": 0.9616613388061523,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -45833,18 +45833,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.6,
-        "relative_humidity_2m": 71,
-        "apparent_temperature": 8.2,
+        "temperature_2m": 10.1,
+        "relative_humidity_2m": 70,
+        "apparent_temperature": 6.8,
         "is_day": 0,
-        "precipitation": 0.2,
-        "weather_code": 80,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 995.8,
-        "wind_speed_10m": 9.6,
-        "wind_direction_10m": 250
+        "pressure_msl": 996.6,
+        "wind_speed_10m": 14.1,
+        "wind_direction_10m": 238
       },
       "hourly_units": {
         "time": "iso8601",
@@ -46853,7 +46853,7 @@
     "Kahramanmaraş": {
       "latitude": 37.5625,
       "longitude": 36.9375,
-      "generationtime_ms": 0.6239414215087891,
+      "generationtime_ms": 0.865936279296875,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -46874,18 +46874,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.3,
-        "relative_humidity_2m": 84,
+        "temperature_2m": 8.9,
+        "relative_humidity_2m": 89,
         "apparent_temperature": 6.9,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 80,
-        "cloud_cover": 99,
-        "pressure_msl": 1010.9,
-        "wind_speed_10m": 10.6,
-        "wind_direction_10m": 80
+        "precipitation": 0.3,
+        "weather_code": 61,
+        "cloud_cover": 100,
+        "pressure_msl": 1010.7,
+        "wind_speed_10m": 9.1,
+        "wind_direction_10m": 81
       },
       "hourly_units": {
         "time": "iso8601",
@@ -47894,7 +47894,7 @@
     "Mardin": {
       "latitude": 37.3125,
       "longitude": 40.75,
-      "generationtime_ms": 0.7026195526123047,
+      "generationtime_ms": 1.0117292404174805,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -47915,18 +47915,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.4,
-        "relative_humidity_2m": 81,
-        "apparent_temperature": 7.2,
+        "temperature_2m": 9.3,
+        "relative_humidity_2m": 79,
+        "apparent_temperature": 6.9,
         "is_day": 0,
-        "precipitation": 0,
+        "precipitation": 0.1,
         "weather_code": 3,
-        "cloud_cover": 90,
-        "pressure_msl": 1014.1,
-        "wind_speed_10m": 8.3,
-        "wind_direction_10m": 124
+        "cloud_cover": 85,
+        "pressure_msl": 1014.4,
+        "wind_speed_10m": 9.5,
+        "wind_direction_10m": 119
       },
       "hourly_units": {
         "time": "iso8601",
@@ -48935,7 +48935,7 @@
     "Muğla": {
       "latitude": 37.1875,
       "longitude": 28.375,
-      "generationtime_ms": 0.7015466690063477,
+      "generationtime_ms": 0.6577968597412109,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -48956,18 +48956,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.5,
-        "relative_humidity_2m": 90,
-        "apparent_temperature": 4.4,
+        "temperature_2m": 6.2,
+        "relative_humidity_2m": 91,
+        "apparent_temperature": 4.6,
         "is_day": 0,
-        "precipitation": 0.3,
-        "weather_code": 95,
+        "precipitation": 0.2,
+        "weather_code": 80,
         "cloud_cover": 100,
-        "pressure_msl": 999.3,
-        "wind_speed_10m": 6,
-        "wind_direction_10m": 205
+        "pressure_msl": 999.9,
+        "wind_speed_10m": 2.9,
+        "wind_direction_10m": 180
       },
       "hourly_units": {
         "time": "iso8601",
@@ -49976,7 +49976,7 @@
     "Muş": {
       "latitude": 38.9375,
       "longitude": 41.75,
-      "generationtime_ms": 0.9108781814575195,
+      "generationtime_ms": 0.8891820907592773,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -49997,18 +49997,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 0.5,
-        "relative_humidity_2m": 94,
-        "apparent_temperature": -2.7,
+        "temperature_2m": 0.7,
+        "relative_humidity_2m": 93,
+        "apparent_temperature": -2.6,
         "is_day": 0,
-        "precipitation": 0.3,
+        "precipitation": 0.1,
         "weather_code": 61,
-        "cloud_cover": 99,
-        "pressure_msl": 1014.5,
-        "wind_speed_10m": 7.2,
-        "wind_direction_10m": 186
+        "cloud_cover": 87,
+        "pressure_msl": 1014,
+        "wind_speed_10m": 8,
+        "wind_direction_10m": 162
       },
       "hourly_units": {
         "time": "iso8601",
@@ -51017,7 +51017,7 @@
     "Nevşehir": {
       "latitude": 38.6875,
       "longitude": 34.6875,
-      "generationtime_ms": 0.6157159805297852,
+      "generationtime_ms": 0.8379220962524414,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -51038,18 +51038,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.7,
-        "relative_humidity_2m": 52,
-        "apparent_temperature": 4.3,
+        "temperature_2m": 9.8,
+        "relative_humidity_2m": 50,
+        "apparent_temperature": 4.1,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 999,
-        "wind_speed_10m": 22.5,
-        "wind_direction_10m": 145
+        "pressure_msl": 998,
+        "wind_speed_10m": 24.8,
+        "wind_direction_10m": 154
       },
       "hourly_units": {
         "time": "iso8601",
@@ -52058,7 +52058,7 @@
     "Niğde": {
       "latitude": 37.9375,
       "longitude": 34.6875,
-      "generationtime_ms": 0.6201267242431641,
+      "generationtime_ms": 0.8974075317382812,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -52078,18 +52078,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.4,
-        "relative_humidity_2m": 60,
-        "apparent_temperature": -1.1,
+        "temperature_2m": 7.2,
+        "relative_humidity_2m": 61,
+        "apparent_temperature": -1.2,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 1,
-        "cloud_cover": 84,
-        "pressure_msl": 1000.4,
-        "wind_speed_10m": 44.3,
-        "wind_direction_10m": 151
+        "weather_code": 3,
+        "cloud_cover": 100,
+        "pressure_msl": 999.4,
+        "wind_speed_10m": 43.5,
+        "wind_direction_10m": 149
       },
       "hourly_units": {
         "time": "iso8601",
@@ -53098,7 +53098,7 @@
     "Ordu": {
       "latitude": 40.9375,
       "longitude": 37.875,
-      "generationtime_ms": 0.690460205078125,
+      "generationtime_ms": 1.1048316955566406,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -53119,18 +53119,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 13.1,
-        "relative_humidity_2m": 58,
-        "apparent_temperature": 11.1,
+        "temperature_2m": 12.2,
+        "relative_humidity_2m": 63,
+        "apparent_temperature": 10,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 1000.6,
-        "wind_speed_10m": 5.8,
-        "wind_direction_10m": 184
+        "pressure_msl": 1000,
+        "wind_speed_10m": 7.1,
+        "wind_direction_10m": 195
       },
       "hourly_units": {
         "time": "iso8601",
@@ -54139,7 +54139,7 @@
     "Rize": {
       "latitude": 41,
       "longitude": 40.5,
-      "generationtime_ms": 1.2350082397460938,
+      "generationtime_ms": 1.4373064041137695,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -54160,18 +54160,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 16,
-        "relative_humidity_2m": 41,
-        "apparent_temperature": 13.1,
+        "temperature_2m": 15.5,
+        "relative_humidity_2m": 43,
+        "apparent_temperature": 12.6,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 86,
-        "pressure_msl": 1003.1,
+        "cloud_cover": 73,
+        "pressure_msl": 1002.3,
         "wind_speed_10m": 8.3,
-        "wind_direction_10m": 178
+        "wind_direction_10m": 182
       },
       "hourly_units": {
         "time": "iso8601",
@@ -55180,7 +55180,7 @@
     "Sakarya": {
       "latitude": 40.6875,
       "longitude": 30.4375,
-      "generationtime_ms": 0.4774332046508789,
+      "generationtime_ms": 0.571131706237793,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -55201,18 +55201,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12.1,
-        "relative_humidity_2m": 70,
-        "apparent_temperature": 11.1,
+        "temperature_2m": 13.2,
+        "relative_humidity_2m": 57,
+        "apparent_temperature": 11.3,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 61,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 991.1,
-        "wind_speed_10m": 1,
-        "wind_direction_10m": 45
+        "pressure_msl": 991.4,
+        "wind_speed_10m": 4.3,
+        "wind_direction_10m": 228
       },
       "hourly_units": {
         "time": "iso8601",
@@ -56221,7 +56221,7 @@
     "Samsun": {
       "latitude": 41.3125,
       "longitude": 36.3125,
-      "generationtime_ms": 0.4932880401611328,
+      "generationtime_ms": 1.0714530944824219,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -56242,18 +56242,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 12.6,
-        "relative_humidity_2m": 67,
-        "apparent_temperature": 10.9,
+        "relative_humidity_2m": 65,
+        "apparent_temperature": 10.8,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 99,
-        "pressure_msl": 998.3,
-        "wind_speed_10m": 5.4,
-        "wind_direction_10m": 180
+        "cloud_cover": 100,
+        "pressure_msl": 997.5,
+        "wind_speed_10m": 5.5,
+        "wind_direction_10m": 169
       },
       "hourly_units": {
         "time": "iso8601",
@@ -57262,7 +57262,7 @@
     "Siirt": {
       "latitude": 37.9375,
       "longitude": 41.9375,
-      "generationtime_ms": 0.47850608825683594,
+      "generationtime_ms": 1.1980533599853516,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -57283,18 +57283,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.5,
+        "temperature_2m": 7.4,
         "relative_humidity_2m": 87,
-        "apparent_temperature": 5.8,
+        "apparent_temperature": 5.6,
         "is_day": 0,
         "precipitation": 0.1,
         "weather_code": 80,
         "cloud_cover": 87,
-        "pressure_msl": 1015.5,
-        "wind_speed_10m": 4.3,
-        "wind_direction_10m": 95
+        "pressure_msl": 1015.7,
+        "wind_speed_10m": 4.2,
+        "wind_direction_10m": 110
       },
       "hourly_units": {
         "time": "iso8601",
@@ -58303,7 +58303,7 @@
     "Sinop": {
       "latitude": 42,
       "longitude": 35.0625,
-      "generationtime_ms": 0.5400180816650391,
+      "generationtime_ms": 1.2286901473999023,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -58324,18 +58324,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 13.8,
-        "relative_humidity_2m": 63,
-        "apparent_temperature": 11.7,
+        "temperature_2m": 14.6,
+        "relative_humidity_2m": 55,
+        "apparent_temperature": 12.1,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 2,
-        "cloud_cover": 51,
-        "pressure_msl": 995.5,
-        "wind_speed_10m": 9.2,
-        "wind_direction_10m": 132
+        "weather_code": 3,
+        "cloud_cover": 100,
+        "pressure_msl": 994.6,
+        "wind_speed_10m": 10.3,
+        "wind_direction_10m": 126
       },
       "hourly_units": {
         "time": "iso8601",
@@ -59344,7 +59344,7 @@
     "Sivas": {
       "latitude": 39.75,
       "longitude": 37,
-      "generationtime_ms": 0.5449056625366211,
+      "generationtime_ms": 0.7175207138061523,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -59365,18 +59365,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 4.8,
-        "relative_humidity_2m": 78,
-        "apparent_temperature": 1.3,
+        "relative_humidity_2m": 77,
+        "apparent_temperature": 0.9,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 97,
-        "pressure_msl": 1006.2,
-        "wind_speed_10m": 10.6,
-        "wind_direction_10m": 145
+        "cloud_cover": 98,
+        "pressure_msl": 1005.6,
+        "wind_speed_10m": 13.5,
+        "wind_direction_10m": 146
       },
       "hourly_units": {
         "time": "iso8601",
@@ -60385,7 +60385,7 @@
     "Tekirdağ": {
       "latitude": 41,
       "longitude": 27.5,
-      "generationtime_ms": 0.7890462875366211,
+      "generationtime_ms": 0.5990266799926758,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -60406,18 +60406,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 5.1,
-        "relative_humidity_2m": 83,
-        "apparent_temperature": -1.4,
+        "temperature_2m": 3.3,
+        "relative_humidity_2m": 84,
+        "apparent_temperature": -4,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 61,
-        "cloud_cover": 92,
-        "pressure_msl": 992.9,
-        "wind_speed_10m": 32.9,
-        "wind_direction_10m": 307
+        "precipitation": 0,
+        "weather_code": 3,
+        "cloud_cover": 99,
+        "pressure_msl": 994.3,
+        "wind_speed_10m": 36.7,
+        "wind_direction_10m": 313
       },
       "hourly_units": {
         "time": "iso8601",
@@ -61426,7 +61426,7 @@
     "Tokat": {
       "latitude": 40.3125,
       "longitude": 36.5625,
-      "generationtime_ms": 1.114964485168457,
+      "generationtime_ms": 0.7871389389038086,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -61447,18 +61447,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 11.2,
-        "relative_humidity_2m": 53,
-        "apparent_temperature": 5.1,
+        "temperature_2m": 11.5,
+        "relative_humidity_2m": 54,
+        "apparent_temperature": 5.6,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 1001.3,
-        "wind_speed_10m": 29.7,
-        "wind_direction_10m": 173
+        "pressure_msl": 1000.8,
+        "wind_speed_10m": 28.5,
+        "wind_direction_10m": 170
       },
       "hourly_units": {
         "time": "iso8601",
@@ -62467,7 +62467,7 @@
     "Trabzon": {
       "latitude": 41,
       "longitude": 39.75,
-      "generationtime_ms": 0.6917715072631836,
+      "generationtime_ms": 1.1529922485351562,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -62487,18 +62487,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 14.6,
-        "relative_humidity_2m": 49,
-        "apparent_temperature": 11.7,
+        "temperature_2m": 14.2,
+        "relative_humidity_2m": 54,
+        "apparent_temperature": 11.8,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 2,
-        "cloud_cover": 70,
-        "pressure_msl": 1001.8,
-        "wind_speed_10m": 9.6,
-        "wind_direction_10m": 160
+        "cloud_cover": 69,
+        "pressure_msl": 1001.2,
+        "wind_speed_10m": 7.9,
+        "wind_direction_10m": 137
       },
       "hourly_units": {
         "time": "iso8601",
@@ -63507,7 +63507,7 @@
     "Tunceli": {
       "latitude": 39.3125,
       "longitude": 39.4375,
-      "generationtime_ms": 0.7190704345703125,
+      "generationtime_ms": 0.6797313690185547,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -63528,18 +63528,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 4.6,
-        "relative_humidity_2m": 84,
-        "apparent_temperature": 1.6,
+        "temperature_2m": 4.7,
+        "relative_humidity_2m": 83,
+        "apparent_temperature": 1.5,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 80,
+        "precipitation": 0.1,
+        "weather_code": 85,
         "cloud_cover": 100,
-        "pressure_msl": 1012.4,
-        "wind_speed_10m": 8.9,
-        "wind_direction_10m": 148
+        "pressure_msl": 1012.3,
+        "wind_speed_10m": 9.7,
+        "wind_direction_10m": 149
       },
       "hourly_units": {
         "time": "iso8601",
@@ -64548,7 +64548,7 @@
     "Şanlıurfa": {
       "latitude": 37.1875,
       "longitude": 38.8125,
-      "generationtime_ms": 0.5668401718139648,
+      "generationtime_ms": 0.6840229034423828,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -64569,18 +64569,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.5,
-        "relative_humidity_2m": 92,
-        "apparent_temperature": 7.4,
+        "temperature_2m": 8.4,
+        "relative_humidity_2m": 94,
+        "apparent_temperature": 7.2,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 73,
-        "pressure_msl": 1013.4,
-        "wind_speed_10m": 3.1,
-        "wind_direction_10m": 54
+        "weather_code": 2,
+        "cloud_cover": 67,
+        "pressure_msl": 1013.5,
+        "wind_speed_10m": 3.8,
+        "wind_direction_10m": 73
       },
       "hourly_units": {
         "time": "iso8601",
@@ -65589,7 +65589,7 @@
     "Uşak": {
       "latitude": 38.6875,
       "longitude": 29.4375,
-      "generationtime_ms": 0.4394054412841797,
+      "generationtime_ms": 0.8847713470458984,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -65610,18 +65610,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 5.3,
-        "relative_humidity_2m": 92,
-        "apparent_temperature": 1.5,
+        "temperature_2m": 5,
+        "relative_humidity_2m": 89,
+        "apparent_temperature": 0.2,
         "is_day": 0,
-        "precipitation": 0.3,
-        "weather_code": 95,
-        "cloud_cover": 100,
-        "pressure_msl": 996.1,
-        "wind_speed_10m": 16.1,
-        "wind_direction_10m": 196
+        "precipitation": 0.1,
+        "weather_code": 80,
+        "cloud_cover": 98,
+        "pressure_msl": 996.7,
+        "wind_speed_10m": 22.5,
+        "wind_direction_10m": 212
       },
       "hourly_units": {
         "time": "iso8601",
@@ -66630,7 +66630,7 @@
     "Van": {
       "latitude": 38.5,
       "longitude": 43.375,
-      "generationtime_ms": 0.7941722869873047,
+      "generationtime_ms": 0.8331537246704102,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -66651,18 +66651,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 1.5,
-        "relative_humidity_2m": 85,
-        "apparent_temperature": -1.2,
+        "temperature_2m": 1.1,
+        "relative_humidity_2m": 86,
+        "apparent_temperature": -1.8,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 2,
-        "cloud_cover": 74,
-        "pressure_msl": 1014.6,
-        "wind_speed_10m": 3.3,
-        "wind_direction_10m": 41
+        "cloud_cover": 69,
+        "pressure_msl": 1014.9,
+        "wind_speed_10m": 4.7,
+        "wind_direction_10m": 86
       },
       "hourly_units": {
         "time": "iso8601",
@@ -67671,7 +67671,7 @@
     "Yozgat": {
       "latitude": 39.8125,
       "longitude": 34.8125,
-      "generationtime_ms": 0.5105733871459961,
+      "generationtime_ms": 0.61798095703125,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -67692,18 +67692,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 6.5,
-        "relative_humidity_2m": 70,
+        "relative_humidity_2m": 74,
         "apparent_temperature": 1.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 1000.4,
-        "wind_speed_10m": 23.6,
-        "wind_direction_10m": 159
+        "pressure_msl": 999.2,
+        "wind_speed_10m": 23.7,
+        "wind_direction_10m": 150
       },
       "hourly_units": {
         "time": "iso8601",
@@ -68712,7 +68712,7 @@
     "Zonguldak": {
       "latitude": 41.4375,
       "longitude": 31.8125,
-      "generationtime_ms": 0.7367134094238281,
+      "generationtime_ms": 0.7200241088867188,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -68733,18 +68733,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 13.7,
-        "relative_humidity_2m": 61,
-        "apparent_temperature": 12.4,
+        "temperature_2m": 12.4,
+        "relative_humidity_2m": 66,
+        "apparent_temperature": 10.6,
         "is_day": 0,
-        "precipitation": 0.1,
-        "weather_code": 61,
+        "precipitation": 0,
+        "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 991.8,
-        "wind_speed_10m": 2.6,
-        "wind_direction_10m": 146
+        "pressure_msl": 991.7,
+        "wind_speed_10m": 5.8,
+        "wind_direction_10m": 150
       },
       "hourly_units": {
         "time": "iso8601",
@@ -69753,7 +69753,7 @@
     "Aksaray": {
       "latitude": 38.375,
       "longitude": 34.0625,
-      "generationtime_ms": 0.66375732421875,
+      "generationtime_ms": 0.41735172271728516,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -69774,18 +69774,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.6,
-        "relative_humidity_2m": 57,
-        "apparent_temperature": 6.9,
+        "temperature_2m": 10.5,
+        "relative_humidity_2m": 50,
+        "apparent_temperature": 5.3,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 998.5,
-        "wind_speed_10m": 5.6,
-        "wind_direction_10m": 135
+        "pressure_msl": 997.1,
+        "wind_speed_10m": 21.3,
+        "wind_direction_10m": 164
       },
       "hourly_units": {
         "time": "iso8601",
@@ -70794,7 +70794,7 @@
     "Bayburt": {
       "latitude": 40.25,
       "longitude": 40.25,
-      "generationtime_ms": 0.8802413940429688,
+      "generationtime_ms": 0.6268024444580078,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -70815,7 +70815,7 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
         "temperature_2m": 4.7,
         "relative_humidity_2m": 65,
@@ -70823,10 +70823,10 @@
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1008.4,
-        "wind_speed_10m": 26.5,
-        "wind_direction_10m": 159
+        "cloud_cover": 92,
+        "pressure_msl": 1008.6,
+        "wind_speed_10m": 26.1,
+        "wind_direction_10m": 157
       },
       "hourly_units": {
         "time": "iso8601",
@@ -71835,7 +71835,7 @@
     "Karaman": {
       "latitude": 37.1875,
       "longitude": 33.25,
-      "generationtime_ms": 0.8271932601928711,
+      "generationtime_ms": 0.7685422897338867,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -71856,18 +71856,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.3,
+        "temperature_2m": 8.5,
         "relative_humidity_2m": 73,
-        "apparent_temperature": 2.5,
+        "apparent_temperature": 3.4,
         "is_day": 0,
-        "precipitation": 0.4,
-        "weather_code": 61,
+        "precipitation": 0.7,
+        "weather_code": 63,
         "cloud_cover": 100,
-        "pressure_msl": 999.6,
-        "wind_speed_10m": 29.2,
-        "wind_direction_10m": 176
+        "pressure_msl": 999.2,
+        "wind_speed_10m": 24.5,
+        "wind_direction_10m": 190
       },
       "hourly_units": {
         "time": "iso8601",
@@ -72876,7 +72876,7 @@
     "Kırıkkale": {
       "latitude": 39.875,
       "longitude": 33.5,
-      "generationtime_ms": 0.5235671997070312,
+      "generationtime_ms": 0.5371570587158203,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -72896,18 +72896,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.2,
-        "relative_humidity_2m": 64,
-        "apparent_temperature": 5.5,
+        "temperature_2m": 9.7,
+        "relative_humidity_2m": 71,
+        "apparent_temperature": 4.8,
         "is_day": 0,
-        "precipitation": 0,
-        "weather_code": 3,
+        "precipitation": 0.2,
+        "weather_code": 61,
         "cloud_cover": 100,
-        "pressure_msl": 996.8,
-        "wind_speed_10m": 22.2,
-        "wind_direction_10m": 167
+        "pressure_msl": 996.1,
+        "wind_speed_10m": 25,
+        "wind_direction_10m": 174
       },
       "hourly_units": {
         "time": "iso8601",
@@ -73916,7 +73916,7 @@
     "Batman": {
       "latitude": 37.875,
       "longitude": 41.125,
-      "generationtime_ms": 0.8698701858520508,
+      "generationtime_ms": 0.5383491516113281,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -73937,18 +73937,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 9.7,
+        "temperature_2m": 9.4,
         "relative_humidity_2m": 88,
-        "apparent_temperature": 8.2,
+        "apparent_temperature": 8,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 92,
-        "pressure_msl": 1014.5,
-        "wind_speed_10m": 6.1,
-        "wind_direction_10m": 45
+        "weather_code": 2,
+        "cloud_cover": 64,
+        "pressure_msl": 1014.8,
+        "wind_speed_10m": 5.9,
+        "wind_direction_10m": 52
       },
       "hourly_units": {
         "time": "iso8601",
@@ -74957,7 +74957,7 @@
     "Şırnak": {
       "latitude": 37.4375,
       "longitude": 42.5,
-      "generationtime_ms": 0.8111000061035156,
+      "generationtime_ms": 0.45490264892578125,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -74978,18 +74978,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 7.8,
+        "temperature_2m": 7.4,
         "relative_humidity_2m": 75,
-        "apparent_temperature": 5.4,
+        "apparent_temperature": 4.5,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 90,
-        "pressure_msl": 1015.5,
-        "wind_speed_10m": 6.6,
-        "wind_direction_10m": 99
+        "weather_code": 2,
+        "cloud_cover": 76,
+        "pressure_msl": 1015.6,
+        "wind_speed_10m": 9,
+        "wind_direction_10m": 90
       },
       "hourly_units": {
         "time": "iso8601",
@@ -75998,7 +75998,7 @@
     "Bartın": {
       "latitude": 41.5625,
       "longitude": 32.4375,
-      "generationtime_ms": 1.7379522323608398,
+      "generationtime_ms": 1.242995262145996,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -76019,18 +76019,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.2,
-        "relative_humidity_2m": 68,
-        "apparent_temperature": 7.8,
+        "temperature_2m": 9.9,
+        "relative_humidity_2m": 71,
+        "apparent_temperature": 7.7,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 992.1,
-        "wind_speed_10m": 8.1,
-        "wind_direction_10m": 103
+        "pressure_msl": 992,
+        "wind_speed_10m": 6.9,
+        "wind_direction_10m": 141
       },
       "hourly_units": {
         "time": "iso8601",
@@ -77039,7 +77039,7 @@
     "Ardahan": {
       "latitude": 41.125,
       "longitude": 42.6875,
-      "generationtime_ms": 0.9410381317138672,
+      "generationtime_ms": 0.8071660995483398,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -77060,18 +77060,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": -0.9,
-        "relative_humidity_2m": 83,
-        "apparent_temperature": -4.4,
+        "temperature_2m": -0.4,
+        "relative_humidity_2m": 81,
+        "apparent_temperature": -4.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1011.8,
-        "wind_speed_10m": 6.3,
-        "wind_direction_10m": 329
+        "cloud_cover": 96,
+        "pressure_msl": 1011.4,
+        "wind_speed_10m": 8.7,
+        "wind_direction_10m": 308
       },
       "hourly_units": {
         "time": "iso8601",
@@ -78080,7 +78080,7 @@
     "Iğdır": {
       "latitude": 39.875,
       "longitude": 44,
-      "generationtime_ms": 0.738978385925293,
+      "generationtime_ms": 0.7094144821166992,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -78101,18 +78101,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 6.6,
-        "relative_humidity_2m": 70,
+        "temperature_2m": 6.2,
+        "relative_humidity_2m": 74,
         "apparent_temperature": 3.3,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 89,
-        "pressure_msl": 1012.5,
-        "wind_speed_10m": 10,
-        "wind_direction_10m": 221
+        "weather_code": 2,
+        "cloud_cover": 75,
+        "pressure_msl": 1012.9,
+        "wind_speed_10m": 7.5,
+        "wind_direction_10m": 235
       },
       "hourly_units": {
         "time": "iso8601",
@@ -79121,7 +79121,7 @@
     "Yalova": {
       "latitude": 40.625,
       "longitude": 29.25,
-      "generationtime_ms": 0.699162483215332,
+      "generationtime_ms": 0.5398988723754883,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -79142,18 +79142,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12.8,
-        "relative_humidity_2m": 66,
-        "apparent_temperature": 11.2,
+        "temperature_2m": 11.9,
+        "relative_humidity_2m": 70,
+        "apparent_temperature": 9.3,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 991.3,
-        "wind_speed_10m": 5.1,
-        "wind_direction_10m": 231
+        "pressure_msl": 991.8,
+        "wind_speed_10m": 12.1,
+        "wind_direction_10m": 207
       },
       "hourly_units": {
         "time": "iso8601",
@@ -80162,7 +80162,7 @@
     "Karabük": {
       "latitude": 41.1875,
       "longitude": 32.625,
-      "generationtime_ms": 0.6424188613891602,
+      "generationtime_ms": 0.5581378936767578,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -80183,18 +80183,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 10.3,
-        "relative_humidity_2m": 71,
-        "apparent_temperature": 8.1,
+        "temperature_2m": 10.4,
+        "relative_humidity_2m": 70,
+        "apparent_temperature": 8.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 994.5,
-        "wind_speed_10m": 7.2,
-        "wind_direction_10m": 27
+        "pressure_msl": 994.3,
+        "wind_speed_10m": 6.5,
+        "wind_direction_10m": 56
       },
       "hourly_units": {
         "time": "iso8601",
@@ -81203,7 +81203,7 @@
     "Kilis": {
       "latitude": 36.6875,
       "longitude": 37.125,
-      "generationtime_ms": 0.4839897155761719,
+      "generationtime_ms": 1.0671615600585938,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -81224,18 +81224,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 8.7,
-        "relative_humidity_2m": 94,
-        "apparent_temperature": 7.4,
+        "temperature_2m": 8.5,
+        "relative_humidity_2m": 96,
+        "apparent_temperature": 7.3,
         "is_day": 0,
-        "precipitation": 0,
+        "precipitation": 0.1,
         "weather_code": 3,
-        "cloud_cover": 90,
-        "pressure_msl": 1012.1,
-        "wind_speed_10m": 4.8,
-        "wind_direction_10m": 132
+        "cloud_cover": 83,
+        "pressure_msl": 1012.3,
+        "wind_speed_10m": 4.5,
+        "wind_direction_10m": 151
       },
       "hourly_units": {
         "time": "iso8601",
@@ -82244,7 +82244,7 @@
     "Osmaniye": {
       "latitude": 37.1875,
       "longitude": 36.1875,
-      "generationtime_ms": 0.8649826049804688,
+      "generationtime_ms": 0.583648681640625,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -82265,18 +82265,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12.1,
-        "relative_humidity_2m": 85,
-        "apparent_temperature": 11.6,
+        "temperature_2m": 11.3,
+        "relative_humidity_2m": 88,
+        "apparent_temperature": 10.2,
         "is_day": 0,
         "precipitation": 0,
-        "weather_code": 3,
-        "cloud_cover": 100,
-        "pressure_msl": 1009.6,
-        "wind_speed_10m": 3.4,
-        "wind_direction_10m": 58
+        "weather_code": 2,
+        "cloud_cover": 49,
+        "pressure_msl": 1008.6,
+        "wind_speed_10m": 6.6,
+        "wind_direction_10m": 49
       },
       "hourly_units": {
         "time": "iso8601",
@@ -83285,7 +83285,7 @@
     "Düzce": {
       "latitude": 40.875,
       "longitude": 31.1875,
-      "generationtime_ms": 0.48089027404785156,
+      "generationtime_ms": 0.5582571029663086,
       "utc_offset_seconds": 10800,
       "timezone": "Europe/Istanbul",
       "timezone_abbreviation": "GMT+3",
@@ -83305,18 +83305,18 @@
         "wind_direction_10m": "°"
       },
       "current": {
-        "time": "2026-02-18T04:30",
+        "time": "2026-02-18T06:00",
         "interval": 900,
-        "temperature_2m": 12.3,
-        "relative_humidity_2m": 61,
-        "apparent_temperature": 10.1,
+        "temperature_2m": 12,
+        "relative_humidity_2m": 63,
+        "apparent_temperature": 10.2,
         "is_day": 0,
         "precipitation": 0,
         "weather_code": 3,
         "cloud_cover": 100,
-        "pressure_msl": 991.6,
-        "wind_speed_10m": 7.1,
-        "wind_direction_10m": 139
+        "pressure_msl": 991.5,
+        "wind_speed_10m": 4.4,
+        "wind_direction_10m": 145
       },
       "hourly_units": {
         "time": "iso8601",
